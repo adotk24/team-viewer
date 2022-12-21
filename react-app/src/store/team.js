@@ -52,18 +52,18 @@ export const getOneTeam = teamId => async dispatch => {
     }
 }
 
-// export const addingTeam = team => async dispatch => {
-//     const response = await fetch(`/api/teams`, {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(team)
-//     })
-//     if (response.ok){
-//         const team = response.json()
-//         dispatch(editTeam(team))
-//         return team
-//     }
-// }
+export const addingTeam = team => async dispatch => {
+    const response = await fetch(`/api/teams/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(team)
+    })
+    if (response.ok) {
+        const team = response.json()
+        dispatch(editTeam(team))
+        return team
+    }
+}
 
 // export const edittingTeam = (team, id) => async dispatch => {
 //     const response = await fetch(`/api/teams/${id}`, {
@@ -103,11 +103,11 @@ export default function reducer(state = { oneTeam: {}, allTeams: {} }, action) {
             newState.oneTeam = action.team
             return newState
         }
-        // case ADD_TEAM: {
-        //     const newState = { ...state, oneTeam: { ...state.oneTeam }, allTeams: { ...state.allTeams } }
-        //     newState.oneTeam = action.team
-        //     return newState
-        // }
+        case ADD_TEAM: {
+            const newState = { ...state, oneTeam: { ...state.oneTeam }, allTeams: { ...state.allTeams } }
+            newState.oneTeam = action.team
+            return newState
+        }
         // case EDIT_TEAM: {
         //     const newState = { ...state, oneTeam: { ...state.oneTeam }, allTeams: { ...state.allTeams } }
         //     newState.allTeams[action.team.id] = action.team

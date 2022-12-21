@@ -12,3 +12,13 @@ class Team(db.Model):
     city = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100), nullable=False)
     year = db.Column(db.Integer)
+
+    def to_dict(self):
+        return {
+            'id' : self.id,
+            'name': self.name,
+            'mascot' : self.mascot,
+            'city' : self.city,
+            'state' : self.state,
+            'year' : self.year
+        }

@@ -17,6 +17,11 @@ const AllTeams = () => {
 
     return isLoaded && (
         <div className="allTeamsContainer">
+            <NavLink to={`/teams/team/add`}>
+                <button>
+                    ADD A TEAM HERE
+                </button>
+            </NavLink>
             {getTeams.map(team => (
                 <NavLink to={`/teams/${team.id}`}>
                     <div className="teamCard">

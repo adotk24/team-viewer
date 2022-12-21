@@ -11,7 +11,7 @@ import { authenticate } from './store/session';
 import LandingPage from './components/LandingPage/LandingPage';
 import AllTeams from './components/AllTeams/AllTeams';
 import OneTeam from './components/TeamDetail/TeamDetail';
-
+import AddTeam from './components/AddTeam/AddTeam';
 
 
 function App() {
@@ -50,6 +50,9 @@ function App() {
         </Route>
         <Route path='/teams' exact={true} >
           <AllTeams />
+        </Route>
+        <Route path='/teams/team/add' exact={true}>
+          <AddTeam />
         </Route>
         <Route path='/teams/:teamId' exact={true}>
           <OneTeam />

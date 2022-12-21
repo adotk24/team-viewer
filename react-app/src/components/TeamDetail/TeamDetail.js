@@ -17,9 +17,13 @@ const OneTeam = () => {
             setLoaded(true)
         })
     }, [dispatch, teamId])
-
     return isLoaded && (
         <div className="oneTeamContainer">
+            <NavLink to={`/teams/team/add`}>
+                <button>
+                    ADD A TEAM HERE
+                </button>
+            </NavLink>
             <div>
                 {team.name} {team.mascot} {team.city} {team.state}
                 <button

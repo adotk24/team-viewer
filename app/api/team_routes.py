@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, Blueprint, redirect, request
 from ..models import db, Team
 from flask_login import login_required, current_user
-# from ..forms import TeamForm
+from ..forms import TeamForm
 team_route = Blueprint('teams', __name__)
 
 #Get All Teams
@@ -38,7 +38,7 @@ def get_single_team(teamId):
     return jsonify(response)
 
 # Create Team
-@team_route.route('/create', methods=['POST'])
+@team_route.route('/add', methods=['POST'])
 def create_team():
     form = TeamForm()
     form['csrf_token'].data = request.cookies['csrf_token']
