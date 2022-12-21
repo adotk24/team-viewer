@@ -9,6 +9,10 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import LandingPage from './components/LandingPage/LandingPage';
+import AllTeams from './components/AllTeams/AllTeams';
+
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -43,6 +47,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <LandingPage />
+        </Route>
+        <Route path='/teams' exact={true} >
+          <AllTeams />
         </Route>
       </Switch>
     </BrowserRouter>

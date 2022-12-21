@@ -36,6 +36,7 @@ const editTeam = team => {
 
 export const getAllTeams = () => async dispatch => {
     const response = await fetch(`/api/teams`)
+    console.log('MY RESPONSE HIT', response)
     if (response.ok) {
         const teams = await response.json()
         dispatch(allTeams(teams))
@@ -90,6 +91,7 @@ export const deletingTeam = id => async dispatch => {
 export default function reducer(state = { oneTeam: {}, allTeams: {} }, action) {
     switch (action.type) {
         case LOAD_ALL_TEAMS: {
+            console.log('THIS IS MY REDUCER?')
             const newState = { oneTeam: {}, allTeams: {} }
             action.teams.Teams.forEach(e => {
                 newState.allTeams[e.id] = e
