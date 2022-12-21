@@ -38,25 +38,25 @@ def get_single_team(teamId):
     return jsonify(response)
 
 # Create Team
-# @team_route.route('/create', methods=['POST'])
-# def create_team():
-#     form = TeamForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
-#     if form.validate_on_submit():
-#         new_team = Team(
-#             name = form.data['name'],
-#             mascot = form.data['mascot'],
-#             city = form.data['city'],
-#             state = form.data['state'],
-#             year = form.data['year']
-#         )
-#     if form.errors:
-#         return "Invalid data"
+@team_route.route('/create', methods=['POST'])
+def create_team():
+    form = TeamForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_team = Team(
+            name = form.data['name'],
+            mascot = form.data['mascot'],
+            city = form.data['city'],
+            state = form.data['state'],
+            year = form.data['year']
+        )
+    if form.errors:
+        return "Invalid data"
 
-#     db.session.add(new_team)
-#     db.session.commit()
+    db.session.add(new_team)
+    db.session.commit()
 
-#     return new_team.to_dict()
+    return new_team.to_dict()
 
 # # Edit a Team
 # @team_route.route('/<int:teamId>/edit', methods=['PUT'])
