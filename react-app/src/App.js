@@ -10,7 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import LandingPage from './components/LandingPage/LandingPage';
 import AllTeams from './components/AllTeams/AllTeams';
-
+import OneTeam from './components/TeamDetail/TeamDetail';
 
 
 
@@ -50,6 +50,9 @@ function App() {
         </Route>
         <Route path='/teams' exact={true} >
           <AllTeams />
+        </Route>
+        <Route path='/teams/:teamId' exact={true}>
+          <OneTeam />
         </Route>
       </Switch>
     </BrowserRouter>
