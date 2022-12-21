@@ -58,22 +58,22 @@ def create_team():
 
     return new_team.to_dict()
 
-# # Edit a Team
-# @team_route.route('/<int:teamId>/edit', methods=['PUT'])
-# def edit_team(teamId):
-#     team = Team.query.filter_by(id = teamId).first()
-#     form = TeamForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
-#     if form.validate_on_submit():
-#         setattr(team, 'name', form.data['name'])
-#         setattr(team, 'mascot', form.data['mascot'])
-#         setattr(team, 'city', form.data['city'])
-#         setattr(team, 'state', form.data['state'])
-#         setattr(team, 'year', form.data['year'])
-#     if form.errors:
-#         return 'Invalid data'
-#     db.session.commit()
-#     return team.to_dict()
+# Edit a Team
+@team_route.route('/<int:teamId>/edit', methods=['PUT'])
+def edit_team(teamId):
+    team = Team.query.filter_by(id = teamId).first()
+    form = TeamForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        setattr(team, 'name', form.data['name'])
+        setattr(team, 'mascot', form.data['mascot'])
+        setattr(team, 'city', form.data['city'])
+        setattr(team, 'state', form.data['state'])
+        setattr(team, 'year', form.data['year'])
+    if form.errors:
+        return 'Invalid data'
+    db.session.commit()
+    return team.to_dict()
 
 # Delete a Team
 @team_route.route('/<int:teamId>', methods=['DELETE'])

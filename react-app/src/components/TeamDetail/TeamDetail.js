@@ -19,21 +19,31 @@ const OneTeam = () => {
     }, [dispatch, teamId])
     return isLoaded && (
         <div className="oneTeamContainer">
+            <NavLink to={`/teams`}>
+                <button>
+                    See All Teams Here!
+                </button>
+            </NavLink>
             <NavLink to={`/teams/team/add`}>
                 <button>
                     ADD A TEAM HERE
                 </button>
             </NavLink>
+            <NavLink to={`/teams/${teamId}/edit`}>
+                <button>
+                    Edit the Team Here
+                </button>
+            </NavLink>
+            <button
+                onClick={async (e) => {
+                    e.preventDefault()
+                    const deleted = await dispatch(deletingTeam(team.id));
+                    if (deleted) history.push('/teams')
+                }}>
+                DELETE THIS TEAM
+            </button>
             <div>
                 {team.name} {team.mascot} {team.city} {team.state}
-                <button
-                    onClick={async (e) => {
-                        e.preventDefault()
-                        const deleted = await dispatch(deletingTeam(team.id));
-                        if (deleted) history.push('/teams')
-                    }}>
-                    DELETE THIS TEAM
-                </button>
             </div>
 
         </div >

@@ -12,7 +12,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import AllTeams from './components/AllTeams/AllTeams';
 import OneTeam from './components/TeamDetail/TeamDetail';
 import AddTeam from './components/AddTeam/AddTeam';
-
+import EditTeam from './components/EditTeam/EditTeam';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -56,6 +56,9 @@ function App() {
         </Route>
         <Route path='/teams/:teamId' exact={true}>
           <OneTeam />
+        </Route>
+        <Route path='/teams/:teamId/edit' exact={true}>
+          <EditTeam />
         </Route>
       </Switch>
     </BrowserRouter>

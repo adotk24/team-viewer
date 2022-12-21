@@ -36,7 +36,6 @@ const editTeam = team => {
 
 export const getAllTeams = () => async dispatch => {
     const response = await fetch(`/api/teams`)
-    console.log('MY RESPONSE HIT', response)
     if (response.ok) {
         const teams = await response.json()
         dispatch(allTeams(teams))
@@ -65,18 +64,19 @@ export const addingTeam = team => async dispatch => {
     }
 }
 
-// export const edittingTeam = (team, id) => async dispatch => {
-//     const response = await fetch(`/api/teams/${id}`, {
-//         method: 'PUT',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(team)
-//     })
-//     if (response.ok) {
-//         const team = response.json()
-//         dispatch(editTeam(team))
-//         return team
-//     }
-// }
+export const edittingTeam = (team, id) => async dispatch => {
+    const response = await fetch(`/api/teams/${id}/edit`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(team)
+    })
+    console.log('IS THIS EVEN HITTING?', response)
+    if (response.ok) {
+        const team = response.json()
+        dispatch(editTeam(team))
+        return team
+    }
+}
 
 export const deletingTeam = id => async dispatch => {
     const response = await fetch(`/api/teams/${id}`, { method: 'DELETE' })
@@ -91,7 +91,6 @@ export const deletingTeam = id => async dispatch => {
 export default function reducer(state = { oneTeam: {}, allTeams: {} }, action) {
     switch (action.type) {
         case LOAD_ALL_TEAMS: {
-            console.log('THIS IS MY REDUCER?')
             const newState = { oneTeam: {}, allTeams: {} }
             action.teams.Teams.forEach(e => {
                 newState.allTeams[e.id] = e
@@ -108,12 +107,12 @@ export default function reducer(state = { oneTeam: {}, allTeams: {} }, action) {
             newState.oneTeam = action.team
             return newState
         }
-        // case EDIT_TEAM: {
-        //     const newState = { ...state, oneTeam: { ...state.oneTeam }, allTeams: { ...state.allTeams } }
-        //     newState.allTeams[action.team.id] = action.team
-        //     newState.oneTeam = action.team
-        //     return newState
-        // }
+        case EDIT_TEAM: {
+            const newState = { ...state, oneTeam: { ...state.oneTeam }, allTeams: { ...state.allTeams } }
+            newState.allTeams[action.team.id] = action.team
+            newState.oneTeam = action.team
+            return newState
+        }
         case DELETE_TEAM: {
             const newState = { ...state, oneTeam: { ...state.oneTeam }, allTeams: { ...state.allTeams } }
             delete newState.allTeams[action.team.id]
