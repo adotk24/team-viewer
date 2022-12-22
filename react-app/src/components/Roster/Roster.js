@@ -28,7 +28,10 @@ const Roster = () => {
             <div className="rosterHeader">
                 Roster
             </div>
-            <button> Add Player</button>
+            <NavLink to={`/teams/${teamId}/addPlayer`}>
+                <button> Add Player
+                </button>
+            </NavLink>
             {findPlayers.map(player => (
                 <NavLink to={`/teams/players/${player.id}`}>
                     <div> {player.firstName} {player.lastName} {heightConvert(player.height)}

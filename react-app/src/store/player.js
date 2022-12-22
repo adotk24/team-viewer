@@ -79,7 +79,7 @@ export const edittingPlayer = (teamId, playerId, player) => async dispatch => {
 }
 
 export const deletingPlayer = id => async dispatch => {
-    const response = await fetch(`/api/players/${id}/delete`, {
+    const response = await fetch(`/api/players//player/${id}/delete`, {
         method: 'DELETE'
     })
     if (response.ok) {

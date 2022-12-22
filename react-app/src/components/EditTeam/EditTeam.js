@@ -15,7 +15,6 @@ const EditTeam = () => {
     const editThisTeam = findEditThisTeam[0]
     const dispatch = useDispatch()
 
-    console.log('THIS IS MY EDIT TEAM', editThisTeam)
 
     useEffect(() => {
         dispatch(getOneTeam(teamId))
