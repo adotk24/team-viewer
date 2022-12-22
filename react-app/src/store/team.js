@@ -59,7 +59,7 @@ export const addingTeam = team => async dispatch => {
     })
     if (response.ok) {
         const team = response.json()
-        dispatch(editTeam(team))
+        dispatch(addTeam(team))
         return team
     }
 }

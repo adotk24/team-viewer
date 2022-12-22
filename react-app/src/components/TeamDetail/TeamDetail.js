@@ -24,6 +24,11 @@ const OneTeam = () => {
                     See All Teams Here!
                 </button>
             </NavLink>
+            <NavLink to={`/teams/${teamId}/roster`}>
+                <button>
+                    Check out This Teams Roster!
+                </button>
+            </NavLink>
             <NavLink to={`/teams/team/add`}>
                 <button>
                     ADD A TEAM HERE

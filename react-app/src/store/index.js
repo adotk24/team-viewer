@@ -2,8 +2,9 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import team from './team'
+import player from './player'
 const rootReducer = combineReducers({
-  session, team
+  session, team, player
 });
 
 

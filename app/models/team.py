@@ -13,6 +13,8 @@ class Team(db.Model):
     state = db.Column(db.String(100), nullable=False)
     year = db.Column(db.Integer)
 
+    players = db.relationship('Player', back_populates='teams', cascade='all, delete')
+
     def to_dict(self):
         return {
             'id' : self.id,

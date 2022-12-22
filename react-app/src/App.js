@@ -13,6 +13,8 @@ import AllTeams from './components/AllTeams/AllTeams';
 import OneTeam from './components/TeamDetail/TeamDetail';
 import AddTeam from './components/AddTeam/AddTeam';
 import EditTeam from './components/EditTeam/EditTeam';
+import Roster from './components/Roster/Roster';
+import PlayerDetail from './components/PlayerDetail/PlayerDetail';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +55,12 @@ function App() {
         </Route>
         <Route path='/teams/team/add' exact={true}>
           <AddTeam />
+        </Route>
+        <Route path='/teams/:teamId/roster' exact={true}>
+          <Roster />
+        </Route>
+        <Route path='/teams/players/:playerId' exact={true}>
+          <PlayerDetail />
         </Route>
         <Route path='/teams/:teamId' exact={true}>
           <OneTeam />
