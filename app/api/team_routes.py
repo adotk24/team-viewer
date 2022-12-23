@@ -33,7 +33,8 @@ def get_single_team(teamId):
         'mascot': team.mascot,
         'city': team.city,
         'state': team.state,
-        'year' : team.year
+        'year' : team.year,
+        'userId': team.userId
     })
     return jsonify(response)
 

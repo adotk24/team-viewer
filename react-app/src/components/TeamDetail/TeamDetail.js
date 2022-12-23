@@ -11,7 +11,7 @@ const OneTeam = () => {
     const findTeam = useSelector(state => state.team.oneTeam)
     const team = findTeam[0]
     const [isLoaded, setLoaded] = useState(false)
-
+    const user = useSelector(state => state.session.user)
     useEffect(() => {
         dispatch(getOneTeam(teamId)).then(() => {
             setLoaded(true)
@@ -29,24 +29,30 @@ const OneTeam = () => {
                     Check out This Teams Roster!
                 </button>
             </NavLink>
-            <NavLink to={`/teams/team/add`}>
-                <button>
-                    ADD A TEAM HERE
+            {user.id == team.userId &&
+                <NavLink to={`/teams/team/add`}>
+                    <button>
+                        ADD A TEAM HERE
+                    </button>
+                </NavLink>
+            }
+            {user.id == team.userId &&
+                <NavLink to={`/teams/${teamId}/edit`}>
+                    <button>
+                        Edit the Team Here
+                    </button>
+                </NavLink>
+            }
+            {user.id == team.userId &&
+                <button
+                    onClick={async (e) => {
+                        e.preventDefault()
+                        const deleted = await dispatch(deletingTeam(team.id));
+                        if (deleted) history.push('/teams')
+                    }}>
+                    DELETE THIS TEAM
                 </button>
-            </NavLink>
-            <NavLink to={`/teams/${teamId}/edit`}>
-                <button>
-                    Edit the Team Here
-                </button>
-            </NavLink>
-            <button
-                onClick={async (e) => {
-                    e.preventDefault()
-                    const deleted = await dispatch(deletingTeam(team.id));
-                    if (deleted) history.push('/teams')
-                }}>
-                DELETE THIS TEAM
-            </button>
+            }
             <div>
                 {team.name} {team.mascot} {team.city} {team.state}
             </div>

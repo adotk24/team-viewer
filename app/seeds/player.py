@@ -46,7 +46,15 @@ def seed_players():
         year = 'Senior',
         position = 'SG'
     )
-
+    player6 = Player(
+        firstName='Lincoln',
+        lastName = 'Chalmers',
+        height = '76',
+        number = '11',
+        teamId = '4',
+        year = 'Junior',
+        position = 'PF'
+    )
 
 
     db.session.add(player1)
@@ -54,6 +62,7 @@ def seed_players():
     db.session.add(player3)
     db.session.add(player4)
     db.session.add(player5)
+    db.session.add(player6)
     db.session.commit()
 
 def undo_players():

@@ -7,6 +7,7 @@ import { getAllTeams } from "../../store/team";
 const AllTeams = () => {
     const getTeams = useSelector(state => Object.values(state.team.allTeams))
     const dispatch = useDispatch()
+    const user = useSelector(state => state.session.user)
     const [isLoaded, setLoaded] = useState(false)
     useEffect(() => {
         dispatch(getAllTeams()).then(() => {
@@ -17,11 +18,12 @@ const AllTeams = () => {
 
     return isLoaded && (
         <div className="allTeamsContainer">
-            <NavLink to={`/teams/team/add`}>
-                <button>
-                    ADD A TEAM HERE
-                </button>
-            </NavLink>
+            {user &&
+                <NavLink to={`/teams/team/add`}>
+                    <button>
+                        ADD A TEAM HERE
+                    </button>
+                </NavLink>}
             {getTeams.map(team => (
                 <NavLink to={`/teams/${team.id}`}>
                     <div className="teamCard">
