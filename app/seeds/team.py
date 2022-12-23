@@ -6,35 +6,40 @@ def seed_teams():
         mascot='Hawks',
         city='Carrollton',
         state='Texas',
-        year='2022'
+        year='2022',
+        userId='1'
     )
     team2 = Team(
         name='Lewisville',
         mascot="Fighting Farmers",
         city='Lewisville',
         state='Texas',
-        year='2022'
+        year='2022',
+        userId = '1'
     )
     team3 = Team(
         name='Callaway',
         mascot='Cavaliers',
         city='Hogansville',
         state='Georgia',
-        year='2022'
+        year='2022',
+        userId='2'
     )
     team4 = Team(
         name='Midlothian',
         mascot='Trojans',
         city='Midlothian',
         state='Virginia',
-        year='2022'
+        year='2022',
+        userId='2'
     )
     team5 = Team(
         name='Swift Creek',
         mascot='Cougars',
         city='Chesterfield',
         state='Virginia',
-        year='2022'
+        year='2022',
+        userId='3'
     )
 
     db.session.add(team1)

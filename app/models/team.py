@@ -12,8 +12,10 @@ class Team(db.Model):
     city = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100), nullable=False)
     year = db.Column(db.Integer)
+    userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
 
     players = db.relationship('Player', back_populates='teams', cascade='all, delete')
+    users = db.relationship('User', back_populates='teams')
 
     def to_dict(self):
         return {
@@ -22,5 +24,6 @@ class Team(db.Model):
             'mascot' : self.mascot,
             'city' : self.city,
             'state' : self.state,
-            'year' : self.year
+            'year' : self.year,
+            'userId': self.userId
         }
