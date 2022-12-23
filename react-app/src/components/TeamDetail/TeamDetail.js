@@ -29,21 +29,21 @@ const OneTeam = () => {
                     Check out This Teams Roster!
                 </button>
             </NavLink>
-            {user.id == team.userId &&
+            {user?.id == team.userId &&
                 <NavLink to={`/teams/team/add`}>
                     <button>
                         ADD A TEAM HERE
                     </button>
                 </NavLink>
             }
-            {user.id == team.userId &&
+            {user?.id == team.userId &&
                 <NavLink to={`/teams/${teamId}/edit`}>
                     <button>
                         Edit the Team Here
                     </button>
                 </NavLink>
             }
-            {user.id == team.userId &&
+            {user?.id == team.userId &&
                 <button
                     onClick={async (e) => {
                         e.preventDefault()

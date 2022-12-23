@@ -38,7 +38,7 @@ const Roster = () => {
             <div className="rosterHeader">
                 Roster
             </div>
-            {user.id == team.userId &&
+            {user?.id == team.userId &&
                 <NavLink to={`/teams/${teamId}/addPlayer`}>
                     <button> Add Player
                     </button>

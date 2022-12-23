@@ -14,7 +14,6 @@ const PlayerDetail = () => {
     const player = useSelector(state => state.player.onePlayer)
     const findTeam = useSelector(state => state.team.oneTeam)
     const team = findTeam[0]
-    console.log('this is my findTeam', team.userId, user.id)
 
     useEffect(() => {
         dispatch(getOnePlayer(playerId)).then(() => {
@@ -36,12 +35,12 @@ const PlayerDetail = () => {
     return isLoaded && (
 
         <div className="playerDetailContainer">
-            {team.userId == user.id &&
+            {team.userId == user?.id &&
                 <NavLink to={`/teams/players/${player.id}/edit`}>
                     <button>Edit This Player</button>
                 </NavLink>
             }
-            {team.userId == user.id &&
+            {team.userId == user?.id &&
                 <button
                     onClick={async (e) => {
                         e.preventDefault()
