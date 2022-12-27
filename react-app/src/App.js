@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navigation/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -17,7 +17,7 @@ import Roster from './components/Roster/Roster';
 import PlayerDetail from './components/PlayerDetail/PlayerDetail';
 import EditPlayer from './components/EditPlayer/EditPlayer';
 import AddPlayer from './components/AddPlayer/AddPlayer';
-
+import UserTeams from './components/UserTeams/UserTeams';
 
 
 
@@ -55,6 +55,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <LandingPage />
+        </Route>
+        <Route path='/user/team' exact={true} >
+          <UserTeams />
         </Route>
         <Route path='/teams' exact={true} >
           <AllTeams />

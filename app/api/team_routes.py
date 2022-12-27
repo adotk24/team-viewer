@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, Blueprint, redirect, request
-from ..models import db, Team
+from ..models import db, Team, User
 from flask_login import login_required, current_user
 from ..forms import TeamForm
 team_route = Blueprint('teams', __name__)
@@ -20,6 +20,26 @@ def get_all_teams():
             'year': team.year
         })
     return jsonify({'Teams': response})
+
+#Get ALL user Teams
+@team_route.route('/user')
+def get_all_user_teams():
+    response = []
+    teams = Team.query.filter_by(userId = current_user.id).all()
+    user = User.query.filter_by(id = current_user.id).first()
+    for team in teams:
+        response.append({
+            'id': team.id,
+            'name': team.name,
+            'mascot' : team.mascot,
+            'city' : team.city,
+            'state' : team.state,
+            'year' : team.year,
+            'userId': team.userId
+        })
+
+    return jsonify({'Teams': response})
+
 
 #Get SINGLE team
 

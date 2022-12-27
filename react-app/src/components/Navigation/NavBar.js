@@ -1,13 +1,16 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from 'react-redux'
+import ProfileButton from './ProfileButton';
 
 
 const NavBar = () => {
 
   const sessionUser = useSelector(state => state.session.user)
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <nav>
       <div className='navbar-left'>
@@ -30,8 +33,11 @@ const NavBar = () => {
             Users
           </NavLink>
         </li> */}
-      {sessionUser &&
+      {/* {sessionUser &&
         <LogoutButton />
+      } */}
+      {sessionUser &&
+        <ProfileButton />
       }
     </nav>
   );

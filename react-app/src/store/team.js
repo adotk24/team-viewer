@@ -42,6 +42,14 @@ export const getAllTeams = () => async dispatch => {
     }
 }
 
+export const getAllUserTeams = () => async dispatch => {
+    const response = await fetch(`/api/teams/user`)
+    if (response.ok) {
+        const teams = await response.json()
+        dispatch(allTeams(teams))
+    }
+}
+
 export const getOneTeam = teamId => async dispatch => {
     const response = await fetch(`/api/teams/${teamId}`)
     if (response.ok) {

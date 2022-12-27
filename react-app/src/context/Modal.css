@@ -1,0 +1,49 @@
+/* frontend/src/context/Modal.css */
+#modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal-content {
+    position: absolute;
+    background-color: white;
+}
+
+#ResponseModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+
+
+#ResponseModalContent {
+    position: absolute;
+    top: 0;
+    right: -1250px;
+    transform: translate(-1250px);
+    height: 100%;
+    background-color: white;
+    margin-top: 4vw;
+    border-left: 1px solid rgba(178, 178, 178, 0.7);
+    padding-left: 10px;
+    overflow-y: auto
+}
