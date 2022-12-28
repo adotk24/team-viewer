@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import './LandingPage.css'
 
 const LandingPage = () => {
-
+    const user = useSelector(state => state.session.user)
 
     return (
         <div className="landingPageContainer">
@@ -18,9 +18,11 @@ const LandingPage = () => {
                     <NavLink to={`/teams`}>
                         <button className="viewTeamsBtn"> Click Here To View Teams!</button>
                     </NavLink>
-                    <NavLink to={`/login`}>
-                        <button className="landingPageStart"> Get Started Here!</button>
-                    </NavLink>
+                    {!user &&
+                        <NavLink to={`/login`}>
+                            <button className="landingPageStart"> Get Started Here!</button>
+                        </NavLink>
+                    }
                 </div>
             </div>
         </div>
