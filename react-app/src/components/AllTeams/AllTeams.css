@@ -1,3 +1,60 @@
 .allTeamsContainer {
-    margin-top: 10%
+    margin-top: 5%;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allTeamsTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allTeamsHeader {
+    font-size: 44px;
+    margin-bottom: 5px
+}
+
+.allTeamsCounter {
+    font-size: 18px;
+    margin-bottom: 5px
+}
+
+.addTeamBtn {
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+    height: 60%;
+}
+
+.teamsLoopContainer {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid lightgray
+}
+
+
+.indiTeaminLoop {
+    width: 100%;
+    text-align: flex-start;
+    height: 6%;
+    align-self: flex-start;
+    border-bottom: 1px solid lightgray;
+    font-size: 32px;
+    text-decoration: none
+}
+
+.teamCard {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: blue
 }

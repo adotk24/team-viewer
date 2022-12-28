@@ -18,19 +18,31 @@ const AllTeams = () => {
 
     return isLoaded && (
         <div className="allTeamsContainer">
+            <div className="allTeamsTop">
+                <div className="allTeamsHeader">
+                    All Schools
+                </div>
+                <div className="allTeamsCounter">
+                    results: {getTeams.length}
+                </div>
+            </div>
             {user &&
                 <NavLink to={`/teams/team/add`}>
-                    <button>
+                    <button className="addTeamBtn">
                         ADD A TEAM HERE
                     </button>
                 </NavLink>}
-            {getTeams.map(team => (
-                <NavLink to={`/teams/${team.id}`}>
-                    <div className="teamCard">
-                        {team.name} {team.mascot} {team.city} {team.state}
+            <div className="teamsLoopContainer">
+                {getTeams.map(team => (
+                    <div className="indiTeaminLoop">
+                        <NavLink to={`/teams/${team.id}`}>
+                            <div className="teamCard">
+                                {team.name} {team.mascot} {team.city} {team.state}
+                            </div>
+                        </NavLink>
                     </div>
-                </NavLink>
-            ))}
+                ))}
+            </div>
         </div>
     )
 
