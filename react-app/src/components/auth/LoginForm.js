@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import * as sessionActions from '../../store/session'
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -46,41 +47,42 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-        <button className="DemoUserButton" onClick={handleDemoUserSubmit}>Demo User</button>
+    <div className='log-in-form-container'>
+      <form onSubmit={onLogin}>
+        <div>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
+        <div>
+          <label htmlFor='email'>Email</label>
+          <input
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
+        <div>
+          <label htmlFor='password'>Password</label>
+          <input
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+          />
+          <button type='submit'>Login</button>
+          <button className="DemoUserButton" onClick={handleDemoUserSubmit}>Demo User</button>
 
-        <div> Don't have an account? Sign up Here!</div>
-        <NavLink to={'/sign-up'} exact={true}>
-          <button>Sign Up</button>
-        </NavLink>
-      </div>
-    </form>
-
+          <div> Don't have an account? Sign up Here!</div>
+          <NavLink to={'/sign-up'} exact={true}>
+            <button>Sign Up</button>
+          </NavLink>
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -5,11 +5,11 @@
     align-items: center;
     background-color: rgb(216, 54, 29);
     height: 9%;
-    width: 99%;
+    width: 100%;
     min-height: 4vw;
     position: fixed;
     top: 0;
-    z-index: -100;
+    z-index: 1000;
     margin-bottom: -200px;
 }
 
