@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(216, 54, 29);
+    height: 9%;
+    width: 99%;
+    min-height: 4vw;
+    position: fixed;
+    top: 0;
+    z-index: -100;
+    margin-bottom: -200px;
+}
+
+.navbar-left {
+    margin-left: 14.5vw
+}
+
+.navbar-right {
+
+    margin-right: 8vw;
+    display: flex;
+    min-height: 10vh;
+    align-items: center;
+
+}
+
+button {
+    background-color: transparent;
+    border: none
+}
+
+active:visited {
+    color: black
+}

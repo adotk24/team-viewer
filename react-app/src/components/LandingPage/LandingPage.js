@@ -7,9 +7,11 @@ const LandingPage = () => {
 
 
     return (
-        <NavLink to={`/teams`}>
-            <button> Click Here For Teams!</button>
-        </NavLink>
+        <div className="landingPageContainer">
+            <NavLink to={`/teams`}>
+                <button> Click Here For Teams!</button>
+            </NavLink>
+        </div>
     )
 }
 

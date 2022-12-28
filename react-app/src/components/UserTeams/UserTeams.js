@@ -18,7 +18,7 @@ const UserTeams = () => {
     }, [dispatch, currentUser])
 
     return (
-        <div>
+        <div className="userTeamsContainer">
             {
                 teams.map(team => (
                     <NavLink to={`/teams/${team.id}`}>

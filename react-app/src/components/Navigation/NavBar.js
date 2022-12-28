@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from 'react-redux'
 import ProfileButton from './ProfileButton';
-
+import './navigation.css'
 
 const NavBar = () => {
 
@@ -12,34 +12,36 @@ const NavBar = () => {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <nav>
+    <div className='navbar'>
       <div className='navbar-left'>
         <NavLink to='/' exact={true} activeClassName='active'>
           Home
         </NavLink>
       </div>
-      {!sessionUser &&
-        <NavLink to='/login' exact={true} activeClassName='active'>
-          Login
-        </NavLink>
-      }
       {/* <li>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
-          </NavLink>
-        </li> */}
+            </NavLink>
+          </li> */}
       {/* <li>
           <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
+          Users
           </NavLink>
         </li> */}
       {/* {sessionUser &&
         <LogoutButton />
       } */}
-      {sessionUser &&
-        <ProfileButton />
-      }
-    </nav>
+      <div className='navbar-right'>
+        {!sessionUser &&
+          <NavLink to='/login' exact={true} activeClassName='active'>
+            Login
+          </NavLink>
+        }
+        {sessionUser &&
+          <ProfileButton />
+        }
+      </div>
+    </div>
   );
 }
 
