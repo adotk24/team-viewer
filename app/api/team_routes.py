@@ -63,13 +63,15 @@ def get_single_team(teamId):
 def create_team():
     form = TeamForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    userId = current_user.id
     if form.validate_on_submit():
         new_team = Team(
             name = form.data['name'],
             mascot = form.data['mascot'],
             city = form.data['city'],
             state = form.data['state'],
-            year = form.data['year']
+            year = form.data['year'],
+            userId = userId
         )
     if form.errors:
         return "Invalid data"

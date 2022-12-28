@@ -48,9 +48,6 @@ function ProfileButton() {
                         </div>
                     </div>
                     <div className="dropdownItems">
-                        <NavLink id="profileItems" to="/profile">
-                            <i style={{ fontSize: "30px" }} className="fa-solid fa-book" />
-                        </NavLink>
                         <NavLink id="profileItems" to="/user/team">
                             <button>Check Out Your Teams</button>
                         </NavLink>
