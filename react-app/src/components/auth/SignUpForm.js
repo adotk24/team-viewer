@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './SignUpForm.css'
 
@@ -45,50 +45,58 @@ const SignUpForm = () => {
 
   return (
     <div className='sign-up-form-container'>
-      <form onSubmit={onSignUp}>
-        <div>
+      <form className='sign-up-form' onSubmit={onSignUp}>
+        <div className='sign-up-form-header'>Create Account</div>
+        <div className='sign-up-errors'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
-        <div>
+        <div className='sign-up-username-input'>
           <label>User Name</label>
           <input
             type='text'
             name='username'
             onChange={updateUsername}
             value={username}
+            className='username-input-signup'
           ></input>
         </div>
-        <div>
+        <div className='sign-up-email-input'>
           <label>Email</label>
           <input
             type='text'
             name='email'
             onChange={updateEmail}
             value={email}
+            className='email-input-signup'
           ></input>
         </div>
-        <div>
+        <div className='sign-up-password-input'>
           <label>Password</label>
           <input
             type='password'
             name='password'
             onChange={updatePassword}
             value={password}
+            className='password-input-signup'
           ></input>
         </div>
-        <div>
-          <label>Repeat Password</label>
+        <div className='sign-up-password-input'>
+          <label>Repeat</label>
           <input
             type='password'
             name='repeat_password'
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
+            className='password-input-signup'
           ></input>
         </div>
-        <button type='submit'>Sign Up</button>
+        <button type='submit' className='signupsubmit'>Sign Up</button>
+        <NavLink to={'/login'} exact={true}>
+          <button className='createAccountFromLogin'>Already Have an Account?</button>
+        </NavLink>
       </form>
     </div>
   );
