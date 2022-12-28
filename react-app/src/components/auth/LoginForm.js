@@ -48,13 +48,16 @@ const LoginForm = () => {
 
   return (
     <div className='log-in-form-container'>
-      <form onSubmit={onLogin}>
-        <div>
+      <form className='log-in-form' onSubmit={onLogin}>
+        <div className='log-in-form-header'>
+          Sign In
+        </div>
+        <div className='login-errors'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
-        <div>
+        <div className='login-email-input'>
           <label htmlFor='email'>Email</label>
           <input
             name='email'
@@ -62,9 +65,10 @@ const LoginForm = () => {
             placeholder='Email'
             value={email}
             onChange={updateEmail}
+            className='email-input-login'
           />
         </div>
-        <div>
+        <div className='login-password-input'>
           <label htmlFor='password'>Password</label>
           <input
             name='password'
@@ -72,15 +76,15 @@ const LoginForm = () => {
             placeholder='Password'
             value={password}
             onChange={updatePassword}
+            className='password-input-login'
           />
-          <button type='submit'>Login</button>
-          <button className="DemoUserButton" onClick={handleDemoUserSubmit}>Demo User</button>
-
-          <div> Don't have an account? Sign up Here!</div>
-          <NavLink to={'/sign-up'} exact={true}>
-            <button>Sign Up</button>
-          </NavLink>
         </div>
+        <button className='login-form-submit' type='submit'>Sign In</button>
+        <button className="DemoUserButton" onClick={handleDemoUserSubmit}>Demo User</button>
+
+        <NavLink to={'/sign-up'} exact={true}>
+          <button className='createAccountFromLogin'>Create An Account</button>
+        </NavLink>
       </form>
     </div>
   );

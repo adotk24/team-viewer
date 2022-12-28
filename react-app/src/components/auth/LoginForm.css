@@ -1,3 +1,95 @@
 .log-in-form-container {
     margin-top: 10%;
+    height: 75vh;
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log-in-form {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log-in-form-header {
+    border-top: 3px solid blue;
+    width: 80%;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(89, 88, 88);
+    margin-bottom: 15px;
+}
+
+
+.login-errors {
+    width: 80%;
+    text-align: center;
+    background-color: rgb(238, 159, 159);
+    color: darkred;
+    border-radius: 10px;
+    margin-bottom: 15px
+}
+
+.login-email-input {
+    width: 80%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 32px;
+    margin-bottom: 15px
+}
+
+.login-password-input {
+    width: 80%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 32px;
+    margin-bottom: 45px
+}
+
+.email-input-login {
+    width: 60%;
+}
+
+.password-input-login {
+    width: 60%
+}
+
+.login-form-submit {
+    width: 80%;
+    border-radius: 15px;
+    height: 6%;
+    background-color: lightskyblue;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 15px
+}
+
+.DemoUserButton {
+    width: 80%;
+    border-radius: 15px;
+    height: 6%;
+    background-color: rgb(28, 137, 79);
+    color: white;
+    font-size: 32px;
+    margin-bottom: 15px
+}
+
+.createAccountFromLogin {
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+    color: lightskyblue;
+    font-size: 32px;
+    margin-bottom: 10px;
+    height: 100%;
+
 }
