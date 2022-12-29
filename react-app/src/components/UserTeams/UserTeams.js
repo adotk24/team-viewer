@@ -10,6 +10,7 @@ const UserTeams = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user)
     const teams = useSelector(state => Object.values(state.team.allTeams))
+    const user = useSelector(state => state.session.user)
 
     console.log('THESE ARE USER TEAMS', teams)
 
@@ -19,15 +20,33 @@ const UserTeams = () => {
 
     return (
         <div className="userTeamsContainer">
-            {
-                teams.map(team => (
-                    <NavLink to={`/teams/${team.id}`}>
-                        <div>
-                            {team.name} {team.mascot} {team.city} {team.state}
+            <div className="allTeamsTop">
+                <div className="allTeamsHeader">
+                    Your Teams
+                </div>
+                <div className="allTeamsCounter">
+                    results: {teams.length}
+                </div>
+                {user &&
+                    <NavLink to={`/teams/team/add`}>
+                        <button className="addTeamBtn">
+                            ADD A TEAM HERE
+                        </button>
+                    </NavLink>}
+            </div>
+            <div className="teamsLoopContainer">
+                {
+                    teams.map(team => (
+                        <div className="indiTeaminLoop">
+                            <NavLink to={`/teams/${team.id}`}>
+                                <div className="teamCard">
+                                    {team.name} {team.mascot} {team.city} {team.state}
+                                </div>
+                            </NavLink>
                         </div>
-                    </NavLink>
-                ))
-            }
+                    ))
+                }
+            </div>
         </div>
     )
 }
