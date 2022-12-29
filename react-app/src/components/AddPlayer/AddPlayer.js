@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux"
 import { NavLink, useParams, useHistory } from "react-router-dom"
 import { addingPlayer } from "../../store/player"
 import './AddPlayer.css'
+import { getOneTeam } from "../../store/team";
 
 
 const AddPlayer = () => {
     const { teamId } = useParams()
+    const findTeam = useSelector(state => state.team.oneTeam)
+    const team = findTeam[0]
     const history = useHistory()
     const dispatch = useDispatch()
     const [firstName, setFirstName] = useState('')
@@ -16,7 +19,7 @@ const AddPlayer = () => {
     const [number, setNumber] = useState('')
     const [year, setYear] = useState('')
     const [errors, setErrors] = useState([])
-
+    console.log('THIS IS MY TEAM', team)
     useEffect(() => {
         const validationErrors = []
         if (!firstName || firstName.length <= 2 || firstName.length >= 30) validationErrors.push('Must have First Name between 3 and 30 characters')
@@ -28,6 +31,10 @@ const AddPlayer = () => {
         setErrors(validationErrors)
     }, [firstName, lastName, height, position, number, year])
 
+    useEffect(() => {
+        dispatch(getOneTeam(teamId))
+    }, [dispatch])
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formValues = { firstName, lastName, height, position, number, year }
@@ -36,75 +43,94 @@ const AddPlayer = () => {
     }
     return (
         <div className="addPlayerContainer">
-            <div className="addPlayerHeader">
-                Create a new Player!
+            <div className="oneTeamBanner">
+                Welcome to the Team Viewer for your {team?.name} {team?.mascot}
             </div>
-            <form className="player-form" onSubmit={handleSubmit}>
-                <label>
-                    <input
-                        type='text'
-                        placeholder='First Name'
-                        className="addfirstNameInput"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='text'
-                        placeholder='Last Name'
-                        className="addLastNameInput"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='integer'
-                        placeholder='Height'
-                        className="addHeightInput"
-                        value={height}
-                        onChange={(e) => setHeight(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='text'
-                        placeholder='Position'
-                        className="addPositionInput"
-                        value={position}
-                        onChange={(e) => setPosition(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='integer'
-                        placeholder='Number'
-                        className="addNumberInput"
-                        value={number}
-                        onChange={(e) => setNumber(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='integer'
-                        placeholder='Year'
-                        className="addYearInput"
-                        value={year}
-                        onChange={(e) => setYear(e.target.value)}
-                        required />
-                </label>
-                <button type="submit"
-                    className="editPlayerBtn"
-                    disabled={errors.length > 0}>
-                    ADD PLAYER
-                </button>
+            <div className="player-form-div">
+                <div className="addPlayerHeader">
+                    Create a new Player!
+                </div>
                 <ul className="editPlayerErrors">
                     {errors.map(e => (
                         <li key={e}>{e}</li>
                     ))}
                 </ul>
-            </form>
+                <form className="player-form" onSubmit={handleSubmit}>
+                    <div className="player-form-input">
+                        <label>First Name</label>
+                        <input
+                            type='text'
+                            placeholder='First Name'
+                            className="player-input-box"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required />
+                    </div>
+                    <div className="player-form-input">
+                        <label>Last Name</label>
+                        <input
+                            type='text'
+                            placeholder='Last Name'
+                            className="player-input-box"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required />
+                    </div>
+
+                    <div className="player-form-input">
+
+                        <label>Height(in)</label>
+                        <input
+                            type='integer'
+                            placeholder='Height'
+                            className="player-input-box"
+                            value={height}
+                            onChange={(e) => setHeight(e.target.value)}
+                            required />
+                    </div>
+
+                    <div className="player-form-input">
+                        <label>Position</label>
+                        <input
+                            type='text'
+                            placeholder='Position'
+                            className="player-input-box"
+                            value={position}
+                            onChange={(e) => setPosition(e.target.value)}
+                            required />
+                    </div>
+
+                    <div className="player-form-input">
+                        <label>
+                            Number
+                        </label>
+                        <input
+                            type='integer'
+                            placeholder='Number'
+                            className="player-input-box"
+                            value={number}
+                            onChange={(e) => setNumber(e.target.value)}
+                            required />
+                    </div>
+
+                    <div className="player-form-input">
+                        <label>Year</label>
+                        <input
+                            type='integer'
+                            placeholder='Year'
+                            className="player-input-box"
+                            value={year}
+                            onChange={(e) => setYear(e.target.value)}
+                            required />
+                    </div>
+
+                    <button type="submit"
+                        className="editPlayerBtn"
+                        disabled={errors.length > 0}>
+                        ADD PLAYER
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }

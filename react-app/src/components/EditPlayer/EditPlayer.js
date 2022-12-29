@@ -3,12 +3,20 @@ import { useDispatch, useSelector } from "react-redux"
 import { NavLink, useParams, useHistory } from "react-router-dom";
 import './EditPlayer.css'
 import { getOnePlayer, edittingPlayer } from "../../store/player";
+import { getOneTeam } from "../../store/team";
 
 const EditPlayer = () => {
     const { playerId } = useParams()
     const history = useHistory()
     const player = useSelector(state => state.player.onePlayer)
     const dispatch = useDispatch()
+    const findTeam = useSelector(state => state.team.oneTeam)
+    const team = findTeam[0]
+
+
+    useEffect(() => {
+        dispatch(getOneTeam(player.teamId))
+    }, [dispatch])
 
     useEffect(() => {
         dispatch(getOnePlayer(playerId))
@@ -49,79 +57,98 @@ const EditPlayer = () => {
         if (edittedPlayer) history.push(`/teams/players/${edittedPlayer.id}`)
     }
 
+
+
     console.log('THIS IS MY PLAYERS STUFF', player.teamId, player)
     return (
-        <div className="editPlayerContainer">
-            <div className="editPlayerHeader">
-                Edit Player Here!
+        <div className="addPlayerContainer">
+            <div className="oneTeamBanner">
+                Welcome to the Team Viewer for your {team?.name} {team?.mascot}
             </div>
-            <form className="edit-player-form" onSubmit={handleSubmit}>
-                <label>
-                    <input
-                        type='text'
-                        placeholder="First Name"
-                        className="firstNameInput"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='text'
-                        placeholder="Last Name"
-                        className="lastNameInput"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='integer'
-                        placeholder="Height"
-                        className="heightInput"
-                        value={height}
-                        onChange={(e) => setHeight(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='text'
-                        placeholder="Position"
-                        className="positionInput"
-                        value={position}
-                        onChange={(e) => setPosition(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='integer'
-                        placeholder="Number"
-                        className="numberInput"
-                        value={number}
-                        onChange={(e) => setNumber(e.target.value)}
-                        required />
-                </label>
-                <label>
-                    <input
-                        type='integer'
-                        placeholder="Year"
-                        className="playerYearInput"
-                        value={year}
-                        onChange={(e) => setYear(e.target.value)}
-                        required />
-                </label>
-                <button type="submit"
-                    className="editPlayerBtn"
-                    disabled={errors.length > 0}>
-                    EDIT PLAYER
-                </button>
+            <div className="player-form-div">
+                <div className="addPlayerHeader">
+                    Edit Player Here!
+                </div>
                 <ul className="editPlayerErrors">
                     {errors.map(e => (
                         <li key={e}>{e}</li>
                     ))}
                 </ul>
-            </form>
-        </div>
+                <form className="player-form" onSubmit={handleSubmit}>
+                    <div className="player-form-input">
+                        <label>First Name</label>
+                        <input
+                            type='text'
+                            placeholder="First Name"
+                            className="player-input-box"
+
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required />
+                    </div>
+                    <div className="player-form-input">
+                        <label>Last Name</label>
+                        <input
+                            type='text'
+                            placeholder="Last Name"
+                            className="player-input-box"
+
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required />
+                    </div>
+                    <div className="player-form-input">
+                        <label>Height(in)</label>
+                        <input
+                            type='integer'
+                            placeholder="Height"
+                            className="player-input-box"
+
+                            value={height}
+                            onChange={(e) => setHeight(e.target.value)}
+                            required />
+                    </div>
+                    <div className="player-form-input">
+                        <label>Position</label>
+                        <input
+                            type='text'
+                            placeholder="Position"
+                            className="player-input-box"
+
+                            value={position}
+                            onChange={(e) => setPosition(e.target.value)}
+                            required />
+                    </div>
+                    <div className="player-form-input">
+                        <label>Number</label>
+                        <input
+                            type='integer'
+                            placeholder="Number"
+                            className="player-input-box"
+
+                            value={number}
+                            onChange={(e) => setNumber(e.target.value)}
+                            required />
+                    </div>
+                    <div className="player-form-input">
+                        <label>Year</label>
+                        <input
+                            type='integer'
+                            placeholder="Year"
+                            className="player-input-box"
+
+                            value={year}
+                            onChange={(e) => setYear(e.target.value)}
+                            required />
+                    </div>
+                    <button type="submit"
+                        className="editPlayerBtn"
+                        disabled={errors.length > 0}>
+                        EDIT PLAYER
+                    </button>
+                </form>
+            </div >
+        </div >
     )
 }
 
