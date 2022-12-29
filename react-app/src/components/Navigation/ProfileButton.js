@@ -34,6 +34,8 @@ function ProfileButton() {
         history.push('/')
     }
 
+    console.log('THIS IS MY SESSION USER', sessionUser)
+
     return (
         <div className="profile-icon" onClick={openMenu}>
             <i style={{ fontSize: '35px', color: "rgb(29, 29, 29)" }} className="fa-regular fa-user" />
@@ -41,15 +43,11 @@ function ProfileButton() {
             {showMenu &&
                 <div className="profile-dropdown">
                     <div className="dropdownItems">
-                        <div>
-                            <div id="profileUserEmail">
-                                {sessionUser.email}
-                            </div>
-                        </div>
+                        {sessionUser.username}
                     </div>
                     <div className="dropdownItems">
                         <NavLink id="profileItems" to="/user/team">
-                            <button>Check Out Your Teams</button>
+                            <button>Your Teams</button>
                         </NavLink>
                     </div>
                     <div className="dropdownItems">
