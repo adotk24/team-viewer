@@ -35,24 +35,40 @@ const Roster = () => {
 
     return isLoaded && (
         <div className="rostercontainer">
-            <div className="rosterHeader">
-                Roster
+            <div className="oneTeamBanner">
+                Welcome to the Team Viewer for your {team?.name} {team?.mascot}
             </div>
-            {user?.id == team.userId &&
+            <div className="rosterHeader">
+                YOUR {team?.name.toUpperCase()} {team?.mascot.toUpperCase()}
+            </div>
+
+            <div className="roster">
+                <div>Number</div>
+                <div>Name</div>
+                <div>Height</div>
+                <div>Position</div>
+                <div>Year</div>
+            </div>
+            {findPlayers.map(player => (
+                <div className="roster-player-grid">
+                    <div>{player.number}</div>
+                    <NavLink to={`/teams/players/${player.id}`}>
+                        <div>{player.firstName} {player.lastName}</div></NavLink>
+                    <div>{heightConvert(player.height)}</div>
+                    <div>{player.position}</div>
+                    <div>{player.year}</div>
+
+                </div>
+            ))}
+            {user?.id == team?.userId &&
                 <NavLink to={`/teams/${teamId}/addPlayer`}>
-                    <button> Add Player
+                    <button
+                        className="roster-add-player-btn"
+                    > Add Player
                     </button>
                 </NavLink>
             }
-            {findPlayers.map(player => (
-                <NavLink to={`/teams/players/${player.id}`}>
-                    <div> {player.firstName} {player.lastName} {heightConvert(player.height)}
-                        #{player.number} {player.position} {player.year}
-                    </div>
-                </NavLink>
-            ))}
         </div>
-
     )
 }
 
