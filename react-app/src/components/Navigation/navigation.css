@@ -15,7 +15,11 @@
 }
 
 .navbar-left {
-    margin-left: 14.5vw
+    margin-left: 14.5vw;
+    width: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
 }
 
 .navbar-right {

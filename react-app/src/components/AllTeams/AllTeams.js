@@ -6,6 +6,13 @@ import { getAllTeams } from "../../store/team";
 
 const AllTeams = () => {
     const getTeams = useSelector(state => Object.values(state.team.allTeams))
+    const teams = getTeams.sort((a, b) => {
+        if (a.name < b.name) return -1
+        else if (a.name > b.name) return 1
+        else if (a.mascot < b.mascot) return -1
+        else if (a.mascot > b.mascot) return 1
+        else return 0
+    })
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const [isLoaded, setLoaded] = useState(false)
@@ -33,7 +40,7 @@ const AllTeams = () => {
                     </button>
                 </NavLink>}
             <div className="teamsLoopContainer">
-                {getTeams.map(team => (
+                {teams.map(team => (
                     <div className="indiTeaminLoop">
                         <NavLink to={`/teams/${team.id}`}>
                             <div className="teamCard">
