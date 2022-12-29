@@ -2,34 +2,34 @@ from app.models import db, Team, environment, SCHEMA
 
 def seed_teams():
     team1 = Team(
-        name="Hebron",
-        mascot='Hawks',
-        city='Carrollton',
+        name="Texas",
+        mascot='Longhorns',
+        city='Austin',
         state='Texas',
         year='2022',
         userId='1'
     )
     team2 = Team(
-        name='Lewisville',
-        mascot="Fighting Farmers",
-        city='Lewisville',
+        name='Dallas',
+        mascot='Mavericks',
+        city='Dallas',
         state='Texas',
         year='2022',
         userId = '1'
     )
     team3 = Team(
-        name='Callaway',
-        mascot='Cavaliers',
-        city='Hogansville',
-        state='Georgia',
+        name='Team USA',
+        mascot='Redeem',
+        city='Washington D.C.',
+        state='Virginia',
         year='2022',
         userId='2'
     )
     team4 = Team(
-        name='Midlothian',
-        mascot='Trojans',
-        city='Midlothian',
-        state='Virginia',
+        name='Callaway',
+        mascot='Cavaliers',
+        city='Hogansville',
+        state='Georgia',
         year='2022',
         userId='2'
     )

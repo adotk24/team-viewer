@@ -13,6 +13,7 @@ const AddTeam = () => {
     const [state, setState] = useState('')
     const [year, setYear] = useState('')
     const [errors, setErrors] = useState([])
+    const findTeam = useSelector(state => state.team.oneTeam)
 
     useEffect(() => {
         const validationErrors = []
@@ -41,53 +42,58 @@ const AddTeam = () => {
                 Create your team here!
             </div>
             <form className="team-form" onSubmit={handleSubmit}>
-                <label>
+                <div className="team-form-input">
+                    <label>Name</label>
                     <input
                         type='text'
                         placeholder='Name'
-                        className="nameInput"
+                        className="addTeamInput"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+                <div className="team-form-input">
+                    <label>Mascot</label>
                     <input
                         type='text'
                         placeholder='Mascot'
-                        className="mascotInput"
+                        className="addTeamInput"
                         value={mascot}
                         onChange={(e) => setMascot(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+                <div className="team-form-input">
+                    <label>City</label>
                     <input
                         type='text'
                         placeholder='city'
-                        className="cityInput"
+                        className="addTeamInput"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+                <div className="team-form-input">
+                    <label>State</label>
                     <input
                         type='text'
                         placeholder='State'
-                        className="stateInput"
+                        className="addTeamInput"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+                <div className="team-form-input">
+                    <label>Year</label>
                     <input
                         type='integer'
                         placeholder='Year'
-                        className="yearInput"
+                        className="addTeamInput"
                         value={year}
                         onChange={(e) => setYear(e.target.value)}
                         required />
-                </label>
+                </div>
                 <button type='submit'
-                    className="addTeamBtn"
+                    className="submit-add-team"
                     disabled={errors.length > 0}>
                     CREATE TEAM
                 </button>

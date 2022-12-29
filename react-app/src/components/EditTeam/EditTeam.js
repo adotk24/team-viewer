@@ -53,62 +53,71 @@ const EditTeam = () => {
     }
 
     return (
-        <div className="editTeamContainer">
-            <div className="editTeamHeader">
+        <div className="addTeamContainer">
+            <div className="addTeamHeader">
                 Edit your team here!
             </div>
-            <form className="edit-team-form" onSubmit={handleSubmit}>
-                <label>
+            <form className="team-form" onSubmit={handleSubmit}>
+                <div className="team-form-input">
+                    <label>Name</label>
                     <input
                         type='text'
                         placeholder='Name'
-                        className="nameInput"
+                        className="addTeamInput"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+
+                <div className="team-form-input">
+                    <label>Mascot</label>
                     <input
                         type='text'
                         placeholder='Mascot'
-                        className="mascotInput"
+                        className="addTeamInput"
                         value={mascot}
                         onChange={(e) => setMascot(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+
+                <div className="team-form-input">
+                    <label>City</label>
                     <input
                         type='text'
                         placeholder='city'
-                        className="cityInput"
+                        className="addTeamInput"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+
+                <div className="team-form-input">
+                    <label>State</label>
                     <input
                         type='text'
                         placeholder='State'
-                        className="stateInput"
+                        className="addTeamInput"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                         required />
-                </label>
-                <label>
+                </div>
+
+                <div className="team-form-input">
+                    <label>Year</label>
                     <input
                         type='integer'
                         placeholder='Year'
-                        className="yearInput"
+                        className="addTeamInput"
                         value={year}
                         onChange={(e) => setYear(e.target.value)}
                         required />
-                </label>
+                </div>
                 <button type='submit'
-                    className="editTeamBtn"
+                    className="submit-add-team"
                     disabled={errors.length > 0}>
                     EDIT TEAM
                 </button>
-                <ul className="editTeamErrors">
+                <ul className="addTeamErrors">
                     {errors.map(e => (
                         <li key={e}>{e}</li>
                     ))}

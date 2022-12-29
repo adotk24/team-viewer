@@ -19,7 +19,6 @@ const AddPlayer = () => {
     const [number, setNumber] = useState('')
     const [year, setYear] = useState('')
     const [errors, setErrors] = useState([])
-    console.log('THIS IS MY TEAM', team)
     useEffect(() => {
         const validationErrors = []
         if (!firstName || firstName.length <= 2 || firstName.length >= 30) validationErrors.push('Must have First Name between 3 and 30 characters')
