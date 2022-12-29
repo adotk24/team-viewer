@@ -1,3 +1,56 @@
 .playerDetailContainer {
-    margin-top: 10%
+    margin-top: 6%;
+    height: 86vh;
+    width: 100%;
+    margin-left: -8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerDetailCard {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 40%;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    background-image: url('youngmandunking.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.playerDetailCard-left {
+    margin-left: 20px;
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.playerDetailCard-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerDetailFunctions {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.playerDetailBtn {
+    background-color: darkgray;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    width: 150px
 }

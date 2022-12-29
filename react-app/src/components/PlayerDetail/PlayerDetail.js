@@ -35,22 +35,39 @@ const PlayerDetail = () => {
     return isLoaded && (
 
         <div className="playerDetailContainer">
-            {team.userId == user?.id &&
-                <NavLink to={`/teams/players/${player.id}/edit`}>
-                    <button>Edit This Player</button>
-                </NavLink>
-            }
-            {team.userId == user?.id &&
-                <button
-                    onClick={async (e) => {
-                        e.preventDefault()
-                        const deleted = await dispatch(deletingPlayer(player.id))
-                        if (deleted) history.push(`/teams/${player.teamId}/roster`)
-                    }}
-                >Delete This Player</button>
-            }
-            <h1>{player.firstName} {player.lastName}</h1>
-            <div> {heightConvert(player.height)} {player.position} #{player.number} {player.year}</div>
+            <div className="playerDetailCard">
+                <div className="playerDetailCard-left">
+                    <h1>{player.firstName} {player.lastName}</h1>
+                    <div>{team?.name} High School</div>
+                    <div>{team?.city}, {team?.state}</div>
+                    <div>
+                        {heightConvert(player.height)} {player.position} #{player.number} {player.year}
+                    </div>
+                </div>
+                <div className="playerDetailCard-right">
+                    INSERT STATS HERE
+                </div>
+            </div>
+
+            <div className="playerDetailFunctions">
+                {team?.userId == user?.id &&
+                    <NavLink to={`/teams/players/${player.id}/edit`}>
+                        <button
+                            className="playerDetailBtn"
+                        >Edit This Player</button>
+                    </NavLink>
+                }
+                {team?.userId == user?.id &&
+                    <button
+                        className="playerDetailBtn"
+                        onClick={async (e) => {
+                            e.preventDefault()
+                            const deleted = await dispatch(deletingPlayer(player.id))
+                            if (deleted) history.push(`/teams/${player.teamId}/roster`)
+                        }}
+                    >Delete This Player</button>
+                }
+            </div>
         </div>
     )
 }
