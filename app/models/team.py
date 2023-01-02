@@ -16,6 +16,7 @@ class Team(db.Model):
 
     players = db.relationship('Player', back_populates='teams', cascade='all, delete')
     users = db.relationship('User', back_populates='teams')
+    games = db.relationship('Game', back_populates='teams', cascade='all, delete')
 
     def to_dict(self):
         return {
