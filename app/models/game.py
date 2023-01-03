@@ -9,15 +9,16 @@ class Game(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     datetime = db.Column(db.DateTime(), nullable=False)
-    team1_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
-    team2_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
+    matchupId = db.Column(db.Integer, nullable=False)
+    # team1_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
+    # team2_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     # teams = db.relationship('Team', back_populates='games', lazy='selectin',
     # primaryjoin="or_(Team.id==Game.team1id, " "Team.id==Game.team2id)")
 
     # teams = db.relationship('Team', foreign_keys=('Game.team1id'))
     # teams = db.relationship('Team', foreign_keys=('Game.team2id'))
-    team1 = db.relationship('Team', foreign_keys=[team1_id])
-    team2 = db.relationship('Team', foreign_keys=[team2_id])
+    # team1 = db.relationship('Team', foreign_keys=[team1_id])
+    # team2 = db.relationship('Team', foreign_keys=[team2_id])
 
 
     # team1 = db.relationship('Team', back_populates='games')
@@ -35,6 +36,7 @@ class Game(db.Model):
         return {
             'id' : self.id,
             'datetime': self.datetime,
-            'team1id': self.team1id,
-            'team2id' : self.team2id
+            # 'team1id': self.team1id,
+            # 'team2id' : self.team2id
+            'matchupId' : self.matchupId
         }

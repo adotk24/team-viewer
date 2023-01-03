@@ -21,10 +21,11 @@ def upgrade():
     op.create_table('games',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('datetime', sa.DateTime(), nullable=False),
-    sa.Column('team1id', sa.Integer()),
-    sa.Column('team2id', sa.Integer()),
-    sa.ForeignKeyConstraint(['team1id'], ['teams.id'], ),
-    sa.ForeignKeyConstraint(['team2id'], ['teams.id'], ),
+    # sa.Column('team1id', sa.Integer()),
+    # sa.Column('team2id', sa.Integer()),
+    # sa.ForeignKeyConstraint(['team1id'], ['teams.id'], ),
+    # sa.ForeignKeyConstraint(['team2id'], ['teams.id'], ),
+    sa.Column('matchupId', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
