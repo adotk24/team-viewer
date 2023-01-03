@@ -12,5 +12,4 @@ class GameForm(FlaskForm):
     day = IntegerField('Day', dr)
     hour = IntegerField('Hour', dr)
     minute = IntegerField('Minute', dr)
-    # schedule = DateTimeField('Schedule', dr)
-    team1id = IntegerField('Team1id', dr)
+    matchupId = IntegerField('Matchup Id', dr)
