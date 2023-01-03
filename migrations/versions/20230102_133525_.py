@@ -30,6 +30,8 @@ def upgrade():
     sa.Column('matchupId', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
