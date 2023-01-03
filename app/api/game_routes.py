@@ -6,7 +6,7 @@ game_route = Blueprint('games', __name__)
 from datetime import datetime
 
 
-#Get All Games
+#Get All Games for Specific Team?
 @game_route.route('/')
 def get_all_games():
     response = []
