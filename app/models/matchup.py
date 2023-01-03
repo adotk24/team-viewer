@@ -15,3 +15,10 @@ class Matchup(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     team1id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     team2id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'team1id': self.team1id,
+            'team2id': self.team2id
+        }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink, useParams, useHistory } from "react-router-dom";
 import { deletingTeam, getOneTeam } from "../../store/team";
+import TeamSchedule from "../TeamSchedule/TeamSchedule";
 import './TeamDetail.css'
 
 const OneTeam = () => {
@@ -68,7 +69,7 @@ const OneTeam = () => {
                     </button>
                 }
             </div>
-
+            <TeamSchedule teamId={teamId} />
         </div >
     )
 }

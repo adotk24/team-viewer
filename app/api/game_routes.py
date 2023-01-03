@@ -1,27 +1,47 @@
 from flask import Flask, jsonify, Blueprint, redirect, request
-from ..models import db, Team, Game, Matchup
+from ..models import db, Team, Game, Matchup, Player
 from flask_login import login_required, current_user
 from ..forms import GameForm
 game_route = Blueprint('games', __name__)
 from datetime import datetime
 
 
-#Get All Games for Specific Team?
+#Get All Games for Specific Team
 @game_route.route('/team/<int:teamId>')
-def get_all_games(teamId):
+def get_all_games_team(teamId):
     response = []
     games = Game.query.all()
     for game in games:
         matchup = Matchup.query.filter_by(id = game.matchupId).first()
         team1 = Team.query.filter_by(id = matchup.team1id).first().to_dict()
         team2 = Team.query.filter_by(id = matchup.team2id).first().to_dict()
-        response.append({
-            'id': game.id,
-            'datetime': game.datetime,
-            'team1': team1,
-            'team2': team2
+        if team1["id"] == teamId or team2["id"] == teamId:
+            response.append({
+                'id': game.id,
+                'datetime': game.datetime,
+                'team1': team1,
+                'team2': team2
         })
     return jsonify({'Games': response})
+
+#Get All Games for Specific Player
+# @game_route.route('/player/<int:playerId>')
+# def get_all_games_player(playerId):
+#     response = []
+#     games = Game.query.all()
+#     player = Player.query.filter_by(id = playerId).first()
+#     for game in games:
+#         matchup = Matchup.query.filter_by(id = game.matchupId).first()
+#         team1 = Team.query.filter_by(id = matchup.team1id).first().to_dict()
+#         team2 = Team.query.filter_by(id = matchup.team2id).first().to_dict()
+#         if team1["id"] == player.teamId or team2["id"] == player.teamId:
+#             response.append({
+#                 'id': game.id,
+#                 'datetime': game.datetime,
+#                 'team1': team1,
+#                 'team2': team2
+#             })
+
 
 #Get Single Game
 @game_route.route('/<int:gameId>')
@@ -38,6 +58,7 @@ def get_single_game(gameId):
         'team2': team2
     })
     return jsonify({'Game': response})
+
 
 # Create a Game
 @game_route.route('/add', methods=['POST'])
