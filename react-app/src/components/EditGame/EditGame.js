@@ -9,21 +9,32 @@ const EditGame = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const findGame = useSelector(state => state.game.oneGame)
-    const [loaded, isLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(false)
     let [values, setValues] = useState(false)
     useEffect(() => {
         dispatch(getOneGame(gameId)).then(() => {
-            isLoaded(true)
+            setLoaded(true)
+            if (findGame && findGame.Game) {
+                const game = findGame.Game[0]
+                const gameSplit = game.datetime.split(' ')
+                const day = gameSplit[1]
+                const month = getMonth(gameSplit[2])
+                const year = gameSplit[3]
+                const time = gameSplit[4]
+                const datetime = (`${year}-${month}-${day}T${time}`)
+                setDatetime(datetime)
+                setValues(true)
+            }
         })
     }, [gameId])
+    // useEffect(() => {
+    //     dispatch(getOneGame(gameId)).then(() => {
+    //         isLoaded(true)
+    //     })
+    // }, [gameId])
 
-    let game;
-    let year;
-    let month;
-    let day;
-    let time;
 
-    let [datetime, setDatetime] = useState('')
+    let [datetime, setDatetime] = useState('2020-01-01T00:00')
     const getMonth = (str) => {
         if (str == 'Jan') return '01'
         if (str == 'Feb') return '02'
@@ -39,23 +50,25 @@ const EditGame = () => {
         if (str == 'Dec') return '12'
     }
 
-    useEffect(() => {
-        setDatetime(datetime)
-    }, [datetime])
+    // useEffect(() => {
+    //     setDatetime(datetime)
+    // }, [datetime])
 
 
-    if (loaded && !values) {
-        game = findGame.Game[0]
-        const gameSplit = game.datetime.split(' ')
-        day = gameSplit[1]
-        month = getMonth(gameSplit[2])
-        year = gameSplit[3]
-        time = gameSplit[4]
-        datetime = (`${year}-${month}-${day}T${time}`)
-        console.log('VALUES', values)
-        values = true
-        console.log('VALUES POST', values)
-    }
+    // if (loaded && !values) {
+    //     game = findGame.Game[0]
+    //     const gameSplit = game.datetime.split(' ')
+    //     day = gameSplit[1]
+    //     month = getMonth(gameSplit[2])
+    //     year = gameSplit[3]
+    //     time = gameSplit[4]
+    //     datetime = (`${year}-${month}-${day}T${time}`)
+    //     console.log('VALUES', values)
+    //     setValues(true)
+    //     console.log('VALUES POST', values)
+    // }
+
+
     console.log('RIGHT BEFORE RETURN', datetime)
     return loaded && values && (
         < div className="game-form-container" >
