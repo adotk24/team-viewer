@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
@@ -11,6 +11,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  // const [errorsShow, setErrorsShown] = useState(false);
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -19,6 +20,11 @@ const LoginForm = () => {
       setErrors(data);
     }
   };
+  useEffect(() => {
+    const validation = []
+    if (!email.includes('@')) validation.push("Invalid email.")
+    setErrors(validation)
+  }, [email])
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -41,11 +47,30 @@ const LoginForm = () => {
           if (data && data.errors) {
             return setErrors(data.errors)
           }
-
         }
       );
   }
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setErrorsShown(true)
+
+  //   if (!errors.length) {
+  //     return dispatch(sessionActions.login({ email, password }))
+  //       .then((res) => {
+  //         if (res.errors) setErrors(res.errors)
+  //         console.log('COMPONENT', res.errors)
+  //       })
+  //       .catch(
+  //         async (res) => {
+  //           const data = await res.json();
+  //           if (data && data.errors) {
+  //             setErrors(data.errors)
+  //           }
+  //         }
+  //       );
+  //   };
+  // }
   return (
     <div className='log-in-form-container'>
       <form className='log-in-form' onSubmit={onLogin}>
@@ -53,9 +78,10 @@ const LoginForm = () => {
           Sign In
         </div>
         <div className='login-errors'>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
+          {errors &&
+            errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
         </div>
         <div className='login-email-input'>
           <label htmlFor='email'>Email</label>

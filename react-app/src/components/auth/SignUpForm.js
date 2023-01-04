@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
@@ -21,7 +21,18 @@ const SignUpForm = () => {
         setErrors(data)
       }
     }
+    else {
+      const validation = []
+      validation.push('Passwords Must Match')
+      setErrors(validation)
+    }
   };
+
+  useEffect(() => {
+    const validation = []
+    if (!email.includes('@')) validation.push("Invalid email.")
+    setErrors(validation)
+  }, [email])
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
