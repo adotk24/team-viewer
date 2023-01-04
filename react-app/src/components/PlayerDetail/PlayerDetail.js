@@ -4,6 +4,7 @@ import { NavLink, useParams, useHistory } from "react-router-dom"
 import './PlayerDetail.css'
 import { getOnePlayer, deletingPlayer } from "../../store/player";
 import { getOneTeam } from "../../store/team";
+import PlayerSchedule from "../PlayerSchedule/PlayerSchedule";
 
 const PlayerDetail = () => {
     const { playerId } = useParams()
@@ -68,6 +69,7 @@ const PlayerDetail = () => {
                     >Delete This Player</button>
                 }
             </div>
+            <PlayerSchedule playerTeam={team?.id} />
         </div>
     )
 }
