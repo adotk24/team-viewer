@@ -18,7 +18,9 @@ const TeamSchedule = ({ teamId }) => {
                 <div className="scheduleOneGame">
                     <div>{e.datetime}</div>
                     <div>{e.team1.mascot} VS {e.team2.mascot}</div>
-
+                    <NavLink to={`schedule/game/${e.id}/edit`}>
+                        <button>Edit This Game</button>
+                    </NavLink>
                 </div>
             ))}
         </div>

@@ -81,7 +81,6 @@ const EditPlayer = () => {
                             type='text'
                             placeholder="First Name"
                             className="player-input-box"
-
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                             required />

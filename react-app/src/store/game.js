@@ -90,14 +90,14 @@ export const deletingGame = gameId => async dispatch => {
 export default function reducer(state = { oneGame: {}, allGames: {} }, action) {
     switch (action.type) {
         case LOAD_ALL_GAMES_BY_TEAM: {
-            const newState = { oneGame: {}, allGames: {} }
+            const newState = { ...state, oneGame: { ...state.oneGame }, allGames: {} }
             action.games.Games.forEach(e => {
                 newState.allGames[e.id] = e
             })
             return newState
         }
         case LOAD_ONE_GAME: {
-            const newState = { oneGame: {}, allGames: {} }
+            const newState = { ...state, oneGame: {}, allGames: { ...state.allGames } }
             newState.oneGame = action.game
             return newState
         }
