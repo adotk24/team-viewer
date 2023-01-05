@@ -17,51 +17,54 @@ const EditGame = () => {
     const [errors, setErrors] = useState([])
     const [team1id, setTeam1id] = useState(null)
     const [team2id, setTeam2id] = useState(null)
-    console.log('WHY REFRESH', gameId)
+    // console.log('WHY REFRESH', gameId)
     useEffect(() => {
         dispatch(getOneGame(gameId)).then(() => {
-            dispatch(getAllTeams()).then(() => {
-                if (findGame && findGame.Game) {
-                    const game = findGame.Game[0]
-                    const gameSplit = game.datetime.split(' ')
-                    const day = gameSplit[1]
-                    const month = getMonth(gameSplit[2])
-                    const year = gameSplit[3]
-                    const time = gameSplit[4]
-                    const datetime = (`${year}-${month}-${day}T${time}`)
-                    setDatetime(datetime)
-                    setTeam1(game.team1.name)
-                    setTeam2(game.team2.name)
-                    setTeam1id(game.team1.id)
-                    setTeam2id(game.team2.id)
+            dispatch(getAllTeams())
+                // .then(() =>
+                // {
+                //     if (findGame && findGame.Game) {
+                //         const game = findGame.Game[0]
+                //         const gameSplit = game.datetime.split(' ')
+                //         const day = gameSplit[1]
+                //         const month = getMonth(gameSplit[2])
+                //         const year = gameSplit[3]
+                //         const time = gameSplit[4]
+                //         const datetime = (`${year}-${month}-${day}T${time}`)
+                //         setDatetime(datetime)
+                //         setTeam1(game.team1.name)
+                //         setTeam2(game.team2.name)
+                //         setTeam1id(game.team1.id)
+                //         setTeam2id(game.team2.id)
 
-                    console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
-                }
-            }).then(() => {
-                setLoaded(true)
+                //         console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
+                //     }
+                // })
+                .then(() => {
+                    setLoaded(true)
 
-            })
+                })
         })
-    }, [dispatch, gameId, datetime])
+    }, [dispatch, gameId])
 
-    // useEffect(() => {
-    //     if (findGame && findGame.Game) {
-    //         const game = findGame.Game[0]
-    //         const gameSplit = game.datetime.split(' ')
-    //         const day = gameSplit[1]
-    //         const month = getMonth(gameSplit[2])
-    //         const year = gameSplit[3]
-    //         const time = gameSplit[4]
-    //         const datetime = (`${year}-${month}-${day}T${time}`)
-    //         setDatetime(datetime)
-    //         setTeam1(game.team1.name)
-    //         setTeam2(game.team2.name)
-    //         setTeam1id(game.team1.id)
-    //         setTeam2id(game.team2.id)
+    useEffect(() => {
+        if (findGame && findGame.Game) {
+            const game = findGame.Game[0]
+            const gameSplit = game.datetime.split(' ')
+            const day = gameSplit[1]
+            const month = getMonth(gameSplit[2])
+            const year = gameSplit[3]
+            const time = gameSplit[4]
+            const datetime = (`${year}-${month}-${day}T${time}`)
+            setDatetime(datetime)
+            setTeam1(game.team1.name)
+            setTeam2(game.team2.name)
+            setTeam1id(game.team1.id)
+            setTeam2id(game.team2.id)
 
-    //         console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
-    //     }
-    // }, [findGame])
+            console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
+        }
+    }, [findGame])
 
 
     const getMonth = (str) => {
@@ -103,12 +106,12 @@ const EditGame = () => {
             gameId = findGame.Game[0].id
         }
         const values = { year, month, day, hour, minute, team1id, team2id }
-        console.log('WHY DOES THIS NOT WORK', values)
+        console.log('WHY DOES THIS NOT WORK', values, gameId)
         const edittedGame = await dispatch(edittingGame(gameId, values))
         if (edittedGame) history.push(`/teams/${team1id}`)
     }
 
-    return datetime && isLoaded && (
+    return datetime && isLoaded && team1id && (
         < div className="game-form-container" >
             <ul className="game-formErrors">
                 {errors.map(e => (
