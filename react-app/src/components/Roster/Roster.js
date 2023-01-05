@@ -13,7 +13,6 @@ const Roster = () => {
     const findPlayers = useSelector(state => Object.values(state.player.allPlayers))
     const user = useSelector(state => state.session.user)
     const findTeam = useSelector(state => state.team.oneTeam)
-    console.log('THIS IS MY FOUND PLAYERS', findPlayers);
     const sortedPlayers = findPlayers.sort((a, b) => {
         if (a.number < b.number) return -1
         else if (a.number > b.number) return 1

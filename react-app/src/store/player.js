@@ -38,7 +38,6 @@ export const getAllPlayers = teamId => async dispatch => {
     const response = await fetch(`/api/players/${teamId}`)
     if (response.ok) {
         const players = await response.json()
-        console.log('STORE PLAYERS', players)
         dispatch(allPlayers(players))
     }
 }

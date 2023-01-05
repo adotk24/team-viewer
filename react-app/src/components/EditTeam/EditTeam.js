@@ -9,7 +9,6 @@ const EditTeam = () => {
     const { teamId } = useParams()
     const history = useHistory()
     const findEditThisTeam = useSelector(state => {
-        console.log('THIS IS MY STATE', state)
         return state.team.oneTeam
     })
     const editThisTeam = findEditThisTeam[0]

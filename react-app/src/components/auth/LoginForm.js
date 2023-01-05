@@ -37,10 +37,9 @@ const LoginForm = () => {
   if (user) {
     return <Redirect to='/' />;
   }
-  const handleDemoUserSubmit = (e) => {
+  const handleDemoUserSubmit = async (e) => {
 
-    e.preventDefault()
-    return dispatch(sessionActions.login({ email: "demo@aa.io", password: 'password' }))
+    return dispatch(sessionActions.login('demo@aa.io', 'password'))
       .catch(
         async (res) => {
           const data = await res.json();
@@ -51,26 +50,6 @@ const LoginForm = () => {
       );
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setErrorsShown(true)
-
-  //   if (!errors.length) {
-  //     return dispatch(sessionActions.login({ email, password }))
-  //       .then((res) => {
-  //         if (res.errors) setErrors(res.errors)
-  //         console.log('COMPONENT', res.errors)
-  //       })
-  //       .catch(
-  //         async (res) => {
-  //           const data = await res.json();
-  //           if (data && data.errors) {
-  //             setErrors(data.errors)
-  //           }
-  //         }
-  //       );
-  //   };
-  // }
   return (
     <div className='log-in-form-container'>
       <form className='log-in-form' onSubmit={onLogin}>

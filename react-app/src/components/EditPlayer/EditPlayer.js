@@ -57,9 +57,6 @@ const EditPlayer = () => {
         if (edittedPlayer) history.push(`/teams/players/${edittedPlayer.id}`)
     }
 
-
-
-    console.log('THIS IS MY PLAYERS STUFF', player.teamId, player)
     return (
         <div className="addPlayerContainer">
             <div className="oneTeamBanner">

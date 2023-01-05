@@ -12,8 +12,6 @@ const UserTeams = () => {
     const teams = useSelector(state => Object.values(state.team.allTeams))
     const user = useSelector(state => state.session.user)
 
-    console.log('THESE ARE USER TEAMS', teams)
-
     useEffect(() => {
         dispatch(getAllUserTeams())
     }, [dispatch, currentUser])

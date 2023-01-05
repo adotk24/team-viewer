@@ -34,8 +34,6 @@ function ProfileButton() {
         history.push('/')
     }
 
-    console.log('THIS IS MY SESSION USER', sessionUser)
-
     return (
         <div className="profile-icon" onClick={openMenu}>
             <i style={{ fontSize: '35px', color: "rgb(29, 29, 29)" }} className="fa-regular fa-user" />

@@ -78,7 +78,6 @@ export const edittingTeam = (team, id) => async dispatch => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(team)
     })
-    console.log('IS THIS EVEN HITTING?', response)
     if (response.ok) {
         const team = response.json()
         dispatch(editTeam(team))
