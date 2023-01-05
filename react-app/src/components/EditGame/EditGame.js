@@ -17,33 +17,51 @@ const EditGame = () => {
     const [errors, setErrors] = useState([])
     const [team1id, setTeam1id] = useState(null)
     const [team2id, setTeam2id] = useState(null)
-
+    console.log('WHY REFRESH', gameId)
     useEffect(() => {
         dispatch(getOneGame(gameId)).then(() => {
             dispatch(getAllTeams()).then(() => {
+                if (findGame && findGame.Game) {
+                    const game = findGame.Game[0]
+                    const gameSplit = game.datetime.split(' ')
+                    const day = gameSplit[1]
+                    const month = getMonth(gameSplit[2])
+                    const year = gameSplit[3]
+                    const time = gameSplit[4]
+                    const datetime = (`${year}-${month}-${day}T${time}`)
+                    setDatetime(datetime)
+                    setTeam1(game.team1.name)
+                    setTeam2(game.team2.name)
+                    setTeam1id(game.team1.id)
+                    setTeam2id(game.team2.id)
+
+                    console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
+                }
+            }).then(() => {
                 setLoaded(true)
+
             })
         })
-    }, [dispatch, gameId])
+    }, [dispatch, gameId, datetime])
 
-    useEffect(() => {
-        if (findGame && findGame.Game) {
-            const game = findGame.Game[0]
-            const gameSplit = game.datetime.split(' ')
-            const day = gameSplit[1]
-            const month = getMonth(gameSplit[2])
-            const year = gameSplit[3]
-            const time = gameSplit[4]
-            const datetime = (`${year}-${month}-${day}T${time}`)
-            setDatetime(datetime)
-            setTeam1(game.team1.name)
-            setTeam2(game.team2.name)
-            setTeam1id(game.team1.id)
-            setTeam2id(game.team2.id)
+    // useEffect(() => {
+    //     if (findGame && findGame.Game) {
+    //         const game = findGame.Game[0]
+    //         const gameSplit = game.datetime.split(' ')
+    //         const day = gameSplit[1]
+    //         const month = getMonth(gameSplit[2])
+    //         const year = gameSplit[3]
+    //         const time = gameSplit[4]
+    //         const datetime = (`${year}-${month}-${day}T${time}`)
+    //         setDatetime(datetime)
+    //         setTeam1(game.team1.name)
+    //         setTeam2(game.team2.name)
+    //         setTeam1id(game.team1.id)
+    //         setTeam2id(game.team2.id)
 
-            console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
-        }
-    }, [findGame])
+    //         console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
+    //     }
+    // }, [findGame])
 
 
     const getMonth = (str) => {
@@ -80,6 +98,7 @@ const EditGame = () => {
         let minute = datetime.slice(14, 16)
         if (minute == '00') minute = "0"
         let gameId = findGame.Game[0].id || null
+        // if (findGame.Game) gameId = findGame.Game[0].id
         if (findGame) {
             gameId = findGame.Game[0].id
         }
