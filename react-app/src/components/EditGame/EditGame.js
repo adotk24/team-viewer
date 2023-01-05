@@ -58,11 +58,11 @@ const EditGame = () => {
     }
 
 
-    // useEffect(() => {
-    //     const validationErrors = []
-    //     if (team1 == team2) validationErrors.push("Team can't face itself!")
-    //     setErrors(validationErrors)
-    // }, [team1, team2, team2id, team1id])
+    useEffect(() => {
+        const validationErrors = []
+        if (team1 == team2) validationErrors.push("Team can't face itself!")
+        setErrors(validationErrors)
+    }, [team1, team2, team2id, team1id])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

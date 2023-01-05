@@ -13,9 +13,17 @@ const PlayerSchedule = ({ playerTeam }) => {
     useEffect(() => {
         dispatch(getAllGamesByTeam(playerTeam)).then(() => setLoaded(true))
     }, [dispatch, playerTeam])
+
+
+    const sortedSchedule = schedule.sort((a, b) => {
+        const aTime = new Date(a.datetime).getTime();
+        const bTime = new Date(b.datetime).getTime();
+        return aTime - bTime;
+    })
+
     return isLoaded && (
         <div className="scheduleContainer">
-            {schedule.map(e => (
+            {sortedSchedule.map(e => (
                 <div className="scheduleOneGame">
                     <div>{e.datetime}</div>
                     <div>{e.team1.mascot} VS {e.team2.mascot}</div>

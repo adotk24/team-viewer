@@ -20,15 +20,24 @@ const TeamSchedule = ({ teamId }) => {
     useEffect(() => {
         dispatch(getOneTeam(teamId))
     }, [dispatch, teamId, findSchedule])
+
+    const sortedSchedule = schedule.sort((a, b) => {
+        const aTime = new Date(a.datetime).getTime();
+        const bTime = new Date(b.datetime).getTime();
+        return aTime - bTime;
+    })
+
+
+
+
     return isLoaded && (
         <div className="scheduleContainer">
-            {schedule.map(game => (
+            {sortedSchedule.map(game => (
                 < div className="scheduleOneGame" >
                     <div>{game.datetime}</div>
                     <div>{game.team1.mascot} VS {game.team2.mascot}</div>
                     {
                         team[0].userId == user.id &&
-
                         <div className="gamefunctions">
                             <NavLink to={`schedule/game/${game.id}/edit`}>
                                 <button>Edit This Game</button>
