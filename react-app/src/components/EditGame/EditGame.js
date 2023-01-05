@@ -146,8 +146,8 @@ const EditGame = () => {
                     onChange={(e) => setTeam2id(e.target.value)}>
                     {findTeams.map(e => (
                         <option
-                            id={e.id}
-                        >{e.name}</option>
+                            value={e.id}
+                        > {e.name}</option>
                     ))}
                 </select>
                 <button type='submit'
