@@ -17,7 +17,7 @@ const EditGame = () => {
     const [errors, setErrors] = useState([])
     const [team1id, setTeam1id] = useState(null)
     const [team2id, setTeam2id] = useState(null)
-    console.log('LINE 20', team2id)
+
     useEffect(() => {
         dispatch(getOneGame(gameId)).then(() => {
             dispatch(getAllTeams()).then(() => {
@@ -25,7 +25,7 @@ const EditGame = () => {
             })
         })
     }, [dispatch, gameId])
-    console.log('LINE 28', team2id)
+
     useEffect(() => {
         if (findGame && findGame.Game) {
             const game = findGame.Game[0]
@@ -44,7 +44,7 @@ const EditGame = () => {
             console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
         }
     }, [findGame])
-    console.log('LINE 47', team2id)
+
 
     const getMonth = (str) => {
         if (str == 'Jan') return '01'
@@ -60,14 +60,13 @@ const EditGame = () => {
         if (str == 'Nov') return '11'
         if (str == 'Dec') return '12'
     }
-    console.log('LINE 63', team2id)
+
 
     useEffect(() => {
         const validationErrors = []
         if (team1 == team2) validationErrors.push("Team can't face itself!")
         setErrors(validationErrors)
     }, [team1, team2])
-    console.log('LINE 70', team2id)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -80,7 +79,7 @@ const EditGame = () => {
         if (hour[0] == 0) hour = datetime.slice(12, 13)
         let minute = datetime.slice(14, 16)
         if (minute == '00') minute = "0"
-        let gameId = findGame.Game[0].id
+        let gameId = findGame.Game[0].id || null
         if (findGame) {
             gameId = findGame.Game[0].id
         }
