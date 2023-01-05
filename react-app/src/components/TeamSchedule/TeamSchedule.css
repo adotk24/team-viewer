@@ -1,3 +1,29 @@
 .scheduleContainer {
-    margin-top: 10%
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scheduleLoop {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scheduleOneGame {
+    border: 1px solid lightgray;
+    width: 40%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.gameFunctions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

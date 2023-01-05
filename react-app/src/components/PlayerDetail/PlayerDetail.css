@@ -18,8 +18,10 @@
     color: white;
     background-image: url('youngmandunking.png');
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat
+    background-size: stretch;
+    background-repeat: no-repeat;
+    background-position-x: 250px;
+    background-position-y: -50px
 }
 
 .playerDetailCard-left {

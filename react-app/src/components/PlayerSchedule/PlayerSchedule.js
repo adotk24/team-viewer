@@ -22,14 +22,16 @@ const PlayerSchedule = ({ playerTeam }) => {
     })
 
     return isLoaded && (
-        <div className="scheduleContainer">
-            {sortedSchedule.map(e => (
-                <div className="scheduleOneGame">
-                    <div>{e.datetime}</div>
-                    <div>{e.team1.mascot} VS {e.team2.mascot}</div>
+        <div className="playerScheduleContainer">
+            <div className="playerScheduleLoop">
+                {sortedSchedule.map(e => (
+                    <div className="playerScheduleOneGame">
+                        <div>{e.datetime}</div>
+                        <div>{e.team1.mascot} VS {e.team2.mascot}</div>
 
-                </div>
-            ))}
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

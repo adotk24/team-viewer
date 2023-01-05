@@ -32,28 +32,33 @@ const TeamSchedule = ({ teamId }) => {
 
     return isLoaded && (
         <div className="scheduleContainer">
-            {sortedSchedule.map(game => (
-                < div className="scheduleOneGame" >
-                    <div>{game.datetime}</div>
-                    <div>{game.team1.mascot} VS {game.team2.mascot}</div>
-                    {
-                        team[0].userId == user.id &&
-                        <div className="gamefunctions">
-                            <NavLink to={`schedule/game/${game.id}/edit`}>
-                                <button>Edit This Game</button>
-                            </NavLink>
-                            <button onClick={async (e) => {
-                                e.preventDefault()
-                                const deleted = await dispatch(deletingGame(game.id))
-                                window.location.reload()
-                            }}>
-                                Delete This team
-                            </button>
-                        </div>
-                    }
-                </div>
-            ))
-            }
+            <div className="scheduleLoop">
+                {sortedSchedule.map(game => (
+                    < div className="scheduleOneGame" >
+                        <div>{game.datetime}</div>
+                        <div>{game.team1.mascot} VS {game.team2.mascot}</div>
+                        {
+                            team[0].userId == user.id &&
+                            <div className="gameFunctions">
+                                <NavLink to={`schedule/game/${game.id}/edit`}>
+                                    <button
+                                        className="schedule-btn">Edit This Game</button>
+                                </NavLink>
+                                <button
+                                    className="schedule-btn"
+                                    onClick={async (e) => {
+                                        e.preventDefault()
+                                        const deleted = await dispatch(deletingGame(game.id))
+                                        window.location.reload()
+                                    }}>
+                                    Delete This team
+                                </button>
+                            </div>
+                        }
+                    </div>
+                ))
+                }
+            </div>
         </div >
     )
 }

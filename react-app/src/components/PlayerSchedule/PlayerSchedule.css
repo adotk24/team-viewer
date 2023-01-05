@@ -1,0 +1,23 @@
+.playerScheduleContainer {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerScheduleLoop {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerScheduleOneGame {
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
