@@ -54,6 +54,7 @@ def get_single_game(gameId):
     response.append({
         'id': game.id,
         'datetime': game.datetime,
+        'matchupId': matchup.id,
         'team1': team1,
         'team2': team2
     })
