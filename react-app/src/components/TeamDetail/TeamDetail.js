@@ -24,13 +24,13 @@ const OneTeam = () => {
                 Welcome to the Team Viewer for your {team.name} {team.mascot}
             </div>
             <div className="oneTeamFunctions">
-                <NavLink to={`/teams`}>
+                {/* <NavLink to={`/teams`}>
                     <button
                         className="oneTeamBtn"
                     >
                         See All Teams Here!
                     </button>
-                </NavLink>
+                </NavLink> */}
                 <NavLink to={`/teams/${teamId}/roster`}>
                     <button
                         className="oneTeamBtn"
@@ -44,6 +44,14 @@ const OneTeam = () => {
                             className="oneTeamBtn"
                         >
                             Add Team Here
+                        </button>
+                    </NavLink>
+                }
+                {
+                    user?.id == team.userId &&
+                    <NavLink to={`/teams/schedule/game/add`}>
+                        <button className="oneTeamBtn">
+                            Add Game Here
                         </button>
                     </NavLink>
                 }

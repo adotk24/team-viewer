@@ -25,9 +25,9 @@ const AddTeam = () => {
         setErrors(validationErrors)
     }, [name, mascot, city, state, year])
 
-    useEffect(() => {
-        dispatch(addingTeam())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(addingTeam())
+    // }, [dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

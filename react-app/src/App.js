@@ -19,7 +19,7 @@ import EditPlayer from './components/EditPlayer/EditPlayer';
 import AddPlayer from './components/AddPlayer/AddPlayer';
 import UserTeams from './components/UserTeams/UserTeams';
 import EditGame from './components/EditGame/EditGame';
-
+import AddGame from './components/AddGame/AddGame';
 
 
 function App() {
@@ -85,6 +85,9 @@ function App() {
         </Route>
         <Route path='/teams/schedule/game/:gameId/edit' exact={true}>
           <EditGame />
+        </Route>
+        <Route path='/teams/schedule/game/add' exact={true}>
+          <AddGame />
         </Route>
       </Switch>
     </BrowserRouter>

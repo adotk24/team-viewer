@@ -36,7 +36,6 @@ const deleteGame = game => {
 
 export const getAllGamesByTeam = teamId => async dispatch => {
     const response = await fetch(`/api/games/team/${teamId}`)
-    console.log('STORE REFACTOR', response)
     if (response.ok) {
         const games = await response.json()
         dispatch(allGamesByTeam(games))

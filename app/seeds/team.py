@@ -7,7 +7,7 @@ def seed_teams():
         city='Austin',
         state='Texas',
         year='2022',
-        userId='1'
+        userId='2'
     )
     team2 = Team(
         name='Dallas',
@@ -31,7 +31,7 @@ def seed_teams():
         city='Hogansville',
         state='Georgia',
         year='2022',
-        userId='2'
+        userId='1'
     )
     team5 = Team(
         name='Swift Creek',
