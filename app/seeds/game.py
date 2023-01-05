@@ -4,24 +4,28 @@ from datetime import datetime
 def seed_games():
     game1 = Game(
         datetime = datetime(2022, 12, 31, 12, 0),
-        matchupId = 1,
-        # team2id = 2
+        team1id = 1,
+        team2id = 2
     )
     game2 = Game(
         datetime = datetime(2023, 1, 1, 12, 0),
-        matchupId = 2
+        team1id = 2,
+        team2id = 3
     )
     game3 = Game(
         datetime = datetime(2023, 1, 2, 12, 0),
-        matchupId = 3
+        team1id = 3,
+        team2id = 4
     )
     game4 = Game(
         datetime = datetime(2023, 1, 1, 12, 0),
-        matchupId = 4
+        team1id = 4,
+        team2id = 5
     )
     game5 = Game(
         datetime = datetime(2022, 12, 31, 12, 0),
-        matchupId = 5
+        team1id = 5,
+        team2id = 1
     )
 
 

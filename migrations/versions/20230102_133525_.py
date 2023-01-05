@@ -27,7 +27,10 @@ def upgrade():
     # sa.Column('team2id', sa.Integer()),
     # sa.ForeignKeyConstraint(['team1id'], ['teams.id'], ),
     # sa.ForeignKeyConstraint(['team2id'], ['teams.id'], ),
-    sa.Column('matchupId', sa.Integer(), nullable=False),
+    sa.Column('team1id', sa.Integer(), nullable=True),
+    sa.Column('team2id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['team1id'], ['teams.id'], ),
+    sa.ForeignKeyConstraint(['team2id'], ['teams.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":

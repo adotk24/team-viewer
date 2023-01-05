@@ -9,7 +9,11 @@ class Game(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     datetime = db.Column(db.DateTime(), nullable=False)
-    matchupId = db.Column(db.Integer, nullable=False)
+    # matchupId = db.Column(db.Integer, nullable=False)
+    team1id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
+    team2id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
+
+
     # team1_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     # team2_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     # teams = db.relationship('Team', back_populates='games', lazy='selectin',
@@ -36,7 +40,7 @@ class Game(db.Model):
         return {
             'id' : self.id,
             'datetime': self.datetime,
-            # 'team1id': self.team1id,
-            # 'team2id' : self.team2id
-            'matchupId' : self.matchupId
+            'team1id': self.team1id,
+            'team2id' : self.team2id
+            # 'matchupId' : self.matchupId
         }

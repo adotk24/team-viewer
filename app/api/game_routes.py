@@ -12,9 +12,8 @@ def get_all_games_team(teamId):
     response = []
     games = Game.query.all()
     for game in games:
-        matchup = Matchup.query.filter_by(id = game.matchupId).first()
-        team1 = Team.query.filter_by(id = matchup.team1id).first().to_dict()
-        team2 = Team.query.filter_by(id = matchup.team2id).first().to_dict()
+        team1 = Team.query.filter_by(id = game.team1id).first().to_dict()
+        team2 = Team.query.filter_by(id = game.team2id).first().to_dict()
         if team1["id"] == teamId or team2["id"] == teamId:
             response.append({
                 'id': game.id,
@@ -47,14 +46,12 @@ def get_all_games_team(teamId):
 @game_route.route('/<int:gameId>')
 def get_single_game(gameId):
     game = Game.query.get(gameId)
-    matchup = Matchup.query.filter_by(id = game.matchupId).first()
-    team1 = Team.query.filter_by(id = matchup.team1id).first().to_dict()
-    team2 = Team.query.filter_by(id = matchup.team2id).first().to_dict()
+    team1 = Team.query.filter_by(id = game.team1id).first().to_dict()
+    team2 = Team.query.filter_by(id = game.team2id).first().to_dict()
     response = []
     response.append({
         'id': game.id,
         'datetime': game.datetime,
-        'matchupId': matchup.id,
         'team1': team1,
         'team2': team2
     })
