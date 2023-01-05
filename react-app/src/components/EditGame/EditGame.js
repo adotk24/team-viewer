@@ -15,17 +15,17 @@ const EditGame = () => {
     const [team1, setTeam1] = useState(null)
     const [team2, setTeam2] = useState(null)
     const [errors, setErrors] = useState([])
-    const [matchup, setMatchup] = useState(null)
-
-
+    const [team1id, setTeam1id] = useState(null)
+    const [team2id, setTeam2id] = useState(null)
+    console.log('LINE 20', team2id)
     useEffect(() => {
         dispatch(getOneGame(gameId)).then(() => {
             dispatch(getAllTeams()).then(() => {
                 setLoaded(true)
             })
         })
-    }, [gameId])
-
+    }, [dispatch, gameId])
+    console.log('LINE 28', team2id)
     useEffect(() => {
         if (findGame && findGame.Game) {
             const game = findGame.Game[0]
@@ -38,9 +38,13 @@ const EditGame = () => {
             setDatetime(datetime)
             setTeam1(game.team1.name)
             setTeam2(game.team2.name)
-            // console.log('GAME', game)
+            setTeam1id(game.team1.id)
+            setTeam2id(game.team2.id)
+
+            console.log('ON LOAD', findGame.Game[0], team1, team2, team1id, team2id)
         }
     }, [findGame])
+    console.log('LINE 47', team2id)
 
     const getMonth = (str) => {
         if (str == 'Jan') return '01'
@@ -56,15 +60,43 @@ const EditGame = () => {
         if (str == 'Nov') return '11'
         if (str == 'Dec') return '12'
     }
+    console.log('LINE 63', team2id)
+
+    useEffect(() => {
+        const validationErrors = []
+        if (team1 == team2) validationErrors.push("Team can't face itself!")
+        setErrors(validationErrors)
+    }, [team1, team2])
+    console.log('LINE 70', team2id)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('submit', datetime)
-
+        const year = datetime.slice(0, 4)
+        let month = datetime.slice(5, 7)
+        if (month[0] == 0) month = datetime.slice(6, 7)
+        let day = datetime.slice(8, 10)
+        if (day[0] == 0) day = datetime.slice(9, 10)
+        let hour = datetime.slice(11, 13)
+        if (hour[0] == 0) hour = datetime.slice(12, 13)
+        let minute = datetime.slice(14, 16)
+        if (minute == '00') minute = "0"
+        let gameId = findGame.Game[0].id
+        if (findGame) {
+            gameId = findGame.Game[0].id
+        }
+        const values = { year, month, day, hour, minute, team1id, team2id }
+        console.log('WHY DOES THIS NOT WORK', values)
+        const edittedGame = await dispatch(edittingGame(gameId, values))
+        if (edittedGame) history.push(`/teams/${team1id}`)
     }
 
     return datetime && isLoaded && (
         < div className="game-form-container" >
+            <ul className="game-formErrors">
+                {errors.map(e => (
+                    <li key={e}>{e}</li>
+                ))}
+            </ul>
             <form className="game-form" onSubmit={handleSubmit}>
                 <label>Date + Time</label>
                 <input
@@ -77,32 +109,35 @@ const EditGame = () => {
                 <select
                     className="game-team-input"
                     placeholder={team1}
-                    value={team1}
-                    onChange={(e) => setTeam1(e.target.value)}>
+                    value={team1id}
+                    onChange={(e) => setTeam1id(e.target.value)}>
                     {findTeams.map(e => (
-                        <option>{e.name}</option>
+                        <option
+                            value={e.id}
+                        >{e.name}</option>
                     ))}
                 </select>
-
                 <label>Team 2</label>
                 <select
-                    className="game-team-input"
+                    className="game-team-input-2"
                     placeholder={team2}
-                    value={team2}
-                    onChange={(e) => setTeam2(e.target.value)}>
+                    value={team2id}
+                    onChange={(e) => setTeam2id(e.target.value)}>
                     {findTeams.map(e => (
-                        <option>{e.name}</option>
+                        <option
+                            id={e.id}
+                        >{e.name}</option>
                     ))}
                 </select>
                 <button type='submit'
-                    className="submit-add-game">
+                    className="submit-add-game"
+                    disabled={errors.length > 0}>
                     Edit Game
                 </button>
             </form>
         </div >
     )
 }
-
 export default EditGame
 // import { useEffect, useState } from "react";
 // import { useDispatch, useSelector } from "react-redux"

@@ -91,13 +91,14 @@ def edit_game(gameId):
     response = []
     if form.validate_on_submit():
         setattr(game, 'datetime', datetime(form.data['year'], form.data['month'], form.data['day'], form.data['hour'], form.data['minute']))
-        setattr(game, 'matchupId', form.data['matchupId'])
+        setattr(game, 'team1id', form.data['team1id'])
+        setattr(game, 'team2id', form.data['team2id'])
     if form.errors:
+        print('*********************************************', form.errors, form.data['minute'])
         return 'Invalid data'
     response.append(game.to_dict())
-    matchup = Matchup.query.filter_by(id = form.data['matchupId']).first()
-    team1 = Team.query.filter_by(id = matchup.team1id).first().to_dict()
-    team2 = Team.query.filter_by(id = matchup.team2id).first().to_dict()
+    team1 = Team.query.filter_by(id = game.team1id).first().to_dict()
+    team2 = Team.query.filter_by(id = game.team2id).first().to_dict()
     response.append(team1)
     response.append(team2)
     db.session.commit()

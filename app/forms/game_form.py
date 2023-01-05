@@ -11,5 +11,6 @@ class GameForm(FlaskForm):
     month = IntegerField('Month', dr)
     day = IntegerField('Day', dr)
     hour = IntegerField('Hour', dr)
-    minute = IntegerField('Minute', dr)
-    matchupId = IntegerField('Matchup Id', dr)
+    minute = IntegerField('Minute')
+    team1id = IntegerField('Team 1 Id', dr)
+    team2id = IntegerField('Team 2 Id', dr)
