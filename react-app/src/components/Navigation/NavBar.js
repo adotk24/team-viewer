@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className='navbar-left'>
 
         <NavLink to='/' exact={true} activeClassName='active'>
-          Home
+          <img className='logo' src={require('./favicon.ico').default} alt='icoImage' />
         </NavLink>
 
 
