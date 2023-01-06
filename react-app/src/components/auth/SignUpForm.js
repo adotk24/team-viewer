@@ -15,22 +15,26 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword && !errors.length) {
+    const validation = [];
+    if (password !== repeatPassword) validation.push('Passwords Must Match')
+    if (!email.includes('@')) validation.push("Invalid email.")
+    if (!username) validation.push('Need Username')
+
+    setErrors(validation)
+    if (password === repeatPassword && email.includes('@')) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
         setErrors(data)
       }
     }
-
   };
-  console.log('errors', errors)
 
-  useEffect(() => {
-    const validation = []
-    if (!email.includes('@')) validation.push("Invalid email.")
-    if (password !== repeatPassword) validation.push('Passwords Must Match')
-    setErrors(validation)
-  }, [username, email, password, repeatPassword])
+  // useEffect(() => {
+  //   const validation = []
+  //   if (!email.includes('@')) validation.push("Invalid email.")
+  //   if (password !== repeatPassword) validation.push('Passwords Must Match')
+  //   setErrors(validation)
+  // }, [email, password, repeatPassword])
 
   const updateUsername = (e) => {
     setUsername(e.target.value);

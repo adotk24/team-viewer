@@ -40,7 +40,7 @@ const TeamSchedule = ({ teamId }) => {
                             <div>{game.team1.mascot} VS {game.team2.mascot}</div>
                         </div>
                         {
-                            team[0].userId == user.id &&
+                            team[0].userId == user?.id &&
                             <div className="gameFunctions">
                                 <NavLink to={`schedule/game/${game.id}/edit`}>
                                     <button

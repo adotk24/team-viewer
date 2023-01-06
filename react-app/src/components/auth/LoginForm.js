@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
 import * as sessionActions from '../../store/session'
 import './LoginForm.css'
@@ -9,6 +9,7 @@ const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory()
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   // const [errorsShow, setErrorsShown] = useState(false);
@@ -17,13 +18,13 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
+      const validation = []
+      if (!email.includes('@')) validation.push("Invalid email.")
+      setErrors(validation)
       setErrors(data);
     }
   };
   useEffect(() => {
-    const validation = []
-    if (!email.includes('@')) validation.push("Invalid email.")
-    setErrors(validation)
   }, [email])
 
   const updateEmail = (e) => {
@@ -39,15 +40,16 @@ const LoginForm = () => {
   }
   const handleDemoUserSubmit = async (e) => {
 
-    return dispatch(sessionActions.login('demo@aa.io', 'password'))
-      .catch(
-        async (res) => {
-          const data = await res.json();
-          if (data && data.errors) {
-            return setErrors(data.errors)
-          }
-        }
-      );
+    dispatch(sessionActions.login('demo@aa.io', 'password')).then(() => {
+    })
+    // .catch(
+    // async (res) => {
+    // const data = await res.json();
+    // if (data && data.errors) {
+    // return setErrors(data.errors)
+    // }
+    // }
+    // );
   }
 
   return (
