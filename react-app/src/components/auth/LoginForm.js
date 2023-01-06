@@ -39,9 +39,8 @@ const LoginForm = () => {
     return <Redirect to='/' />;
   }
   const handleDemoUserSubmit = async (e) => {
-
-    dispatch(sessionActions.login('demo@aa.io', 'password')).then(() => {
-    })
+    e.preventDefault(0)
+    dispatch(sessionActions.login('demo@aa.io', 'password'))
     // .catch(
     // async (res) => {
     // const data = await res.json();
