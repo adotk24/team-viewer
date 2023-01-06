@@ -66,15 +66,16 @@ def create_game():
     team1 = Team.query.filter_by(id = form.data['team1id']).first()
     team2 = Team.query.filter_by(id = form.data['team2id']).first()
     response = []
+    print('******************************************************', form.data)
     if form.validate_on_submit():
         new_game = Game(
             datetime = datetime(form.data['year'], form.data['month'], form.data['day'], form.data['hour'], form.data['minute']),
             team1id = form.data['team1id'],
             team2id = form.data['team2id']
         )
-    response.append(new_game.to_dict())
-    response.append(team1)
-    response.append(team2)
+        response.append(new_game.to_dict())
+        response.append(team1.to_dict())
+        response.append(team2.to_dict())
     if form.errors:
         return 'Invalid data'
     db.session.add(new_game)

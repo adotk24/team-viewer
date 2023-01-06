@@ -24,8 +24,8 @@ const LoginForm = () => {
       setErrors(data);
     }
   };
-  useEffect(() => {
-  }, [email])
+  // useEffect(() => {
+  // }, [email])
 
   const updateEmail = (e) => {
     setEmail(e.target.value);

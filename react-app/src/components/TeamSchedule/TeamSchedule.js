@@ -27,9 +27,6 @@ const TeamSchedule = ({ teamId }) => {
         return aTime - bTime;
     })
 
-
-
-
     return isLoaded && (
         <div className="scheduleContainer">
             <div className="scheduleLoop">

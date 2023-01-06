@@ -11,8 +11,8 @@ const AddGame = () => {
     const [datetime, setDatetime] = useState('')
     const [team1, setTeam1] = useState('')
     const [team2, setTeam2] = useState('')
-    const [team1id, setTeam1id] = useState('')
-    const [team2id, setTeam2id] = useState('')
+    const [team1id, setTeam1id] = useState(1)
+    const [team2id, setTeam2id] = useState(1)
     const [errors, setErrors] = useState([])
     const [isLoaded, setLoaded] = useState(false)
     const findTeams = useSelector(state => Object.values(state.team.allTeams))
@@ -22,6 +22,10 @@ const AddGame = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const validation = []
+        if (!datetime) validation.push('Need a Date + Time')
+        if (team1id == team2id) validation.push('Team cannot face itself!')
+        setErrors(validation)
         const year = datetime.slice(0, 4)
         let month = datetime.slice(5, 7)
         if (month[0] == 0) month = datetime.slice(6, 7)
@@ -31,10 +35,14 @@ const AddGame = () => {
         if (hour[0] == 0) hour = datetime.slice(12, 13)
         let minute = datetime.slice(14, 16)
         if (minute == '00') minute = "0"
-
+        console.log('THIS IS MY ERRORS', errors)
         const values = { year, month, day, hour, minute, team1id, team2id }
-        const addedGame = await dispatch(addingGame(values))
-        if (addedGame) history.push(`/teams/${team1id}`)
+        if (!errors.length) {
+            console.log('WHY INVALID', values)
+            const addedGame = await dispatch(addingGame(values))
+            if (addedGame) history.push(`/teams/${team1id}`)
+        }
+
     }
 
 
@@ -58,6 +66,7 @@ const AddGame = () => {
                     <input
                         type='datetime-local'
                         value={datetime}
+                        placeholder={new Date()}
                         onChange={(e) => setDatetime(e.target.value)}
                         className='game-team-input'
                     ></input>
@@ -95,7 +104,8 @@ const AddGame = () => {
 
                 <button type='submit'
                     className="submit-add-game"
-                    disabled={errors.length > 0}>
+                // disabled={errors.length > 0}
+                >
                     Add Game
                 </button>
             </form>
