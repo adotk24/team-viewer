@@ -32,11 +32,11 @@ const EditPlayer = () => {
 
     useEffect(() => {
         const validationErrors = []
-        if (!firstName || firstName.length <= 2 || firstName.length >= 30) validationErrors.push('Must have First Name between 3 and 30 characters')
-        if (!lastName || lastName.length <= 2 || lastName.length >= 30) validationErrors.push('Must have Last Name between 3 and 30 characters')
-        if (!height || height <= 48 || height >= 96) validationErrors.push('Must have height between 48 and 96 inches')
-        if (!position || position.length >= 30) validationErrors.push('Must have Position Name less than 30 characters')
-        if (!number || number < 0 || number > 99) validationErrors.push('Must have Number between 0 and 99')
+        if (!firstName || firstName.length <= 2) validationErrors.push('First Name must have at least 3 characters')
+        if (!lastName || lastName.length <= 2 || lastName.length >= 30) validationErrors.push('Last Name must have at least 3 characters')
+        if (!height || height < 48 || height > 96) validationErrors.push('Must have height between 48 and 96 inches')
+        if (!position) validationErrors.push('Must have Position')
+        if (number === null || number < 0 || number > 99) validationErrors.push('Must have Number between 0 and 99')
         if (!year) validationErrors.push('Must have Year')
         setErrors(validationErrors)
     }, [firstName, lastName, height, position, number, year])
@@ -53,8 +53,10 @@ const EditPlayer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const values = { firstName, lastName, height, position, number, year }
-        const edittedPlayer = await dispatch(edittingPlayer(player.teamId, player.id, values))
-        if (edittedPlayer) history.push(`/teams/players/${edittedPlayer.id}`)
+        if (!errors.length) {
+            const edittedPlayer = await dispatch(edittingPlayer(player.teamId, player.id, values))
+            if (edittedPlayer) history.push(`/teams/players/${edittedPlayer.id}`)
+        }
     }
 
     return (
@@ -80,6 +82,7 @@ const EditPlayer = () => {
                             className="player-input-box"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
+                            maxLength={30}
                             required />
                     </div>
                     <div className="player-form-input">
@@ -88,7 +91,7 @@ const EditPlayer = () => {
                             type='text'
                             placeholder="Last Name"
                             className="player-input-box"
-
+                            maxLength={30}
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                             required />
@@ -96,10 +99,11 @@ const EditPlayer = () => {
                     <div className="player-form-input">
                         <label>Height(in)</label>
                         <input
-                            type='integer'
+                            type='number'
                             placeholder="Height"
                             className="player-input-box"
-
+                            max={96}
+                            min={48}
                             value={height}
                             onChange={(e) => setHeight(e.target.value)}
                             required />
@@ -110,7 +114,7 @@ const EditPlayer = () => {
                             type='text'
                             placeholder="Position"
                             className="player-input-box"
-
+                            maxLength={30}
                             value={position}
                             onChange={(e) => setPosition(e.target.value)}
                             required />
@@ -118,24 +122,28 @@ const EditPlayer = () => {
                     <div className="player-form-input">
                         <label>Number</label>
                         <input
-                            type='integer'
+                            type='number'
                             placeholder="Number"
                             className="player-input-box"
-
                             value={number}
+                            max={99}
+                            min={0}
                             onChange={(e) => setNumber(e.target.value)}
                             required />
                     </div>
                     <div className="player-form-input">
                         <label>Year</label>
-                        <input
-                            type='integer'
+                        <select
                             placeholder="Year"
                             className="player-input-box"
-
                             value={year}
                             onChange={(e) => setYear(e.target.value)}
-                            required />
+                            required >
+                            <option>Freshman</option>
+                            <option>Sophomore</option>
+                            <option>Junior</option>
+                            <option>Senior</option>
+                        </select>
                     </div>
                     <button type="submit"
                         className="editPlayerBtn"

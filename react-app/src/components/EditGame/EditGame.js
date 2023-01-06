@@ -87,43 +87,56 @@ const EditGame = () => {
 
     return datetime && isLoaded && team1id && (
         < div className="game-form-container" >
-            <ul className="game-formErrors">
-                {errors.map(e => (
-                    <li key={e}>{e}</li>
-                ))}
-            </ul>
             <form className="game-form" onSubmit={handleSubmit}>
-                <label>Date + Time</label>
-                <input
-                    type='datetime-local'
-                    value={datetime}
-                    onChange={(e) => setDatetime(e.target.value)}
-                    className='add-game-calendar'
-                ></input>
-                <label>Team 1</label>
-                <select
-                    className="game-team-input"
-                    placeholder={team1}
-                    value={team1id}
-                    onChange={(e) => setTeam1id(e.target.value)}>
-                    {findTeams.map(e => (
-                        <option
-                            value={e.id}
-                        >{e.name}</option>
+                <div className="game-form-header">Edit Game</div>
+                <div className="game-formErrors">
+                    {errors.map(e => (
+                        <li key={e}>{e}</li>
                     ))}
-                </select>
-                <label>Team 2</label>
-                <select
-                    className="game-team-input-2"
-                    placeholder={team2}
-                    value={team2id}
-                    onChange={(e) => setTeam2id(e.target.value)}>
-                    {findTeams.map(e => (
-                        <option
-                            value={e.id}
-                        > {e.name}</option>
-                    ))}
-                </select>
+                </div>
+
+                <div className="game-form-input">
+                    <label>Date + Time</label>
+                    <input
+                        type='datetime-local'
+                        value={datetime}
+                        onChange={(e) => setDatetime(e.target.value)}
+                        className='game-team-input'
+                    ></input>
+                </div>
+
+                <div className="game-form-input">
+
+                    <label>Team 1</label>
+                    <select
+                        className="game-team-input"
+                        placeholder={team1}
+                        value={team1id}
+                        onChange={(e) => setTeam1id(e.target.value)}>
+                        {findTeams.map(e => (
+                            <option
+                                value={e.id}
+                            >{e.name}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="game-form-input">
+
+                    <label>Team 2</label>
+                    <select
+                        className="game-team-input"
+                        placeholder={team2}
+                        value={team2id}
+                        onChange={(e) => setTeam2id(e.target.value)}>
+                        {findTeams.map(e => (
+                            <option
+                                value={e.id}
+                            > {e.name}</option>
+                        ))}
+                    </select>
+                </div>
+
                 <button type='submit'
                     className="submit-add-game"
                     disabled={errors.length > 0}>

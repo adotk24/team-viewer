@@ -62,10 +62,10 @@ def edit_player(teamId, playerId):
         setattr(player, 'firstName', form.data['firstName'])
         setattr(player, 'lastName', form.data['lastName'])
         setattr(player, 'height', form.data['height'])
-        setattr(player, 'number', form.data['number'])
         setattr(player, 'year', form.data['year'])
         setattr(player, 'position', form.data['position'])
         setattr(player, 'teamId', teamId)
+        setattr(player, 'number', form.data['number'])
     if form.errors:
         return 'Invalid Data'
     db.session.commit()

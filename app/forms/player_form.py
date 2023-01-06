@@ -9,6 +9,6 @@ class PlayerForm(FlaskForm):
     firstName = StringField('First Name', dr)
     lastName = StringField('Last Name', dr)
     height = IntegerField('Height', dr)
-    number = IntegerField('Number', dr)
+    number = IntegerField('Number')
     year = StringField('Year', dr)
     position = StringField('Position', dr)

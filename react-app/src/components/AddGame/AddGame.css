@@ -1,3 +1,59 @@
-.addGameContainer {
-    margin-top: 10%
+.game-form-container {
+    margin-top: 10%;
+    height: 75vh;
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-form {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-form-header {
+    border-top: 3px solid blue;
+    width: 80%;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(89, 88, 88);
+    margin-bottom: 15px;
+}
+
+.game-formErrors {
+    width: 80%;
+    text-align: center;
+    background-color: rgb(238, 159, 159);
+    color: darkred;
+    border-radius: 10px;
+    margin-bottom: 15px
+}
+
+.game-form-input {
+    width: 80%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 32px;
+    margin-bottom: 15px
+}
+
+.game-team-input {
+    width: 60%
+}
+
+.submit-add-game {
+    width: 80%;
+    border-radius: 15px;
+    height: 6%;
+    background-color: lightskyblue;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 15px;
 }

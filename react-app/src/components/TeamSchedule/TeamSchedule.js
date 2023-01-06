@@ -36,7 +36,9 @@ const TeamSchedule = ({ teamId }) => {
                 {sortedSchedule.map(game => (
                     < div className="scheduleOneGame" >
                         <div>{game.datetime}</div>
-                        <div>{game.team1.mascot} VS {game.team2.mascot}</div>
+                        <div className="scheduleMatchup">
+                            <div>{game.team1.mascot} VS {game.team2.mascot}</div>
+                        </div>
                         {
                             team[0].userId == user.id &&
                             <div className="gameFunctions">

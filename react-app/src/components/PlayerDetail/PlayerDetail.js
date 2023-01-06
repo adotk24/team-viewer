@@ -51,6 +51,11 @@ const PlayerDetail = () => {
             </div>
 
             <div className="playerDetailFunctions">
+                <NavLink to={`/teams/${player.teamId}`}>
+                    <button
+                        className="playerDetailBtn"
+                    >Back To Team Home</button>
+                </NavLink>
                 {team?.userId == user?.id &&
                     <NavLink to={`/teams/players/${player.id}/edit`}>
                         <button

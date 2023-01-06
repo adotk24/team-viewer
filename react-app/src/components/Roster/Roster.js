@@ -64,14 +64,21 @@ const Roster = () => {
 
                 </div>
             ))}
-            {user?.id == team?.userId &&
-                <NavLink to={`/teams/${teamId}/addPlayer`}>
+            <div className="roster-bottom-buttons">
+                <NavLink to={`/teams/${teamId}`}>
                     <button
-                        className="roster-add-player-btn"
-                    > Add Player
-                    </button>
+                        className="roster-bth"
+                    >Back To Team Home</button>
                 </NavLink>
-            }
+                {user?.id == team?.userId &&
+                    <NavLink to={`/teams/${teamId}/addPlayer`}>
+                        <button
+                            className="roster-add-player-btn"
+                        > Add Player
+                        </button>
+                    </NavLink>
+                }
+            </div>
         </div>
     )
 }

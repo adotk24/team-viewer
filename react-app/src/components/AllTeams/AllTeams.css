@@ -1,5 +1,5 @@
 .allTeamsContainer {
-    margin-top: 5%;
+    margin-top: 5.5%;
     height: 87vh;
     display: flex;
     flex-direction: column;
@@ -14,12 +14,12 @@
 
 .allTeamsHeader {
     font-size: 44px;
-    margin-bottom: 5px
+    margin-bottom: px
 }
 
 .allTeamsCounter {
     font-size: 18px;
-    margin-bottom: 30px
+    margin-bottom: 10px
 }
 
 .addTeamBtn {
@@ -47,7 +47,9 @@
     align-self: flex-start;
     border-bottom: 1px solid lightgray;
     font-size: 32px;
-    text-decoration: none
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px
 }
 
 .teamCard {

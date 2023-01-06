@@ -27,8 +27,9 @@ const PlayerSchedule = ({ playerTeam }) => {
                 {sortedSchedule.map(e => (
                     <div className="playerScheduleOneGame">
                         <div>{e.datetime}</div>
-                        <div>{e.team1.mascot} VS {e.team2.mascot}</div>
-
+                        <div className='playerScheduleMatchup'>
+                            <div>{e.team1.mascot} VS {e.team2.mascot}</div>
+                        </div>
                     </div>
                 ))}
             </div>

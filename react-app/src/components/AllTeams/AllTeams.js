@@ -27,7 +27,7 @@ const AllTeams = () => {
         <div className="allTeamsContainer">
             <div className="allTeamsTop">
                 <div className="allTeamsHeader">
-                    All Schools
+                    All Teams
                 </div>
                 <div className="allTeamsCounter">
                     results: {getTeams.length}
