@@ -10,4 +10,3 @@ class TeamForm(FlaskForm):
     mascot = StringField('Mascot', dr)
     city = StringField('City', dr)
     state = StringField ('State', dr)
-    year = IntegerField('Year', dr)

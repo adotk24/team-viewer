@@ -27,7 +27,6 @@ def upgrade():
     sa.Column('mascot', sa.String(length=100), nullable=False),
     sa.Column('city', sa.String(length=100), nullable=False),
     sa.Column('state', sa.String(length=100), nullable=False),
-    sa.Column('year', sa.Integer(), nullable=True),
     sa.Column('userId', sa.Integer, nullable=False),
     sa.PrimaryKeyConstraint('id')
     )

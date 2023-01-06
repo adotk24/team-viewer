@@ -11,7 +11,6 @@ const AddTeam = () => {
     const [mascot, setMascot] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
-    const [year, setYear] = useState('')
     const [errors, setErrors] = useState([])
     const findTeam = useSelector(state => state.team.oneTeam)
 
@@ -21,9 +20,8 @@ const AddTeam = () => {
         if (!mascot || mascot.length <= 2 || mascot.length >= 50) validationErrors.push('Must have a mascot between 3 and 50 characters')
         if (!city || city.length <= 2 || city.length >= 50) validationErrors.push('Must have city between 3 and 50 characters')
         if (!state || state.length <= 2 || state.length >= 50) validationErrors.push('Must have state between 3 and 50 characters')
-        if (!year) validationErrors.push('Must include a year')
         setErrors(validationErrors)
-    }, [name, mascot, city, state, year])
+    }, [name, mascot, city, state])
 
     // useEffect(() => {
     //     dispatch(addingTeam())
@@ -31,7 +29,7 @@ const AddTeam = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const formValues = { name, mascot, city, state, year }
+        const formValues = { name, mascot, city, state }
         const newTeam = await dispatch(addingTeam(formValues))
         if (newTeam) history.push(`/teams/${newTeam.id}`)
     }
@@ -80,16 +78,6 @@ const AddTeam = () => {
                         className="addTeamInput"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
-                        required />
-                </div>
-                <div className="team-form-input">
-                    <label>Year</label>
-                    <input
-                        type='integer'
-                        placeholder='Year'
-                        className="addTeamInput"
-                        value={year}
-                        onChange={(e) => setYear(e.target.value)}
                         required />
                 </div>
                 <button type='submit'

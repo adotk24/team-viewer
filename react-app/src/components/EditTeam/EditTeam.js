@@ -23,7 +23,6 @@ const EditTeam = () => {
     const [mascot, setMascot] = useState(editThisTeam?.mascot)
     const [city, setCity] = useState(editThisTeam?.city)
     const [state, setState] = useState(editThisTeam?.state)
-    const [year, setYear] = useState(editThisTeam?.year)
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
@@ -32,21 +31,19 @@ const EditTeam = () => {
         if (!mascot || mascot.length <= 2 || mascot.length >= 50) validationErrors.push('Must have a mascot between 3 and 50 characters')
         if (!city || city.length <= 2 || city.length >= 50) validationErrors.push('Must have city between 3 and 50 characters')
         if (!state || state.length <= 2 || state.length >= 50) validationErrors.push('Must have state between 3 and 50 characters')
-        if (!year) validationErrors.push('Must include a year')
         setErrors(validationErrors)
-    }, [name, mascot, city, state, year])
+    }, [name, mascot, city, state])
 
     useEffect(() => {
         setName(editThisTeam?.name)
         setMascot(editThisTeam?.mascot)
         setCity(editThisTeam?.city)
         setState(editThisTeam?.state)
-        setYear(editThisTeam?.year)
     }, [editThisTeam])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const formValues = { name, mascot, city, state, year }
+        const formValues = { name, mascot, city, state }
         const edittedTeam = await dispatch(edittingTeam(formValues, editThisTeam.id))
         if (edittedTeam) history.push(`/teams/${edittedTeam.id}`)
     }
@@ -98,17 +95,6 @@ const EditTeam = () => {
                         className="addTeamInput"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
-                        required />
-                </div>
-
-                <div className="team-form-input">
-                    <label>Year</label>
-                    <input
-                        type='integer'
-                        placeholder='Year'
-                        className="addTeamInput"
-                        value={year}
-                        onChange={(e) => setYear(e.target.value)}
                         required />
                 </div>
                 <button type='submit'

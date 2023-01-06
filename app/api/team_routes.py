@@ -17,7 +17,6 @@ def get_all_teams():
             "mascot": team.mascot,
             'city': team.city,
             'state': team.state,
-            'year': team.year
         })
     return jsonify({'Teams': response})
 
@@ -34,7 +33,6 @@ def get_all_user_teams():
             'mascot' : team.mascot,
             'city' : team.city,
             'state' : team.state,
-            'year' : team.year,
             'userId': team.userId
         })
 
@@ -53,7 +51,6 @@ def get_single_team(teamId):
         'mascot': team.mascot,
         'city': team.city,
         'state': team.state,
-        'year' : team.year,
         'userId': team.userId
     })
     return jsonify(response)
@@ -70,7 +67,6 @@ def create_team():
             mascot = form.data['mascot'],
             city = form.data['city'],
             state = form.data['state'],
-            year = form.data['year'],
             userId = userId
         )
     if form.errors:
@@ -92,7 +88,6 @@ def edit_team(teamId):
         setattr(team, 'mascot', form.data['mascot'])
         setattr(team, 'city', form.data['city'])
         setattr(team, 'state', form.data['state'])
-        setattr(team, 'year', form.data['year'])
     if form.errors:
         return 'Invalid data'
     db.session.commit()

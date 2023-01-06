@@ -6,7 +6,6 @@ def seed_teams():
         mascot='Longhorns',
         city='Austin',
         state='Texas',
-        year='2022',
         userId='2'
     )
     team2 = Team(
@@ -14,7 +13,6 @@ def seed_teams():
         mascot='Mavericks',
         city='Dallas',
         state='Texas',
-        year='2022',
         userId = '1'
     )
     team3 = Team(
@@ -22,7 +20,6 @@ def seed_teams():
         mascot='Redeem',
         city='Washington D.C.',
         state='Virginia',
-        year='2022',
         userId='2'
     )
     team4 = Team(
@@ -30,7 +27,6 @@ def seed_teams():
         mascot='Cavaliers',
         city='Hogansville',
         state='Georgia',
-        year='2022',
         userId='1'
     )
     team5 = Team(
@@ -38,7 +34,6 @@ def seed_teams():
         mascot='Cougars',
         city='Chesterfield',
         state='Virginia',
-        year='2022',
         userId='3'
     )
 

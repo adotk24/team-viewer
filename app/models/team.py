@@ -12,7 +12,6 @@ class Team(db.Model):
     mascot = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100), nullable=False)
-    year = db.Column(db.Integer)
     userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
 
     players = db.relationship('Player', back_populates='teams', cascade='all, delete')
@@ -33,6 +32,5 @@ class Team(db.Model):
             'mascot' : self.mascot,
             'city' : self.city,
             'state' : self.state,
-            'year' : self.year,
             'userId': self.userId
         }
