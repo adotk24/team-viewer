@@ -41,7 +41,6 @@ export const login = (email, password) => async (dispatch) => {
     })
   });
 
-  console.log('STORE', email, password)
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))

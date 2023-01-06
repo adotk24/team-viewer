@@ -80,7 +80,6 @@ export const edittingGame = (gameId, game) => async dispatch => {
 
 export const deletingGame = gameId => async dispatch => {
     const response = await fetch(`/api/games/${gameId}/delete`, { method: 'DELETE' })
-    console.log('THUNKER', response)
     if (response.ok) {
         const game = await response.json()
         await dispatch(deleteGame(game))

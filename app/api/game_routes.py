@@ -65,7 +65,6 @@ def create_game():
     form['csrf_token'].data = request.cookies['csrf_token']
     team1 = Team.query.filter_by(id = form.data['team1id']).first()
     team2 = Team.query.filter_by(id = form.data['team2id']).first()
-    print('**********************************************', team1, team2)
     response = []
     if form.validate_on_submit():
         new_game = Game(
