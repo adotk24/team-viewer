@@ -62,7 +62,7 @@ const EditGame = () => {
         const validationErrors = []
         if (team1 == team2) validationErrors.push("Team can't face itself!")
         setErrors(validationErrors)
-    }, [team1, team2, team2id, team1id])
+    }, [team1, team2, team2id, team1id, datetime])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -76,16 +76,21 @@ const EditGame = () => {
         let minute = datetime.slice(14, 16)
         if (minute == '00') minute = "0"
         let gameId = findGame.Game[0].id || null
-        // if (findGame.Game) gameId = findGame.Game[0].id
         if (findGame) {
             gameId = findGame.Game[0].id
         }
         const values = { year, month, day, hour, minute, team1id, team2id }
-        const edittedGame = await dispatch(edittingGame(gameId, values))
-        if (edittedGame) history.push(`/teams/${team1id}`)
+        const validation = []
+        if (!datetime) validation.push('Need a Date + Time')
+        if (team1id == team2id) validation.push('Team cannot face itself!')
+        setErrors(validation)
+        if (!validation.length) {
+            const edittedGame = await dispatch(edittingGame(gameId, values))
+            if (edittedGame) history.goBack()
+        }
     }
 
-    return datetime && isLoaded && team1id && (
+    return isLoaded && team1id && (
         < div className="game-form-container" >
             <form className="game-form" onSubmit={handleSubmit}>
                 <div className="game-form-header">Edit Game</div>

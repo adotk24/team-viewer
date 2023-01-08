@@ -35,22 +35,14 @@ const AddGame = () => {
         if (hour[0] == 0) hour = datetime.slice(12, 13)
         let minute = datetime.slice(14, 16)
         if (minute == '00') minute = "0"
-        console.log('THIS IS MY ERRORS', errors)
         const values = { year, month, day, hour, minute, team1id, team2id }
-        if (!errors.length) {
-            console.log('WHY INVALID', values)
+        if (!validation.length) {
+
             const addedGame = await dispatch(addingGame(values))
-            if (addedGame) history.push(`/teams/${team1id}`)
+            if (addedGame) history.goBack()
         }
 
     }
-
-
-    // useEffect(() => {
-    //     const validationErrors = []
-    //     if (team1 == team2) validationErrors.push("Team can't face itself!")
-    //     setErrors(validationErrors)
-    // }, [team1, team2, team1id, team2id])
 
     return isLoaded && (
         < div className="game-form-container" >

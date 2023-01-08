@@ -4,6 +4,8 @@ import { NavLink, useParams, useHistory } from "react-router-dom";
 import { deletingTeam, getOneTeam } from "../../store/team";
 import TeamSchedule from "../TeamSchedule/TeamSchedule";
 import './TeamDetail.css'
+import AddGame from "../AddGame/AddGame";
+
 
 const OneTeam = () => {
     const { teamId } = useParams()
