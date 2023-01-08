@@ -18,6 +18,7 @@ const LandingPage = () => {
                     <NavLink to={`/teams`}>
                         <button className="viewTeamsBtn"> Click Here To View Teams!</button>
                     </NavLink>
+                    {/* <button className="aboutBtn">About</button> */}
                     {!user &&
                         <NavLink to={`/login`}>
                             <button className="landingPageStart"> Get Started Here!</button>
