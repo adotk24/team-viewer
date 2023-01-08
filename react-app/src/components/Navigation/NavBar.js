@@ -39,7 +39,11 @@ const NavBar = () => {
         <LogoutButton />
       } */}
       <div className='navbar-right'>
-        <button>About</button>
+        <div className='about-page'>
+          <button className='aboutPageBtn'>
+            <NavLink to={`/about`} className='aboutUsLink'>About</NavLink>
+          </button>
+        </div>
         {!sessionUser &&
           <NavLink to='/login' exact={true} activeClassName='active'>
             Login

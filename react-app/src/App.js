@@ -20,7 +20,7 @@ import AddPlayer from './components/AddPlayer/AddPlayer';
 import UserTeams from './components/UserTeams/UserTeams';
 import EditGame from './components/EditGame/EditGame';
 import AddGame from './components/AddGame/AddGame';
-
+import AboutPage from './components/AboutPage/AboutPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -88,6 +88,9 @@ function App() {
         </Route>
         <Route path='/teams/schedule/game/add' exact={true}>
           <AddGame />
+        </Route>
+        <Route path='/about' exact={true}>
+          <AboutPage />
         </Route>
       </Switch>
     </BrowserRouter>

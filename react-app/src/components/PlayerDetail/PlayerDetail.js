@@ -33,7 +33,7 @@ const PlayerDetail = () => {
         return `${feet}' ${inches}`
     }
 
-    return isLoaded && (
+    return isLoaded && player && findTeam && (
 
         <div className="playerDetailContainer">
             <div className="playerDetailCard">
