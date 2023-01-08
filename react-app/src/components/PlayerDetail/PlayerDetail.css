@@ -11,8 +11,8 @@
 .playerDetailCard {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    height: 40%;
+    width: 60vw;
+    height: 20vh;
     margin-bottom: 20px;
     background-color: black;
     color: white;

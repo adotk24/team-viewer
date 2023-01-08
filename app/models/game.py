@@ -12,6 +12,7 @@ class Game(db.Model):
     # matchupId = db.Column(db.Integer, nullable=False)
     team1id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     team2id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
+    stats = db.relationship('Stat', back_populates='games', cascade='all, delete')
 
 
     # team1_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))

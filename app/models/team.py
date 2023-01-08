@@ -1,6 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 # from .matchup import matchup
-from .matchup import Matchup
 class Team(db.Model):
     __tablename__ = 'teams'
 
@@ -16,6 +15,7 @@ class Team(db.Model):
 
     players = db.relationship('Player', back_populates='teams', cascade='all, delete')
     users = db.relationship('User', back_populates='teams')
+    stats = db.relationship('Stat', back_populates='teams', cascade='all, delete')
     # games = db.relationship('Game', back_populates='teams', cascade='all, delete')
     # matchup = db.relationship(
     #     'Team',

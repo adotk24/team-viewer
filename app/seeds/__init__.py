@@ -4,6 +4,7 @@ from .team import seed_teams, undo_teams
 from app.models.db import db, environment, SCHEMA
 from .player import seed_players, undo_players
 from .game import seed_games, undo_games
+from .stat import seed_stats, undo_stats
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
 seed_commands = AppGroup('seed')
@@ -21,10 +22,12 @@ def seed():
         undo_teams()
         undo_players()
         undo_games()
+        undo_stats()
     seed_users()
     seed_teams()
     seed_players()
     seed_games()
+    seed_stats()
     # Add other seed functions here
 
 
@@ -35,4 +38,5 @@ def undo():
     undo_teams()
     undo_players()
     undo_games()
+    undo_stats()
     # Add other undo functions here
