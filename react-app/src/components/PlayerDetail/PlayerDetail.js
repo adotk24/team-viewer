@@ -74,7 +74,7 @@ const PlayerDetail = () => {
                     >Delete This Player</button>
                 }
             </div>
-            {/* <PlayerSchedule playerTeam={team?.id} /> */}
+            <PlayerSchedule playerTeam={team?.id} />
         </div>
     )
 }

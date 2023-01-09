@@ -20,7 +20,7 @@ def seed_games():
     game4 = Game(
         datetime = datetime(2023, 1, 1, 12, 0),
         team1id = 4,
-        team2id = 1
+        team2id = 5
     )
     game5 = Game(
         datetime = datetime(2022, 12, 31, 12, 0),

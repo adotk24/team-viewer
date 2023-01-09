@@ -12,8 +12,12 @@ def get_all_games_team(teamId):
     response = []
     games = Game.query.all()
     for game in games:
-        team1 = Team.query.filter_by(id = game.team1id).first().to_dict()
-        team2 = Team.query.filter_by(id = game.team2id).first().to_dict()
+        team1base = Team.query.filter_by(id = game.team1id).first()
+        team2base = Team.query.filter_by(id = game.team2id).first()
+        if team1base == None or team2base == None:
+            continue
+        team1 = team1base.to_dict()
+        team2 = team2base.to_dict()
         if team1["id"] == teamId or team2["id"] == teamId:
             response.append({
                 'id': game.id,

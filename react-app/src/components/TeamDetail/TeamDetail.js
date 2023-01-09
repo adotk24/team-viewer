@@ -49,14 +49,14 @@ const OneTeam = () => {
                         </button>
                     </NavLink>
                 }
-                {/* {
+                {
                     user?.id == team.userId &&
                     <NavLink to={`/teams/schedule/game/add`}>
                         <button className="oneTeamBtn">
                             Add Game Here
                         </button>
                     </NavLink>
-                } */}
+                }
                 {user?.id == team.userId &&
                     <NavLink to={`/teams/${teamId}/edit`}>
                         <button
@@ -79,7 +79,7 @@ const OneTeam = () => {
                     </button>
                 }
             </div>
-            {/* <TeamSchedule teamId={teamId} /> */}
+            <TeamSchedule teamId={teamId} />
         </div >
     )
 }
