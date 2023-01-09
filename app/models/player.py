@@ -16,7 +16,7 @@ class Player(db.Model):
     year = db.Column(db.String(10))
     position = db.Column(db.String(50), nullable=False)
 
-    teams = db.relationship('Team', back_populates='players', cascade='all, delete')
+    teams = db.relationship('Team', back_populates='players')
     stats = db.relationship('Stat', back_populates='players')
 
     def to_dict(self):
