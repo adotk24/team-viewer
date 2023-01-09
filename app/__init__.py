@@ -12,6 +12,7 @@ from .api.player_routes import player_route
 from .api.game_routes import game_route
 from .seeds import seed_commands
 from .config import Config
+from .api.stat_routes import stat_route
 
 app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 
@@ -34,6 +35,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(team_route, url_prefix='/api/teams')
 app.register_blueprint(player_route, url_prefix='/api/players')
 app.register_blueprint(game_route, url_prefix='/api/games')
+app.register_blueprint(stat_route, url_prefix='/api/stats')
 
 db.init_app(app)
 Migrate(app, db)

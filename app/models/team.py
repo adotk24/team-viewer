@@ -17,14 +17,7 @@ class Team(db.Model):
     users = db.relationship('User', back_populates='teams')
     stats = db.relationship('Stat', back_populates='teams', cascade='all, delete')
     # games = db.relationship('Game', back_populates='teams', cascade='all, delete')
-    # matchup = db.relationship(
-    #     'Team',
-    #     secondary=matchup,
-    #     primaryjoin=(matchup.c.team1id == id),
-    #     secondaryjoin=(matchup.c.team2id == id),
-    #     backref=db.backref('matchups', lazy='dynamic'),
-    #     cascade='all, delete'
-    # )
+
     def to_dict(self):
         return {
             'id' : self.id,

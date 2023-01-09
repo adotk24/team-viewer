@@ -35,7 +35,9 @@ const editTeam = team => {
 }
 
 export const getAllTeams = () => async dispatch => {
+    console.log('IM IN THE STORE')
     const response = await fetch(`/api/teams`)
+    console.log('resposne', response)
     if (response.ok) {
         const teams = await response.json()
         dispatch(allTeams(teams))
