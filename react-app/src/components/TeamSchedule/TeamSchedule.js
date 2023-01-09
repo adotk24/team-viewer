@@ -41,7 +41,7 @@ const TeamSchedule = ({ teamId }) => {
                             <div className="gameFunctions">
                                 <NavLink to={`schedule/game/${game.id}/edit`}>
                                     <button
-                                        className="schedule-btn">Edit This Game</button>
+                                        className="schedule-btn">Edit Game</button>
                                 </NavLink>
                                 <button
                                     className="schedule-btn"
@@ -50,7 +50,7 @@ const TeamSchedule = ({ teamId }) => {
                                         const deleted = await dispatch(deletingGame(game.id))
                                         window.location.reload()
                                     }}>
-                                    Delete This team
+                                    Delete Game
                                 </button>
                             </div>
                         }
