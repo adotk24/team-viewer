@@ -9,8 +9,23 @@ stat_route = Blueprint('stats', __name__)
 @stat_route.route('/team/<int:gameId>')
 def get_stats_by_game(gameId):
     response = []
+    score1 = 0
+    score2 = 0
     stats = Stat.query.filter_by(gameid = gameId).all()
+    team1id = None
+    team2id = None
+    if not stats:
+        return 'None Found'
     for stat in stats:
+        if team1id == None:
+            team1id = stat.teamid
+        elif team1id != None and stat.teamid != team1id:
+            team2id = stat.teamid
+        if (stat.teamid == team1id):
+            score1 += stat.points
+        elif (stat.teamid == team2id):
+            score2 += stat.points
+        print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', team1id, team2id)
         response.append({
             'id': stat.id,
             'teamid': stat.teamid,
@@ -20,8 +35,7 @@ def get_stats_by_game(gameId):
             'rebounds': stat.rebounds,
             'assists': stat.assists
         })
-
-    return jsonify({'Stats': response})
+    return jsonify({'Stats': response, 'Score1': score1, 'Score2': score2})
 
 
 #Get All Stats by Player

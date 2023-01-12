@@ -20,7 +20,7 @@ const TeamSchedule = ({ teamId }) => {
     const user = useSelector(state => state.session.user)
     useEffect(() => {
         dispatch(getOneTeam(teamId))
-    }, [dispatch, teamId, findSchedule])
+    }, [dispatch, teamId])
 
     const sortedSchedule = schedule.sort((a, b) => {
         const aTime = new Date(a.datetime).getTime();

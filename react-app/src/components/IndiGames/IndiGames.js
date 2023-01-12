@@ -7,9 +7,10 @@ import { getStatsBygame } from "../../store/stat";
 
 
 export const IndiGames = ({ game, team, user }) => {
+    console.log('GAME', game)
     const dispatch = useDispatch()
     const [isLoaded, setLoaded] = useState(false)
-
+    const [scoreUpdated, setScoreUpdated] = useState(false)
     const stats = useSelector(state => {
         return Object.values(state.stat.allStats)
     })
@@ -19,14 +20,25 @@ export const IndiGames = ({ game, team, user }) => {
         let team1id = game.team1.id
         let team2id = game.team2.id
         stats.forEach(stat => {
-            console.log('stat', stat.gameId, game.id)
+            console.log('stat', stat)
             stat.teamid == team1id ? score1 += stat.points : score2 += stat.points
         })
     }
+
+    const getScores = (stats) => {
+        let team1id = game.team1.id
+        let team2id = game.team2.id
+        stats.forEach(stat => {
+            stat.teamid == team1id ? score1 += stat.points : score2 += stat.points
+        })
+    }
+
     useEffect(() => {
+        console.log('DISPATACH', game.id)
         dispatch(getStatsBygame(game.id)).then(() => setLoaded(true))
     }, [dispatch, game.id])
-    console.log('RIGHT BEFORE RETURN', score1, score2)
+
+    console.log('RIGHT BEFORE RETURN', stats)
     return isLoaded && (
         < div className="scheduleOneGame" >
             <div>{game.datetime}</div>

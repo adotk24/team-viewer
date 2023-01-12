@@ -18,7 +18,7 @@ def seed_stats():
         rebounds = '1'
     )
     stat3 = Stat(
-        teamid = '1',
+        teamid = '5',
         playerid = '1',
         gameid = '4',
         points = '1',
