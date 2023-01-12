@@ -4,9 +4,10 @@ import session from './session'
 import team from './team'
 import player from './player'
 import game from './game'
+import stat from './stat'
 
 const rootReducer = combineReducers({
-  session, team, player, game
+  session, team, player, game, stat
 });
 
 
