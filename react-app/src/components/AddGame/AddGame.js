@@ -6,12 +6,14 @@ import { addingGame } from "../../store/game";
 import { getAllTeams } from "../../store/team";
 
 const AddGame = () => {
+    const findTeam = useSelector(state => state.team.oneTeam)
+    const team = findTeam[0]
     const dispatch = useDispatch()
     const history = useHistory()
     const [datetime, setDatetime] = useState('')
     const [team1, setTeam1] = useState('')
     const [team2, setTeam2] = useState('')
-    const [team1id, setTeam1id] = useState(1)
+    const [team1id, setTeam1id] = useState(team?.id || 1)
     const [team2id, setTeam2id] = useState(1)
     const [errors, setErrors] = useState([])
     const [isLoaded, setLoaded] = useState(false)
@@ -44,6 +46,8 @@ const AddGame = () => {
 
     }
 
+
+
     return isLoaded && (
         < div className="game-form-container" >
             <form className="game-form" onSubmit={handleSubmit}>
@@ -70,11 +74,21 @@ const AddGame = () => {
                         className="game-team-input"
                         value={team1id}
                         onChange={(e) => setTeam1id(e.target.value)}>
-                        {findTeams.map(e => (
+                        {/* {findTeams.map(e => (
                             <option
                                 value={e.id}
                             >{e.name}</option>
-                        ))}
+                        ))} */}
+                        {
+                            !team && findTeams.map(e => (
+                                <option
+                                    value={e.id}
+                                >{e.name}</option>
+                            ))}
+                        {
+                            team &&
+                            <option value={team?.id}>{team?.name}</option>
+                        }
                     </select>
                 </div>
 
@@ -93,7 +107,6 @@ const AddGame = () => {
                         ))}
                     </select>
                 </div>
-
                 <button type='submit'
                     className="submit-add-game"
                 // disabled={errors.length > 0}
