@@ -15,7 +15,8 @@ def get_stats_by_game(gameId):
     team1id = None
     team2id = None
     if not stats:
-        return 'None Found'
+        return jsonify({'Stats': None,
+                        'scores': None})
     for stat in stats:
         if team1id == None:
             team1id = stat.teamid
@@ -25,7 +26,7 @@ def get_stats_by_game(gameId):
             score1 += stat.points
         elif (stat.teamid == team2id):
             score2 += stat.points
-        print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', team1id, team2id)
+
         response.append({
             'id': stat.id,
             'teamid': stat.teamid,
@@ -35,7 +36,10 @@ def get_stats_by_game(gameId):
             'rebounds': stat.rebounds,
             'assists': stat.assists
         })
-    return jsonify({'Stats': response, 'Score1': score1, 'Score2': score2})
+    return jsonify({'Stats': response,
+                    "scores": {team1id : score1,
+                               team2id: score2}
+                    })
 
 
 #Get All Stats by Player

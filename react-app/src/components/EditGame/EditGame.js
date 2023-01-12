@@ -96,7 +96,6 @@ const EditGame = () => {
         return team1id == team?.id
     }
 
-    console.log('PLEASE?', matchesHome(), 'TEAM1ID', team1id, team.id)
     return isLoaded && team1id && (
         < div className="game-form-container" >
             <form className="game-form" onSubmit={handleSubmit}>
