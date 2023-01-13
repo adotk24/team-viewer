@@ -37,8 +37,8 @@ def seed_stats():
         teamid='4',
         playerid='26',
         gameid='3',
-        points='69',
-        assists='420',
+        points='50',
+        assists='4',
         rebounds='1'
     )
 
