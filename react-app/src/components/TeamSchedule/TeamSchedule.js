@@ -27,7 +27,6 @@ const TeamSchedule = ({ teamId }) => {
         const bTime = new Date(b.datetime).getTime();
         return aTime - bTime;
     })
-    console.log('THIS IS SCHED', sortedSchedule)
     return isLoaded && (
         <div className="scheduleContainer">
             <div className="scheduleLoop">

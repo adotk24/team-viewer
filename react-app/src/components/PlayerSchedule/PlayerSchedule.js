@@ -10,6 +10,7 @@ const PlayerSchedule = ({ playerTeam }) => {
     const findSchedule = useSelector(state => state.game.allGames)
     const [isLoaded, setLoaded] = useState(false)
     const schedule = Object.values(findSchedule)
+
     useEffect(() => {
         dispatch(getAllGamesByTeam(playerTeam)).then(() => setLoaded(true))
     }, [dispatch, playerTeam])
