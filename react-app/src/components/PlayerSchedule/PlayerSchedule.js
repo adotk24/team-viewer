@@ -3,18 +3,18 @@ import { useDispatch, useSelector } from "react-redux"
 import { NavLink, useParams, useHistory } from "react-router-dom";
 import { getAllGamesByTeam } from "../../store/game";
 import './PlayerSchedule.css'
+import { IndiGames } from "../IndiGames/IndiGames";
 
-
-const PlayerSchedule = ({ playerTeam }) => {
+const PlayerSchedule = ({ playerTeamid, team }) => {
     const dispatch = useDispatch()
     const findSchedule = useSelector(state => state.game.allGames)
     const [isLoaded, setLoaded] = useState(false)
     const schedule = Object.values(findSchedule)
+    const user = useSelector(state => state.session.user)
 
     useEffect(() => {
-        dispatch(getAllGamesByTeam(playerTeam)).then(() => setLoaded(true))
-    }, [dispatch, playerTeam])
-
+        dispatch(getAllGamesByTeam(playerTeamid)).then(() => setLoaded(true))
+    }, [dispatch, playerTeamid])
 
     const sortedSchedule = schedule.sort((a, b) => {
         const aTime = new Date(a.datetime).getTime();
@@ -26,12 +26,7 @@ const PlayerSchedule = ({ playerTeam }) => {
         <div className="playerScheduleContainer">
             <div className="playerScheduleLoop">
                 {sortedSchedule.map(e => (
-                    <div className="playerScheduleOneGame">
-                        <div>{e.datetime}</div>
-                        <div className='playerScheduleMatchup'>
-                            <div>{e.team1.mascot} VS {e.team2.mascot}</div>
-                        </div>
-                    </div>
+                    <IndiGames key={e.id} game={e} team={team} user={user} />
                 ))}
             </div>
         </div>

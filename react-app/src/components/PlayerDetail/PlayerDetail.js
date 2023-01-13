@@ -5,7 +5,7 @@ import './PlayerDetail.css'
 import { getOnePlayer, deletingPlayer } from "../../store/player";
 import { getOneTeam } from "../../store/team";
 import PlayerSchedule from "../PlayerSchedule/PlayerSchedule";
-
+import { getStatsByPlayer } from "../../store/stat";
 const PlayerDetail = () => {
     const { playerId } = useParams()
     const dispatch = useDispatch()
@@ -15,22 +15,53 @@ const PlayerDetail = () => {
     const player = useSelector(state => state.player.onePlayer)
     const findTeam = useSelector(state => state.team.oneTeam)
     const team = findTeam[0]
+    const stats = useSelector(state => Object.values(state.stat.allPlayerStats))
 
     useEffect(() => {
         dispatch(getOnePlayer(playerId)).then(() => {
-            setLoaded(true)
+            dispatch(getOneTeam(player.teamId)).then(() => {
+                dispatch(getStatsByPlayer(playerId)).then(() => {
+                    setLoaded(true)
+                })
+            })
         })
-    }, [dispatch, playerId])
-    useEffect(() => {
-        dispatch(getOneTeam(player.teamId)).then(() => {
-            setLoaded(true)
-        })
-    }, [dispatch, player.teamId])
+    }, [dispatch, playerId, player.teamId])
 
     const heightConvert = num => {
         let feet = Math.floor(num / 12)
         let inches = num - (feet * 12)
         return `${feet}' ${inches}`
+    }
+
+    const findPoints = () => {
+        let points = 0;
+        let games = 0
+        stats.forEach(stat => {
+            points += stat.points
+            games += 1
+        })
+        if (games == 0) return 0
+        else return points / games
+    }
+    const findAssists = () => {
+        let assists = 0;
+        let games = 0;
+        stats.forEach(stat => {
+            assists += stat.assists
+            games += 1
+        })
+        if (games == 0) return 0
+        else return assists / games
+    }
+    const findRebounds = () => {
+        let rebs = 0
+        let games = 0
+        stats.forEach(stat => {
+            rebs += stat.rebounds
+            games += 1
+        })
+        if (games == 0) return 0
+        else return rebs / games
     }
 
     return isLoaded && player && findTeam && (
@@ -46,7 +77,9 @@ const PlayerDetail = () => {
                     </div>
                 </div>
                 <div className="playerDetailCard-right">
-                    INSERT STATS HERE
+                    <div>{findPoints()} PPG</div>
+                    <div>{findAssists()} APG</div>
+                    <div>{findRebounds()} RPG</div>
                 </div>
             </div>
 
@@ -74,7 +107,7 @@ const PlayerDetail = () => {
                     >Delete This Player</button>
                 }
             </div>
-            <PlayerSchedule playerTeam={team?.id} />
+            <PlayerSchedule playerTeamid={team?.id} team={team} />
         </div>
     )
 }
