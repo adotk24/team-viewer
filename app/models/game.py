@@ -14,6 +14,11 @@ class Game(db.Model):
     team2id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     stats = db.relationship('Stat', back_populates='games', cascade='all, delete')
 
+    teams = db.relationship("Team",
+                         primaryjoin="or_(Game.team1id == Team.id, Game.team2id == Team.id)",
+                        #  secondaryjoin="or_(Game.team1id == Team.id, Game.team2id == Team.id)",
+                         back_populates="games")
+    # teams = db.relationship('Team', back_populates='players')
 
     # team1_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))
     # team2_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('teams.id')))

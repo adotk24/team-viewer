@@ -6,6 +6,8 @@ import { edittingGame, getOneGame } from "../../store/game";
 import { getAllTeams } from "../../store/team";
 const EditGame = () => {
     const { gameId } = useParams()
+    const findTeam = useSelector(state => state.team.oneTeam)
+    const team = findTeam[0]
     const history = useHistory()
     const dispatch = useDispatch()
     const findGame = useSelector(state => state.game.oneGame)
@@ -90,6 +92,10 @@ const EditGame = () => {
         }
     }
 
+    const matchesHome = () => {
+        return team1id == team?.id
+    }
+
     return isLoaded && team1id && (
         < div className="game-form-container" >
             <form className="game-form" onSubmit={handleSubmit}>
@@ -118,11 +124,15 @@ const EditGame = () => {
                         placeholder={team1}
                         value={team1id}
                         onChange={(e) => setTeam1id(e.target.value)}>
-                        {findTeams.map(e => (
+                        {!matchesHome() && findTeams.map(e => (
                             <option
                                 value={e.id}
                             >{e.name}</option>
                         ))}
+                        {
+                            matchesHome() &&
+                            <option value={team?.id}>{team?.name}</option>
+                        }
                     </select>
                 </div>
 
@@ -134,11 +144,15 @@ const EditGame = () => {
                         placeholder={team2}
                         value={team2id}
                         onChange={(e) => setTeam2id(e.target.value)}>
-                        {findTeams.map(e => (
+                        {matchesHome() && findTeams.map(e => (
                             <option
                                 value={e.id}
-                            > {e.name}</option>
+                            >{e.name}</option>
                         ))}
+                        {
+                            !matchesHome() &&
+                            <option value={team?.id}>{team?.name}</option>
+                        }
                     </select>
                 </div>
 
