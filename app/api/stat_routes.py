@@ -27,10 +27,14 @@ def get_stats_by_game(gameId):
         elif (stat.teamid == team2id):
             score2 += stat.points
 
+        player = Player.query.filter_by(id = stat.playerid).first().to_dict()
+        team = Team.query.filter_by(id = stat.teamid).first().to_dict()
         response.append({
             'id': stat.id,
             'teamid': stat.teamid,
+            'team': team,
             'playerid': stat.playerid,
+            'player': player,
             'gameid': stat.gameid,
             'points': stat.points,
             'rebounds': stat.rebounds,

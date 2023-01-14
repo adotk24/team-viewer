@@ -19,15 +19,15 @@ def seed_stats():
     )
     stat3 = Stat(
         teamid = '5',
-        playerid = '1',
+        playerid = '33',
         gameid = '4',
         points = '1',
-        assists = '19',
-        rebounds = '15'
+        assists = '0',
+        rebounds = '2'
     )
     stat4 = Stat(
         teamid='3',
-        playerid='15',
+        playerid='17',
         gameid='3',
         points='20',
         assists='1',
