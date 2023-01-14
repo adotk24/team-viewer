@@ -1,7 +1,7 @@
 const LOAD_STATS_BY_GAME = 'stats/LOAD_STATS_BY_GAME'
 const LOAD_STATS_BY_PLAYER = 'stats/LOAD_STATS_BY_PLAYER'
 const LOAD_SCORE_BY_GAME = 'stats/LOAD_SCORE_BY_GAME'
-
+const LOAD_ONE_SCORE = 'stats/LOAD_ONE_SCORE'
 const statsBygame = stats => {
     return {
         type: LOAD_STATS_BY_GAME, stats
@@ -21,6 +21,13 @@ const scoreByGame = (gameid, scores) => {
         scores
     }
 }
+
+const oneScore = (gameId, score) => {
+    return {
+        type: LOAD_ONE_SCORE, score
+    }
+}
+
 
 export const getStatsBygame = (gameId) => async dispatch => {
     const response = await fetch(`/api/stats/team/${gameId}`)
@@ -44,35 +51,32 @@ export const getStatsByPlayer = playerId => async dispatch => {
 
 
 
-export default function reducer(state = { oneStat: {}, allStats: {}, allScores: {}, onePlayerStat: {}, allPlayerStats: {} }, action) {
+export default function reducer(state = { oneStat: {}, allStats: {}, oneScore: {}, allScores: {}, onePlayerStat: {}, allPlayerStats: {} }, action) {
     switch (action.type) {
         case LOAD_STATS_BY_GAME: {
-            const newState = { oneStat: {}, allStats: {}, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: { ...state.allPlayerStats } }
+            const newState = { oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: { ...state.allPlayerStats } }
             if (action.stats) {
                 action.stats.forEach(e => {
                     newState.allStats[e.id] = e
-                }
-                )
-
+                })
             }
             return newState
         }
         case LOAD_SCORE_BY_GAME: {
-            const newState = { ...state, oneStat: {}, allStats: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: { ...state.allPlayerStats } }
+            const newState = { ...state, oneStat: {}, allStats: { ...state.allStats }, oneScore: {}, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: { ...state.allPlayerStats } }
             newState.allScores[action.gameid] = action.scores
+            newState.oneScore = action.scores
             return newState
         }
         case LOAD_STATS_BY_PLAYER: {
-            const newState = { ...state, oneState: {}, allStats: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
+            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
             if (action.stats.Stats) {
                 action.stats.Stats.forEach(e => {
                     newState.allPlayerStats[e.id] = e
                 })
                 return newState
             }
-
         }
         default: return state
     }
-
 }

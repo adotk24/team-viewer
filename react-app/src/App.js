@@ -21,6 +21,7 @@ import UserTeams from './components/UserTeams/UserTeams';
 import EditGame from './components/EditGame/EditGame';
 import AddGame from './components/AddGame/AddGame';
 import AboutPage from './components/AboutPage/AboutPage';
+import GameDetail from './components/GameDetail/GameDetail';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -91,6 +92,9 @@ function App() {
         </Route>
         <Route path='/about' exact={true}>
           <AboutPage />
+        </Route>
+        <Route path='/game/:gameId' exact={true}>
+          <GameDetail />
         </Route>
       </Switch>
     </BrowserRouter>

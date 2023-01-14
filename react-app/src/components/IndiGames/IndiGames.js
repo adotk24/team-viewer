@@ -49,12 +49,15 @@ export const IndiGames = ({ game, team, user }) => {
             <div>{game.datetime}</div>
             <div className="scheduleMatchup">
                 {hasScore() &&
-                    <div>{team1ScoreSetter(team1id)}{game.team1.mascot} VS {game.team2.mascot}{team2ScoreSetter(team2id)}</div>
+                    <NavLink to={`/game/${game.id}`}>
+                        <div>{team1ScoreSetter(team1id)}{game.team1.mascot} VS {game.team2.mascot}{team2ScoreSetter(team2id)}</div>
+                    </NavLink>
                 }
                 {
                     !hasScore() &&
-                    <div>{game.team1.mascot} VS {game.team2.mascot}</div>
-
+                    <NavLink to={`/game/${game.id}`}>
+                        <div>{game.team1.mascot} VS {game.team2.mascot}</div>
+                    </NavLink>
                 }
             </div>
             {
