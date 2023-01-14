@@ -21,7 +21,8 @@ import UserTeams from './components/UserTeams/UserTeams';
 import EditGame from './components/EditGame/EditGame';
 import AddGame from './components/AddGame/AddGame';
 import AboutPage from './components/AboutPage/AboutPage';
-
+import GameDetail from './components/GameDetail/GameDetail';
+import AddStat from './components/AddStat/AddStat';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -91,6 +92,12 @@ function App() {
         </Route>
         <Route path='/about' exact={true}>
           <AboutPage />
+        </Route>
+        <Route path='/game/:gameId' exact={true}>
+          <GameDetail />
+        </Route>
+        <Route path='/game/:gameId/:teamId/addStat' exact={true}>
+          <AddStat />
         </Route>
       </Switch>
     </BrowserRouter>

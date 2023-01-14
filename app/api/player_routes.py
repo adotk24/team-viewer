@@ -11,6 +11,12 @@ def get_player_by_id(playerId):
     player = Player.query.get(playerId)
     return player.to_dict()
 
+#Get All Players
+@player_route.route('/all')
+def get_all_players():
+    players = Player.query.all()
+    response =  [player.to_dict() for player in players]
+    return jsonify({'Players': response})
 #Get All Players by Team ID
 @player_route.route('/<int:teamId>')
 def get_players_by_team(teamId):
