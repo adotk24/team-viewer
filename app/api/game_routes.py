@@ -70,7 +70,6 @@ def create_game():
     team1 = Team.query.filter_by(id = form.data['team1id']).first()
     team2 = Team.query.filter_by(id = form.data['team2id']).first()
     response = []
-    print('******************************************************', form.data)
     if form.validate_on_submit():
         new_game = Game(
             datetime = datetime(form.data['year'], form.data['month'], form.data['day'], form.data['hour'], form.data['minute']),

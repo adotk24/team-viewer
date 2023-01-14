@@ -2,6 +2,8 @@ const LOAD_STATS_BY_GAME = 'stats/LOAD_STATS_BY_GAME'
 const LOAD_STATS_BY_PLAYER = 'stats/LOAD_STATS_BY_PLAYER'
 const LOAD_SCORE_BY_GAME = 'stats/LOAD_SCORE_BY_GAME'
 const LOAD_ONE_SCORE = 'stats/LOAD_ONE_SCORE'
+const ADD_STAT = 'stats/ADD_STAT'
+
 const statsBygame = stats => {
     return {
         type: LOAD_STATS_BY_GAME, stats
@@ -28,6 +30,12 @@ const oneScore = (gameId, score) => {
     }
 }
 
+const addStat = (gameId, teamId, stat) => {
+    return {
+        type: ADD_STAT, stat
+    }
+}
+
 
 export const getStatsBygame = (gameId) => async dispatch => {
     const response = await fetch(`/api/stats/team/${gameId}`)
@@ -48,6 +56,18 @@ export const getStatsByPlayer = playerId => async dispatch => {
     }
 }
 
+export const addingStat = (gameId, teamId, stat) => async dispatch => {
+    const response = await fetch(`/api/stats/${gameId}/${teamId}/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(stat)
+    })
+    if (response.ok) {
+        const stat = response.json()
+        dispatch(addStat(stat))
+        return stat
+    }
+}
 
 
 
@@ -76,6 +96,11 @@ export default function reducer(state = { oneStat: {}, allStats: {}, oneScore: {
                 })
                 return newState
             }
+        }
+        case ADD_STAT: {
+            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
+            newState.oneStat = action.stat
+            return newState
         }
         default: return state
     }

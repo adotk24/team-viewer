@@ -64,22 +64,28 @@ const GameDetail = () => {
         setLoaded(true)
     }
 
-
     return isLoaded && (
         <div className='gamedetailcontainer'>
             <div className='gamedetailtop'>
                 <div>{team1score}{team1.mascot} VS {team2.mascot}{team2score}</div>
-                {(team1.userId == user.id || team2.userId == user.id) &&
-                    <button>Add Player Stat</button>
-                }
                 <div>{team1.name} {team1.mascot}</div>
                 {team1stats.map(stat => (
                     <GameDetailRow playerId={stat.playerid} gameId={gameId} teamId={stat.teamid} />
                 ))}
+                {(team1.userId == user.id) &&
+                    <NavLink to={`/game/${gameId}/${team1.id}/addStat`}>
+                        <button>Add Player Stat for {team1.mascot}</button>
+                    </NavLink>
+                }
                 <div>{team2.name} {team2.mascot}</div>
                 {team2stats.map(stat => (
                     <GameDetailRow playerId={stat.playerid} gameId={gameId} teamId={stat.teamid} />
                 ))}
+                {(team2.userId == user.id) &&
+                    <NavLink to={`/game/${gameId}/${team2.id}/addStat`}>
+                        <button>Add Player Stat for {team1.mascot}</button>
+                    </NavLink>
+                }
             </div>
         </div>
 

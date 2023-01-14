@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, Blueprint, redirect, request
 from ..models import db, Team, Game, Player, Stat
 from flask_login import login_required, current_user
-# from ..forms import StatForm
+from ..forms import StatForm
 stat_route = Blueprint('stats', __name__)
 
 
@@ -63,3 +63,27 @@ def get_stats_by_player(playerId):
         })
 
     return jsonify({'Stats': response})
+
+#Add Stat to Game by Player
+@stat_route.route('/<int:gameId>/<int:teamId>/add', methods=['POST'])
+def add_stat(gameId, teamId):
+    form = StatForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    response = []
+    form['teamid'].data = teamId
+    form['gameid'].data = gameId
+    if form.validate_on_submit():
+        new_stat = Stat(
+            teamid = teamId,
+            playerid = form.data["playerid"],
+            gameid = gameId,
+            points = form.data['points'],
+            rebounds = form.data['rebounds'],
+            assists = form.data['assists']
+        )
+        response.append(new_stat.to_dict())
+    if form.errors:
+        return 'Invalid data'
+    db.session.add(new_stat)
+    db.session.commit()
+    return jsonify({'Stat': response})
