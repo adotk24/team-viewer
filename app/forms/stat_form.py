@@ -7,9 +7,9 @@ from wtforms.validators import DataRequired
 dr =[DataRequired()]
 
 class StatForm(FlaskForm):
-    points = IntegerField('Points', dr)
-    rebounds = IntegerField('Rebounds', dr)
-    assists = IntegerField('Assists', dr)
+    points = IntegerField('Points')
+    rebounds = IntegerField('Rebounds')
+    assists = IntegerField('Assists')
     teamid = IntegerField('Team ID', dr)
     playerid = IntegerField('Player ID', dr)
     gameid = IntegerField('Game ID', dr)

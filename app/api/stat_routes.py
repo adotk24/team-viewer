@@ -26,10 +26,11 @@ def get_stats_by_game(gameId):
             score1 += stat.points
         elif (stat.teamid == team2id):
             score2 += stat.points
-
-        player = Player.query.filter_by(id = stat.playerid).first().to_dict()
-        team = Team.query.filter_by(id = stat.teamid).first().to_dict()
-        response.append({
+    if team2id == None:
+        team2id = 0
+    player = Player.query.filter_by(id = stat.playerid).first().to_dict()
+    team = Team.query.filter_by(id = stat.teamid).first().to_dict()
+    response.append({
             'id': stat.id,
             'teamid': stat.teamid,
             'team': team,
@@ -40,9 +41,10 @@ def get_stats_by_game(gameId):
             'rebounds': stat.rebounds,
             'assists': stat.assists
         })
+    print('********************************************', team2id, score2)
     return jsonify({'Stats': response,
                     "scores": {team1id : score1,
-                               team2id: score2}
+                               team2id : score2}
                     })
 
 
@@ -73,7 +75,6 @@ def add_stat(gameId, teamId, playerId):
     form['teamid'].data = teamId
     form['gameid'].data = gameId
     form['playerid'].data = playerId
-    print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', form.data)
 
     if form.validate_on_submit():
         new_stat = Stat(
@@ -86,6 +87,7 @@ def add_stat(gameId, teamId, playerId):
         )
         response.append(new_stat.to_dict())
     if form.errors:
+        print('*********************************************************', form.errors)
         return 'Invalid data'
     db.session.add(new_stat)
     db.session.commit()

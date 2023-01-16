@@ -91,7 +91,7 @@ export default function reducer(state = { oneStat: {}, allStats: {}, oneScore: {
             return newState
         }
         case LOAD_STATS_BY_PLAYER: {
-            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
+            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, onePlayerStat: {}, allPlayerStats: {} }
             if (action.stats.Stats) {
                 action.stats.Stats.forEach(e => {
                     newState.allPlayerStats[e.id] = e

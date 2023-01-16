@@ -17,30 +17,42 @@ const AddStat = () => {
     const [rebounds, setRebounds] = useState(0)
     const players = useSelector(state => Object.values(state.player.allPlayers))
     const curStats = useSelector(state => Object.values(state.stat.allStats))
+    const [find1, setFind1] = useState(false)
+    const [find2, setFind2] = useState(false)
+    const [used, setUsed] = useState([])
+    const [availablePlayers, setAvailablePlayers] = useState([])
     useEffect(() => {
         dispatch(getAllPlayers(teamId)).then(() => {
             dispatch(getStatsBygame(gameId))
         }).
-            then(() => setLoaded(true))
+            then(() => setFind1(true))
     }, [dispatch, teamId])
-    let availablePlayers = []
-    let used = []
-    if (curStats) {
+    if (find1) {
+        let usedArr = []
         curStats.forEach(stat => {
-            used.push(stat.playerid)
+            usedArr.push(stat.playerid)
         })
+        setUsed(usedArr)
+        setFind2(true)
+        setFind1(false)
     }
 
-    if (curStats && players) {
+    if (find2 && players) {
+        let availableArr = []
         players.forEach(player => {
-            if (!used.includes(player.id)) availablePlayers.push(player)
+            if (!used.includes(player.id)) availableArr.push(player)
         })
+        setAvailablePlayers(availableArr)
+        setPlayer(availableArr[0]?.id || null)
+        setLoaded(true)
+        setFind2(false)
         // setPlayer(availablePlayers[0])
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const validationErrors = []
+        console.log('INSIDE HANDLE SUBMIT', player)
         if (!player) validationErrors.push('Must choose a Player!')
         if (points === null) validationErrors.push('Must add Points!')
         if (assists === null) validationErrors.push('Must add Assists!')
@@ -55,8 +67,6 @@ const AddStat = () => {
     }
 
 
-
-    console.log('INSIDE ADD STAT COMP', player)
 
     return (
         <div className='addStatContainer'>

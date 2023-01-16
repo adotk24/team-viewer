@@ -35,13 +35,11 @@ const GameDetailRow = ({ playerId, gameId, teamId }) => {
         setStatFound(false)
         setLoaded(true)
     }
-    if (playerStat) {
-
-    }
+    console.log('IN GAME DETAIL ROW', playerStat)
     return isLoaded && playerStat && (
         <div className='gameRows'>
             <NavLink to={`/teams/players/${playerStat.player.id}`}>
-                #{playerStat?.player.number}{playerStat?.player.firstName} {playerStat?.player.lastName} {playerStat?.points} POINTS {playerStat?.assists} ASSISTS {playerStat?.rebounds} rebounds
+                #{playerStat?.player.number}{playerStat?.player.firstName} {playerStat?.player.lastName} {playerStat?.points} POINTS {playerStat?.assists} ASSISTS {playerStat?.rebounds} REBOUNDS
             </NavLink>
             {playerStat?.team?.userId == user?.id &&
                 <div className='rowUserFunctions'>
