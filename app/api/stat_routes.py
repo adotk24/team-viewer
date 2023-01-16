@@ -26,11 +26,11 @@ def get_stats_by_game(gameId):
             score1 += stat.points
         elif (stat.teamid == team2id):
             score2 += stat.points
-    if team2id == None:
-        team2id = 0
-    player = Player.query.filter_by(id = stat.playerid).first().to_dict()
-    team = Team.query.filter_by(id = stat.teamid).first().to_dict()
-    response.append({
+        if team2id == None:
+            team2id = 0
+        player = Player.query.filter_by(id = stat.playerid).first().to_dict()
+        team = Team.query.filter_by(id = stat.teamid).first().to_dict()
+        response.append({
             'id': stat.id,
             'teamid': stat.teamid,
             'team': team,
@@ -41,7 +41,6 @@ def get_stats_by_game(gameId):
             'rebounds': stat.rebounds,
             'assists': stat.assists
         })
-    print('********************************************', team2id, score2)
     return jsonify({'Stats': response,
                     "scores": {team1id : score1,
                                team2id : score2}

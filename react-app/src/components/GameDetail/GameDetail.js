@@ -64,9 +64,6 @@ const GameDetail = () => {
         setLoaded(true)
     }
 
-
-    console.log('IN GAME DETAILS PAGE', stats)
-
     return isLoaded && (
         <div className='gamedetailcontainer'>
             <div className='gamedetailtop'>

@@ -35,7 +35,7 @@ const GameDetailRow = ({ playerId, gameId, teamId }) => {
         setStatFound(false)
         setLoaded(true)
     }
-    console.log('IN GAME DETAIL ROW', playerStat)
+    console.log('IN GAME DETAIL ROW', stats)
     return isLoaded && playerStat && (
         <div className='gameRows'>
             <NavLink to={`/teams/players/${playerStat.player.id}`}>
