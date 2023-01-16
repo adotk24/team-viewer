@@ -41,6 +41,7 @@ const LoginForm = () => {
   const handleDemoUserSubmit = async (e) => {
     e.preventDefault(0)
     dispatch(sessionActions.login('demo@aa.io', 'password'))
+    history.goBack()
     // .catch(
     // async (res) => {
     // const data = await res.json();

@@ -29,7 +29,7 @@ const GameDetail = () => {
     useEffect(() => {
         dispatch(getStatsBygame(gameId)).then(() => {
             dispatch(getOneGame(gameId)).then(() => {
-                dispatch(getAllUserTeams(user.id)).then(() =>
+                dispatch(getAllUserTeams(user?.id)).then(() =>
                     setGameFound(true))
             })
         })
@@ -72,7 +72,7 @@ const GameDetail = () => {
                 {team1stats.map(stat => (
                     <GameDetailRow playerId={stat.playerid} gameId={gameId} teamId={stat.teamid} />
                 ))}
-                {(team1.userId == user.id) &&
+                {(team1.userId == user?.id) &&
                     <NavLink to={`/game/${gameId}/${team1.id}/addStat`}>
                         <button>Add Player Stat for {team1.mascot}</button>
                     </NavLink>
@@ -81,7 +81,7 @@ const GameDetail = () => {
                 {team2stats.map(stat => (
                     <GameDetailRow playerId={stat.playerid} gameId={gameId} teamId={stat.teamid} />
                 ))}
-                {(team2.userId == user.id) &&
+                {(team2.userId == user?.id) &&
                     <NavLink to={`/game/${gameId}/${team2.id}/addStat`}>
                         <button>Add Player Stat for {team1.mascot}</button>
                     </NavLink>

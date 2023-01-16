@@ -65,17 +65,20 @@ def get_stats_by_player(playerId):
     return jsonify({'Stats': response})
 
 #Add Stat to Game by Player
-@stat_route.route('/<int:gameId>/<int:teamId>/add', methods=['POST'])
-def add_stat(gameId, teamId):
+@stat_route.route('/<int:gameId>/<int:teamId>/<int:playerId>/add', methods=['POST'])
+def add_stat(gameId, teamId, playerId):
     form = StatForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     response = []
     form['teamid'].data = teamId
     form['gameid'].data = gameId
+    form['playerid'].data = playerId
+    print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', form.data)
+
     if form.validate_on_submit():
         new_stat = Stat(
             teamid = teamId,
-            playerid = form.data["playerid"],
+            playerid = playerId,
             gameid = gameId,
             points = form.data['points'],
             rebounds = form.data['rebounds'],
