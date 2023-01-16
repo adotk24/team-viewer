@@ -43,7 +43,7 @@ const GameDetailRow = ({ playerId, gameId, teamId }) => {
             <NavLink to={`/teams/players/${playerStat.player.id}`}>
                 #{playerStat?.player.number}{playerStat?.player.firstName} {playerStat?.player.lastName} {playerStat?.points} POINTS {playerStat?.assists} ASSISTS {playerStat?.rebounds} rebounds
             </NavLink>
-            {playerStat?.team?.userId == user.id &&
+            {playerStat?.team?.userId == user?.id &&
                 <div className='rowUserFunctions'>
                     <button>Edit Stat</button>
                     <button>Delete Stat</button>

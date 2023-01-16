@@ -57,7 +57,9 @@ export const getStatsByPlayer = playerId => async dispatch => {
 }
 
 export const addingStat = (gameId, teamId, stat) => async dispatch => {
-    const response = await fetch(`/api/stats/${gameId}/${teamId}/add`, {
+    console.log('THUNKER THUNKER', stat)
+
+    const response = await fetch(`/api/stats/${gameId}/${teamId}/${stat.player}/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(stat)
