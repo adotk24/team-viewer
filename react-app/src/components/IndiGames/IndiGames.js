@@ -50,7 +50,7 @@ export const IndiGames = ({ game, team, user }) => {
             <div className="scheduleMatchup">
                 {hasScore() &&
                     <NavLink to={`/game/${game.id}`}>
-                        <div>{team1ScoreSetter(team1id)}{game.team1.mascot} VS {game.team2.mascot}{team2ScoreSetter(team2id)}</div>
+                        <div>{team1ScoreSetter(team1id)} {game.team1.mascot} VS {game.team2.mascot} {team2ScoreSetter(team2id)}</div>
                     </NavLink>
                 }
                 {
