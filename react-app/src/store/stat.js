@@ -3,6 +3,9 @@ const LOAD_STATS_BY_PLAYER = 'stats/LOAD_STATS_BY_PLAYER'
 const LOAD_SCORE_BY_GAME = 'stats/LOAD_SCORE_BY_GAME'
 const LOAD_ONE_SCORE = 'stats/LOAD_ONE_SCORE'
 const ADD_STAT = 'stats/ADD_STAT'
+const EDIT_STAT = 'stats/EDIT_STAT'
+const DELETE_STAT = 'stats/DELETE_STAT'
+
 
 const statsBygame = stats => {
     return {
@@ -36,6 +39,17 @@ const addStat = (gameId, teamId, stat) => {
     }
 }
 
+const editStat = (stat) => {
+    return {
+        type: EDIT_STAT, stat
+    }
+}
+
+const deleteStat = stat => {
+    return {
+        type: DELETE_STAT, stat
+    }
+}
 
 export const getStatsBygame = (gameId) => async dispatch => {
     const response = await fetch(`/api/stats/team/${gameId}`)
@@ -71,7 +85,28 @@ export const addingStat = (gameId, teamId, stat) => async dispatch => {
     }
 }
 
+export const edittingStat = (gameId, teamId, playerId, statId, stat) => async dispatch => {
+    const response = await fetch(`/api/stats/${gameId}/${teamId}/${playerId}/${statId}/edit`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(stat)
+    })
+    console.log('THUNKER')
+    if (response.ok) {
+        const stat = response.json()
+        dispatch(editStat(stat))
+        return stat
+    }
+}
 
+export const deletingStat = statId => async dispatch => {
+    const response = await fetch(`/api/stats/${statId}/delete`, { method: 'DELETE' })
+    if (response.ok) {
+        const stat = await response.json()
+        await dispatch(deleteStat(stat))
+        return stat
+    }
+}
 
 export default function reducer(state = { oneStat: {}, allStats: {}, oneScore: {}, allScores: {}, onePlayerStat: {}, allPlayerStats: {} }, action) {
     switch (action.type) {
@@ -91,7 +126,7 @@ export default function reducer(state = { oneStat: {}, allStats: {}, oneScore: {
             return newState
         }
         case LOAD_STATS_BY_PLAYER: {
-            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
+            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, onePlayerStat: {}, allPlayerStats: {} }
             if (action.stats.Stats) {
                 action.stats.Stats.forEach(e => {
                     newState.allPlayerStats[e.id] = e
@@ -102,6 +137,17 @@ export default function reducer(state = { oneStat: {}, allStats: {}, oneScore: {
         case ADD_STAT: {
             const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
             newState.oneStat = action.stat
+            return newState
+        }
+        case EDIT_STAT: {
+            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
+            newState.allStats[action.stat.id] = action.stat
+            newState.oneStat = action.stat
+            return newState
+        }
+        case DELETE_STAT: {
+            const newState = { ...state, oneStat: {}, allStats: {}, oneScore: {}, allScores: { ...state.allStats }, allScores: { ...state.allScores }, onePlayerStat: {}, allPlayerStats: {} }
+            delete newState.allStats[action.stat.id]
             return newState
         }
         default: return state

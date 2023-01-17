@@ -26,7 +26,8 @@ def get_stats_by_game(gameId):
             score1 += stat.points
         elif (stat.teamid == team2id):
             score2 += stat.points
-
+        if team2id == None:
+            team2id = 0
         player = Player.query.filter_by(id = stat.playerid).first().to_dict()
         team = Team.query.filter_by(id = stat.teamid).first().to_dict()
         response.append({
@@ -42,7 +43,7 @@ def get_stats_by_game(gameId):
         })
     return jsonify({'Stats': response,
                     "scores": {team1id : score1,
-                               team2id: score2}
+                               team2id : score2}
                     })
 
 
@@ -73,7 +74,6 @@ def add_stat(gameId, teamId, playerId):
     form['teamid'].data = teamId
     form['gameid'].data = gameId
     form['playerid'].data = playerId
-    print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', form.data)
 
     if form.validate_on_submit():
         new_stat = Stat(
@@ -86,7 +86,39 @@ def add_stat(gameId, teamId, playerId):
         )
         response.append(new_stat.to_dict())
     if form.errors:
+        print('*********************************************************', form.errors)
         return 'Invalid data'
     db.session.add(new_stat)
     db.session.commit()
     return jsonify({'Stat': response})
+
+#EDIT A STAT
+@stat_route.route('/<int:gameId>/<int:teamId>/<int:playerId>/<int:statId>/edit', methods=['PUT'])
+def edit_stat(gameId, teamId, playerId, statId):
+    stat = Stat.query.filter_by(id = statId).first()
+    form = StatForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    form['teamid'].data = teamId
+    form['gameid'].data = gameId
+    form['playerid'].data = playerId
+    if form.validate_on_submit():
+        setattr(stat, "points", form.data['points'])
+        setattr(stat, 'rebounds', form.data['rebounds'])
+        setattr(stat, 'assists', form.data['assists'])
+        setattr(stat, 'teamid', teamId)
+        setattr(stat, 'gameid', gameId)
+        setattr(stat, 'playerid', playerId)
+    if form.errors:
+        return 'Invalid Data'
+    db.session.commit()
+    return stat.to_dict()
+
+@stat_route.route('/<int:statId>/delete', methods=['DELETE'])
+def delete_stat(statId):
+    stat = Stat.query.filter_by(id = statId).first()
+    if not stat:
+        return 'No Stat Found'
+    else:
+        db.session.delete(stat)
+        db.session.commit()
+        return {'message': "Successfully Deleted", 'statusCode': 200}
