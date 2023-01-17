@@ -23,6 +23,9 @@ import AddGame from './components/AddGame/AddGame';
 import AboutPage from './components/AboutPage/AboutPage';
 import GameDetail from './components/GameDetail/GameDetail';
 import AddStat from './components/AddStat/AddStat';
+import EditStat from './components/EditStat/EditStat';
+
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -98,6 +101,9 @@ function App() {
         </Route>
         <Route path='/game/:gameId/:teamId/addStat' exact={true}>
           <AddStat />
+        </Route>
+        <Route path='/game/:gameId/:teamId/:playerId/editStat' exact={true}>
+          <EditStat />
         </Route>
       </Switch>
     </BrowserRouter>
