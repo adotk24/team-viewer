@@ -42,8 +42,8 @@ const EditStat = () => {
 
 
     return (
-        <div className='editstatcontainer'>
-            <div className='editStatHeader'>
+        <div className='addStatContainer'>
+            <div className='stats-form-header'>
                 Editing Stats for {player.firstName} {player.lastName}
             </div>
 
@@ -82,7 +82,7 @@ const EditStat = () => {
                         required />
                 </div>
                 <button type='submit'
-                    className='editStatBtn'
+                    className='stat-form-button'
                     disabled={errors.length > 0}>
                     EDIT STAT
                 </button>

@@ -1,0 +1,30 @@
+.teamdetailrowgrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 30px;
+    grid-auto-flow: row;
+    width: 50%;
+}
+
+.rowUserFunctions {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: -2px
+}
+
+.statfunctions {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    margin-bottom: 1vh
+}
+
+.addstatbutton {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: green;
+    color: white
+}

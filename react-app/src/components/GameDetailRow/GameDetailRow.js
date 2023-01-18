@@ -42,14 +42,22 @@ const GameDetailRow = ({ playerId, gameId, teamId }) => {
     return isLoaded && playerStat && (
         <div className='gameRows'>
             <NavLink to={`/teams/players/${playerStat.player.id}`}>
-                #{playerStat?.player.number}{playerStat?.player.firstName} {playerStat?.player.lastName} {playerStat?.points} POINTS {playerStat?.assists} ASSISTS {playerStat?.rebounds} REBOUNDS
+                {/* #{playerStat?.player.number}{playerStat?.player.firstName} {playerStat?.player.lastName} {playerStat?.points} POINTS {playerStat?.assists} ASSISTS {playerStat?.rebounds} REBOUNDS */}
+                <div className='teamdetailrowgrid'>
+                    <div>{playerStat?.player.number}</div>
+                    <div>{playerStat?.player.lastName}, {playerStat?.player.firstName}</div>
+                    <div>{playerStat?.points}</div>
+                    <div>{playerStat?.rebounds}</div>
+                    <div>{playerStat?.assists}</div>
+                </div>
             </NavLink>
             {playerStat?.team?.userId == user?.id &&
                 <div className='rowUserFunctions'>
                     <NavLink to={`/game/${gameId}/${teamId}/${playerStat.player.id}/editStat`}>
-                        <button>Edit Stat</button>
+                        <button className='statfunctions'>Edit Stat</button>
                     </NavLink>
                     <button
+                        className='statfunctions'
                         onClick={async (e) => {
                             e.preventDefault()
                             const deleted = await dispatch(deletingStat(playerStat.id))

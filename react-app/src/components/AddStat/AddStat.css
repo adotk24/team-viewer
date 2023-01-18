@@ -1,3 +1,50 @@
 .addStatContainer {
-    margin-top: 10%
+    margin-top: 7%;
+    height: 84vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 4px
+}
+
+.stats-form-header {
+    width: 35%;
+    height: 5%;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 1ch
+}
+
+.stat-form-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 2ch
+}
+
+.stat-input-box {
+    width: 50%;
+    text-align: end;
+}
+
+.stat-form-button {
+    border: 1px solid black;
+    background-color: green;
+    color: white;
+    margin-top: 2ch;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 4px;
+    margin-bottom: 1ch
 }
