@@ -99,7 +99,7 @@ const GameDetail = () => {
                 ))}
                 {(team2.userId == user?.id) &&
                     <NavLink to={`/game/${gameId}/${team2.id}/addStat`}>
-                        <button>Add Player Stat for {team1.mascot}</button>
+                        <button className='addstatbutton'>Add Player Stat for {team2.mascot}</button>
                     </NavLink>
                 }
             </div>

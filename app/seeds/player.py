@@ -580,7 +580,7 @@ def seed_players():
     )
     player65 = Player(
         firstName='Christian',
-        lastName='watanabe',
+        lastName='Braun',
         height='78',
         number='0',
         teamId='9',
