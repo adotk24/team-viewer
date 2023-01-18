@@ -70,8 +70,8 @@ const AddStat = () => {
 
     return (
         <div className='addStatContainer'>
+            <div className='stats-form-header'>Add a Stat</div>
             <form className='stat-form' onSubmit={handleSubmit}>
-                <div className='stats-form-header'>Add a Stat</div>
                 <div className='stat-formErrors'>
                     {errors.map(e => (
                         <li key={e}>{e}</li>
@@ -80,7 +80,7 @@ const AddStat = () => {
                 <div className='stat-form-input'>
                     <label>Player</label>
                     <select
-                        className='stat-form-input'
+                        className='stat-input-box'
                         value={player}
                         onChange={(e) => setPlayer(e.target.value)}
                     >
