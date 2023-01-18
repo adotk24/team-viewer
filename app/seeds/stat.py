@@ -301,96 +301,96 @@ def seed_stats():
         teamid = '1',
         playerid = '6',
         gameid = '5',
-        points = '6',
+        points = '30',
         assists = '3',
-        rebounds = '2'
+        rebounds = '8'
     )
     stat39 = Stat(
         teamid = '1',
         playerid = '7',
         gameid = '5',
-        points = '13',
-        assists = '2',
-        rebounds = '1'
+        points = '9',
+        assists = '1',
+        rebounds = '5'
     )
     stat40 = Stat(
         teamid = '1',
         playerid = '8',
         gameid = '5',
-        points = '4',
-        assists = '1',
+        points = '5',
+        assists = '0',
         rebounds = '0'
     )
     stat41 = Stat(
         teamid = '1',
         playerid = '1',
         gameid = '6',
-        points = '11',
-        assists = '8',
-        rebounds = '7'
+        points = '8',
+        assists = '1',
+        rebounds = '6'
     )
     stat42 = Stat(
         teamid = '1',
         playerid = '2',
         gameid = '6',
-        points = '23',
-        assists = '0',
-        rebounds = '4'
+        points = '18',
+        assists = '7',
+        rebounds = '6'
     )
     stat43 = Stat(
         teamid = '1',
         playerid = '3',
         gameid = '6',
-        points = '36',
-        assists = '10',
-        rebounds = '12'
+        points = '21',
+        assists = '2',
+        rebounds = '3'
     )
     stat44 = Stat(
         teamid = '1',
         playerid = '4',
         gameid = '6',
-        points = '17',
-        assists = '7',
-        rebounds = '5'
+        points = '19',
+        assists = '2',
+        rebounds = '4'
     )
     stat45 = Stat(
         teamid = '1',
         playerid = '5',
         gameid = '6',
-        points = '9',
-        assists = '3',
-        rebounds = '1'
+        points = '30',
+        assists = '12',
+        rebounds = '12'
     )
     stat46 = Stat(
         teamid = '1',
         playerid = '6',
         gameid = '6',
-        points = '7',
-        assists = '0',
-        rebounds = '6'
+        points = '6',
+        assists = '4',
+        rebounds = '3'
     )
     stat47 = Stat(
         teamid = '1',
         playerid = '7',
         gameid = '6',
-        points = '12',
-        assists = '1',
-        rebounds = '4'
+        points = '17',
+        assists = '4',
+        rebounds = '2'
     )
     stat48 = Stat(
         teamid = '1',
         playerid = '8',
         gameid = '6',
-        points = '5',
-        assists = '1',
-        rebounds = '2'
+        points = '8',
+        assists = '0',
+        rebounds = '1'
     )
     stat49 = Stat(
         teamid = '1',
         playerid = '1',
         gameid = '7',
-        points = '6',
-        assists = '4',
+        points = '2',
+        assists = '0',
         rebounds = '2'
     )
     stat50 = Stat(
