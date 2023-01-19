@@ -397,401 +397,393 @@ def seed_stats():
         teamid = '1',
         playerid = '2',
         gameid = '7',
-        points = '20',
-        assists = '5',
-        rebounds = '6'
+        points = '21',
+        assists = '7',
+        rebounds = '4'
     )
     stat51 = Stat(
         teamid = '1',
         playerid = '3',
         gameid = '7',
-        points = '41',
-        assists = '3',
-        rebounds = '9'
+        points = '21',
+        assists = '1',
+        rebounds = '3'
     )
     stat52 = Stat(
         teamid = '1',
         playerid = '4',
         gameid = '7',
-        points = '17',
-        assists = '7',
-        rebounds = '5'
+        points = '8',
+        assists = '1',
+        rebounds = '8'
     )
     stat53 = Stat(
         teamid = '1',
         playerid = '5',
         gameid = '7',
-        points = '7',
-        assists = '5',
-        rebounds = '4'
+        points = '11',
+        assists = '4',
+        rebounds = '1'
     )
     stat54 = Stat(
         teamid = '1',
         playerid = '6',
         gameid = '7',
-        points = '22',
-        assists = '2',
-        rebounds = '2'
+        points = '39',
+        assists = '8',
+        rebounds = '12'
     )
     stat55 = Stat(
         teamid = '1',
         playerid = '7',
         gameid = '7',
-        points = '0',
-        assists = '1',
-        rebounds = '4'
+        points = '6',
+        assists = '0',
+        rebounds = '5'
     )
     stat56 = Stat(
         teamid = '1',
         playerid = '8',
         gameid = '7',
-        points = '5',
-        assists = '0',
-        rebounds = '2'
+        points = '3',
+        assists = '1',
+        rebounds = '1'
     )
     stat57 = Stat(
         teamid = '1',
         playerid = '1',
         gameid = '8',
-        points = '27',
-        assists = '1',
-        rebounds = '4'
+        points = '0',
+        assists = '3',
+        rebounds = '2'
     )
     stat58 = Stat(
         teamid = '1',
         playerid = '2',
         gameid = '8',
-        points = '9',
+        points = '11',
         assists = '2',
-        rebounds = '1'
+        rebounds = '5'
     )
     stat59 = Stat(
         teamid = '1',
         playerid = '3',
         gameid = '8',
-        points = '12',
-        assists = '1',
-        rebounds = '9'
+        points = '16',
+        assists = '5',
+        rebounds = '6'
     )
     stat60 = Stat(
         teamid = '1',
         playerid = '4',
         gameid = '8',
-        points = '13',
-        assists = '4',
-        rebounds = '8'
+        points = '19',
+        assists = '3',
+        rebounds = '4'
     )
     stat61 = Stat(
         teamid = '1',
         playerid = '5',
         gameid = '8',
-        points = '12',
-        assists = '4',
-        rebounds = '4'
+        points = '25',
+        assists = '6',
+        rebounds = '6'
     )
     stat62 = Stat(
         teamid = '1',
         playerid = '6',
         gameid = '8',
-        points = '8',
-        assists = '1',
-        rebounds = '0'
+        points = '20',
+        assists = '4',
+        rebounds = '5'
     )
     stat63 = Stat(
         teamid = '1',
         playerid = '7',
         gameid = '8',
-        points = '16',
+        points = '6',
         assists = '0',
-        rebounds = '0'
+        rebounds = '3'
     )
     stat64 = Stat(
         teamid = '1',
         playerid = '8',
         gameid = '8',
-        points = '7',
-        assists = '4',
-        rebounds = '1'
+        points = '5',
+        assists = '0',
+        rebounds = '6'
     )
     stat65 = Stat(
         teamid = '1',
         playerid = '1',
         gameid = '9',
-        points = '51',
-        assists = '5',
-        rebounds = '9'
-    )
-    stat66 = Stat(
-        teamid = '1',
-        playerid = '2',
-        gameid = '9',
-        points = '8',
-        assists = '3',
-        rebounds = '3'
+        points = '2',
+        assists = '1',
+        rebounds = '0'
     )
     stat67 = Stat(
         teamid = '1',
         playerid = '3',
         gameid = '9',
-        points = '8',
-        assists = '3',
-        rebounds = '9'
+        points = '4',
+        assists = '0',
+        rebounds = '7'
     )
     stat68 = Stat(
         teamid = '1',
         playerid = '4',
         gameid = '9',
         points = '10',
-        assists = '6',
+        assists = '4',
         rebounds = '4'
     )
     stat69 = Stat(
         teamid = '1',
         playerid = '5',
         gameid = '9',
-        points = '19',
-        assists = '8',
-        rebounds = '3'
+        points = '12',
+        assists = '2',
+        rebounds = '5'
     )
     stat70 = Stat(
         teamid = '1',
         playerid = '6',
         gameid = '9',
-        points = '9',
-        assists = '6',
-        rebounds = '9'
+        points = '11',
+        assists = '2',
+        rebounds = '4'
     )
     stat71 = Stat(
         teamid = '1',
         playerid = '7',
         gameid = '9',
-        points = '0',
-        assists = '1',
-        rebounds = '3'
+        points = '6',
+        assists = '2',
+        rebounds = '6'
     )
     stat72 = Stat(
         teamid = '1',
         playerid = '8',
         gameid = '9',
-        points = '6',
+        points = '10',
         assists = '0',
-        rebounds = '3'
+        rebounds = '0'
     )
     stat73 = Stat(
         teamid = '2',
         playerid = '9',
         gameid = '1',
-        points = '7',
-        assists = '0',
-        rebounds = '1'
+        points = '10',
+        assists = '1',
+        rebounds = '2'
     )
     stat74 = Stat(
         teamid = '2',
         playerid = '10',
         gameid = '1',
-        points = '30',
+        points = '8',
         assists = '2',
-        rebounds = '8'
+        rebounds = '3'
     )
     stat75 = Stat(
         teamid = '2',
         playerid = '11',
         gameid = '1',
-        points = '7',
-        assists = '9',
-        rebounds = '2'
+        points = '28',
+        assists = '6',
+        rebounds = '16'
     )
     stat76 = Stat(
         teamid = '2',
         playerid = '12',
         gameid = '1',
-        points = '18',
-        assists = '5',
-        rebounds = '5'
+        points = '10',
+        assists = '2',
+        rebounds = '10'
     )
     stat77 = Stat(
         teamid = '2',
         playerid = '13',
         gameid = '1',
-        points = '12',
-        assists = '1',
-        rebounds = '8'
+        points = '24',
+        assists = '6',
+        rebounds = '4'
     )
     stat78 = Stat(
         teamid = '2',
         playerid = '14',
         gameid = '1',
-        points = '2',
-        assists = '0',
-        rebounds = '1'
+        points = '15',
+        assists = '3',
+        rebounds = '5'
     )
     stat79 = Stat(
         teamid = '2',
         playerid = '15',
         gameid = '1',
-        points = '5',
-        assists = '1',
-        rebounds = '7'
+        points = '12',
+        assists = '5',
+        rebounds = '3'
     )
     stat80 = Stat(
         teamid = '2',
         playerid = '16',
         gameid = '1',
         points = '3',
-        assists = '0',
-        rebounds = '0'
+        assists = '2',
+        rebounds = '1'
     )
     stat81 = Stat(
         teamid = '2',
         playerid = '9',
         gameid = '10',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '2',
+        assists = '1',
+        rebounds = '1'
     )
     stat82 = Stat(
         teamid = '2',
         playerid = '10',
         gameid = '10',
-        points = '19',
+        points = '5',
         assists = '1',
-        rebounds = '6'
+        rebounds = '5'
     )
     stat83 = Stat(
         teamid = '2',
         playerid = '11',
         gameid = '10',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '43',
+        assists = '6',
+        rebounds = '11'
     )
     stat84 = Stat(
         teamid = '2',
         playerid = '12',
         gameid = '10',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '12',
+        assists = '2',
+        rebounds = '5'
     )
     stat85 = Stat(
         teamid = '2',
         playerid = '13',
         gameid = '10',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '18',
+        assists = '2',
+        rebounds = '15'
     )
     stat86 = Stat(
         teamid = '2',
         playerid = '14',
         gameid = '10',
-        points = '14',
+        points = '6',
         assists = '2',
-        rebounds = '6'
+        rebounds = '7'
     )
     stat87 = Stat(
         teamid = '2',
         playerid = '15',
         gameid = '10',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '15',
+        assists = '5',
+        rebounds = '1'
     )
     stat88 = Stat(
         teamid = '2',
         playerid = '16',
         gameid = '10',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '5',
+        assists = '0',
+        rebounds = '1'
     )
     stat89 = Stat(
         teamid = '2',
         playerid = '9',
         gameid = '11',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '15',
+        assists = '7',
+        rebounds = '6'
     )
     stat90 = Stat(
         teamid = '2',
         playerid = '10',
         gameid = '11',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '2',
+        assists = '2',
+        rebounds = '4'
     )
     stat91 = Stat(
         teamid = '2',
         playerid = '11',
         gameid = '11',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '12',
+        assists = '4',
+        rebounds = '5'
     )
     stat92 = Stat(
         teamid = '2',
         playerid = '12',
         gameid = '11',
         points = '8',
-        assists = '1',
-        rebounds = '8'
+        assists = '3',
+        rebounds = '0'
     )
     stat93 = Stat(
         teamid = '2',
         playerid = '13',
         gameid = '11',
-        points = '17',
+        points = '18',
         assists = '4',
-        rebounds = '5'
+        rebounds = '14'
     )
     stat94 = Stat(
         teamid = '2',
         playerid = '14',
         gameid = '11',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '44',
+        assists = '6',
+        rebounds = '7'
     )
     stat95 = Stat(
         teamid = '2',
         playerid = '15',
         gameid = '11',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '27',
+        assists = '4',
+        rebounds = '2'
     )
     stat96 = Stat(
         teamid = '2',
         playerid = '16',
         gameid = '11',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '10',
+        assists = '2',
+        rebounds = '7'
     )
     stat97 = Stat(
         teamid = '2',
         playerid = '9',
         gameid = '12',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '3',
+        assists = '0',
+        rebounds = '0'
     )
     stat98 = Stat(
         teamid = '2',
         playerid = '10',
         gameid = '12',
-        points = '19',
+        points = '8',
         assists = '1',
-        rebounds = '6'
+        rebounds = '3'
     )
     stat99 = Stat(
         teamid = '2',
         playerid = '11',
         gameid = '12',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '10',
+        assists = '2',
+        rebounds = '5'
     )
     stat100 = Stat(
         teamid = '2',
@@ -805,9 +797,9 @@ def seed_stats():
         teamid = '2',
         playerid = '13',
         gameid = '12',
-        points = '17',
+        points = '44',
         assists = '4',
-        rebounds = '5'
+        rebounds = '3'
     )
     stat102 = Stat(
         teamid = '2',
@@ -829,9 +821,9 @@ def seed_stats():
         teamid = '2',
         playerid = '16',
         gameid = '12',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '20',
+        assists = '2',
+        rebounds = '13'
     )
     stat105 = Stat(
         teamid = '2',
@@ -853,9 +845,9 @@ def seed_stats():
         teamid = '2',
         playerid = '11',
         gameid = '13',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '26',
+        assists = '6',
+        rebounds = '6'
     )
     stat108 = Stat(
         teamid = '2',
@@ -877,9 +869,9 @@ def seed_stats():
         teamid = '2',
         playerid = '14',
         gameid = '13',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '11',
+        assists = '5',
+        rebounds = '3'
     )
     stat111 = Stat(
         teamid = '2',
@@ -901,9 +893,9 @@ def seed_stats():
         teamid = '2',
         playerid = '9',
         gameid = '14',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '6',
+        assists = '0',
+        rebounds = '6'
     )
     stat114 = Stat(
         teamid = '2',
@@ -925,9 +917,9 @@ def seed_stats():
         teamid = '2',
         playerid = '12',
         gameid = '14',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '6',
+        assists = '0',
+        rebounds = '4'
     )
     stat117 = Stat(
         teamid = '2',
@@ -949,9 +941,9 @@ def seed_stats():
         teamid = '2',
         playerid = '15',
         gameid = '14',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '2',
+        assists = '1',
+        rebounds = '0'
     )
     stat120 = Stat(
         teamid = '2',
@@ -973,9 +965,9 @@ def seed_stats():
         teamid = '2',
         playerid = '10',
         gameid = '15',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '5',
+        assists = '0',
+        rebounds = '1'
     )
     stat115 = Stat(
         teamid = '2',
@@ -997,9 +989,9 @@ def seed_stats():
         teamid = '2',
         playerid = '13',
         gameid = '15',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '4',
+        assists = '1',
+        rebounds = '3'
     )
     stat118 = Stat(
         teamid = '2',
@@ -1021,9 +1013,9 @@ def seed_stats():
         teamid = '2',
         playerid = '16',
         gameid = '15',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '12',
+        assists = '2',
+        rebounds = '17'
     )
     stat121 = Stat(
         teamid = '2',
@@ -1045,9 +1037,9 @@ def seed_stats():
         teamid = '2',
         playerid = '11',
         gameid = '16',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '4',
+        assists = '2',
+        rebounds = '1'
     )
     stat124 = Stat(
         teamid = '2',
@@ -1069,9 +1061,9 @@ def seed_stats():
         teamid = '2',
         playerid = '14',
         gameid = '16',
-        points = '14',
+        points = '21',
         assists = '2',
-        rebounds = '6'
+        rebounds = '8'
     )
     stat127 = Stat(
         teamid = '2',
@@ -1093,9 +1085,9 @@ def seed_stats():
         teamid = '2',
         playerid = '9',
         gameid = '17',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '10',
+        assists = '3',
+        rebounds = '5'
     )
     stat130 = Stat(
         teamid = '2',
@@ -1117,8 +1109,8 @@ def seed_stats():
         teamid = '2',
         playerid = '12',
         gameid = '17',
-        points = '8',
-        assists = '1',
+        points = '17',
+        assists = '11',
         rebounds = '8'
     )
     stat133 = Stat(
@@ -1141,17 +1133,9 @@ def seed_stats():
         teamid = '2',
         playerid = '15',
         gameid = '17',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
-    )
-    stat136 = Stat(
-        teamid = '2',
-        playerid = '16',
-        gameid = '17',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '19',
+        assists = '4',
+        rebounds = '3'
     )
     stat137 = Stat(
         teamid = '3',
@@ -1181,9 +1165,9 @@ def seed_stats():
         teamid = '3',
         playerid = '20',
         gameid = '2',
-        points = '8',
+        points = '3',
         assists = '1',
-        rebounds = '8'
+        rebounds = '3'
     )
     stat141 = Stat(
         teamid = '3',
@@ -1205,9 +1189,9 @@ def seed_stats():
         teamid = '3',
         playerid = '23',
         gameid = '2',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '1',
+        assists = '0',
+        rebounds = '1'
     )
     stat144 = Stat(
         teamid = '3',
@@ -1229,9 +1213,9 @@ def seed_stats():
         teamid = '3',
         playerid = '18',
         gameid = '10',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '4',
+        assists = '2',
+        rebounds = '1'
     )
     stat147 = Stat(
         teamid = '3',
@@ -1253,9 +1237,9 @@ def seed_stats():
         teamid = '3',
         playerid = '21',
         gameid = '10',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '26',
+        assists = '7',
+        rebounds = '7'
     )
     stat150 = Stat(
         teamid = '3',
@@ -1277,9 +1261,9 @@ def seed_stats():
         teamid = '3',
         playerid = '24',
         gameid = '10',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '17',
+        assists = '2',
+        rebounds = '8'
     )
     stat153 = Stat(
         teamid = '3',
@@ -1301,9 +1285,9 @@ def seed_stats():
         teamid = '3',
         playerid = '19',
         gameid = '18',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '23',
+        assists = '8',
+        rebounds = '8'
     )
     stat156 = Stat(
         teamid = '3',
@@ -1325,9 +1309,9 @@ def seed_stats():
         teamid = '3',
         playerid = '22',
         gameid = '18',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '9',
+        assists = '3',
+        rebounds = '2'
     )
     stat159 = Stat(
         teamid = '3',
@@ -1349,9 +1333,9 @@ def seed_stats():
         teamid = '3',
         playerid = '17',
         gameid = '19',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '32',
+        assists = '3',
+        rebounds = '5'
     )
     stat162 = Stat(
         teamid = '3',
@@ -1373,9 +1357,9 @@ def seed_stats():
         teamid = '3',
         playerid = '20',
         gameid = '19',
-        points = '8',
+        points = '2',
         assists = '1',
-        rebounds = '8'
+        rebounds = '1'
     )
     stat165 = Stat(
         teamid = '3',
@@ -1397,9 +1381,9 @@ def seed_stats():
         teamid = '3',
         playerid = '23',
         gameid = '19',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '2',
+        assists = '0',
+        rebounds = '4'
     )
     stat168 = Stat(
         teamid = '3',
@@ -1421,9 +1405,9 @@ def seed_stats():
         teamid = '3',
         playerid = '18',
         gameid = '20',
-        points = '19',
+        points = '10',
         assists = '1',
-        rebounds = '6'
+        rebounds = '5'
     )
     stat171 = Stat(
         teamid = '3',
@@ -1445,9 +1429,9 @@ def seed_stats():
         teamid = '3',
         playerid = '21',
         gameid = '20',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '18',
+        assists = '1',
+        rebounds = '10'
     )
     stat174 = Stat(
         teamid = '3',
@@ -1469,9 +1453,9 @@ def seed_stats():
         teamid = '3',
         playerid = '24',
         gameid = '20',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '5',
+        assists = '3',
+        rebounds = '2'
     )
     stat177 = Stat(
         teamid = '3',
@@ -1493,9 +1477,9 @@ def seed_stats():
         teamid = '3',
         playerid = '19',
         gameid = '21',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '16',
+        assists = '8',
+        rebounds = '6'
     )
     stat180 = Stat(
         teamid = '3',
@@ -1517,9 +1501,9 @@ def seed_stats():
         teamid = '3',
         playerid = '22',
         gameid = '21',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '19',
+        assists = '4',
+        rebounds = '5'
     )
     stat183 = Stat(
         teamid = '3',
@@ -1541,8 +1525,8 @@ def seed_stats():
         teamid = '3',
         playerid = '17',
         gameid = '22',
-        points = '21',
-        assists = '4',
+        points = '11',
+        assists = '2',
         rebounds = '11'
     )
     stat186 = Stat(
@@ -1565,9 +1549,9 @@ def seed_stats():
         teamid = '3',
         playerid = '20',
         gameid = '22',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '5',
+        assists = '0',
+        rebounds = '2'
     )
     stat189 = Stat(
         teamid = '3',
@@ -1589,9 +1573,9 @@ def seed_stats():
         teamid = '3',
         playerid = '23',
         gameid = '22',
-        points = '9',
+        points = '15',
         assists = '3',
-        rebounds = '6'
+        rebounds = '2'
     )
     stat192 = Stat(
         teamid = '3',
@@ -1613,9 +1597,9 @@ def seed_stats():
         teamid = '3',
         playerid = '18',
         gameid = '23',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '2',
+        assists = '4',
+        rebounds = '4'
     )
     stat195 = Stat(
         teamid = '3',
@@ -1637,9 +1621,9 @@ def seed_stats():
         teamid = '3',
         playerid = '21',
         gameid = '23',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '21',
+        assists = '0',
+        rebounds = '3'
     )
     stat198 = Stat(
         teamid = '3',
@@ -1661,9 +1645,9 @@ def seed_stats():
         teamid = '3',
         playerid = '24',
         gameid = '23',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '26',
+        assists = '7',
+        rebounds = '6'
     )
     stat201 = Stat(
         teamid = '3',
@@ -1685,9 +1669,9 @@ def seed_stats():
         teamid = '3',
         playerid = '19',
         gameid = '24',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '8',
+        assists = '2',
+        rebounds = '3'
     )
     stat204 = Stat(
         teamid = '3',
@@ -1709,17 +1693,17 @@ def seed_stats():
         teamid = '3',
         playerid = '22',
         gameid = '24',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '12',
+        assists = '1',
+        rebounds = '12'
     )
     stat207 = Stat(
         teamid = '3',
         playerid = '23',
         gameid = '24',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '26',
+        assists = '6',
+        rebounds = '2'
     )
     stat208 = Stat(
         teamid = '3',
@@ -1741,8 +1725,8 @@ def seed_stats():
         teamid = '4',
         playerid = '26',
         gameid = '3',
-        points = '19',
-        assists = '1',
+        points = '8',
+        assists = '0',
         rebounds = '6'
     )
     stat211 = Stat(
@@ -1765,8 +1749,8 @@ def seed_stats():
         teamid = '4',
         playerid = '29',
         gameid = '3',
-        points = '17',
-        assists = '4',
+        points = '10',
+        assists = '0',
         rebounds = '5'
     )
     stat214 = Stat(
@@ -1781,7 +1765,7 @@ def seed_stats():
         teamid = '4',
         playerid = '31',
         gameid = '3',
-        points = '9',
+        points = '29',
         assists = '3',
         rebounds = '6'
     )
@@ -1789,9 +1773,9 @@ def seed_stats():
         teamid = '4',
         playerid = '32',
         gameid = '3',
-        points = '1',
+        points = '9',
         assists = '1',
-        rebounds = '0'
+        rebounds = '8'
     )
     stat217 = Stat(
         teamid = '4',
@@ -1813,9 +1797,9 @@ def seed_stats():
         teamid = '4',
         playerid = '27',
         gameid = '11',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '10',
+        assists = '1',
+        rebounds = '2'
     )
     stat220 = Stat(
         teamid = '4',
@@ -1837,15 +1821,15 @@ def seed_stats():
         teamid = '4',
         playerid = '30',
         gameid = '11',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '2',
+        assists = '5',
+        rebounds = '3'
     )
     stat223 = Stat(
         teamid = '4',
         playerid = '31',
         gameid = '11',
-        points = '9',
+        points = '19',
         assists = '3',
         rebounds = '6'
     )
@@ -1861,9 +1845,9 @@ def seed_stats():
         teamid = '4',
         playerid = '25',
         gameid = '18',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '3',
+        assists = '0',
+        rebounds = '3'
     )
     stat226 = Stat(
         teamid = '4',
@@ -1885,9 +1869,9 @@ def seed_stats():
         teamid = '4',
         playerid = '28',
         gameid = '18',
-        points = '8',
+        points = '5',
         assists = '1',
-        rebounds = '8'
+        rebounds = '6'
     )
     stat229 = Stat(
         teamid = '4',
@@ -1909,9 +1893,9 @@ def seed_stats():
         teamid = '4',
         playerid = '31',
         gameid = '18',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '42',
+        assists = '5',
+        rebounds = '11'
     )
     stat232 = Stat(
         teamid = '4',
@@ -1933,9 +1917,9 @@ def seed_stats():
         teamid = '4',
         playerid = '26',
         gameid = '25',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '15',
+        assists = '4',
+        rebounds = '5'
     )
     stat235 = Stat(
         teamid = '4',
@@ -1957,9 +1941,9 @@ def seed_stats():
         teamid = '4',
         playerid = '29',
         gameid = '25',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '3',
+        assists = '2',
+        rebounds = '1'
     )
     stat238 = Stat(
         teamid = '4',
@@ -1973,7 +1957,7 @@ def seed_stats():
         teamid = '4',
         playerid = '31',
         gameid = '25',
-        points = '9',
+        points = '25',
         assists = '3',
         rebounds = '6'
     )
@@ -1981,9 +1965,9 @@ def seed_stats():
         teamid = '4',
         playerid = '32',
         gameid = '25',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '12',
+        assists = '2',
+        rebounds = '1'
     )
     stat241 = Stat(
         teamid = '4',
@@ -2005,9 +1989,9 @@ def seed_stats():
         teamid = '4',
         playerid = '27',
         gameid = '26',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '0',
+        assists = '2',
+        rebounds = '1'
     )
     stat244 = Stat(
         teamid = '4',
@@ -2029,15 +2013,15 @@ def seed_stats():
         teamid = '4',
         playerid = '30',
         gameid = '26',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '5',
+        assists = '1',
+        rebounds = '3'
     )
     stat247 = Stat(
         teamid = '4',
         playerid = '31',
         gameid = '26',
-        points = '9',
+        points = '19',
         assists = '3',
         rebounds = '6'
     )
@@ -2053,9 +2037,9 @@ def seed_stats():
         teamid = '4',
         playerid = '25',
         gameid = '27',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '22',
+        assists = '1',
+        rebounds = '4'
     )
     stat250 = Stat(
         teamid = '4',
@@ -2077,9 +2061,9 @@ def seed_stats():
         teamid = '4',
         playerid = '28',
         gameid = '27',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '6',
+        assists = '2',
+        rebounds = '11'
     )
     stat253 = Stat(
         teamid = '4',
@@ -2101,9 +2085,9 @@ def seed_stats():
         teamid = '4',
         playerid = '31',
         gameid = '27',
-        points = '9',
+        points = '24',
         assists = '3',
-        rebounds = '6'
+        rebounds = '2'
     )
     stat256 = Stat(
         teamid = '4',
@@ -2125,9 +2109,9 @@ def seed_stats():
         teamid = '4',
         playerid = '26',
         gameid = '28',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '5',
+        assists = '4',
+        rebounds = '3'
     )
     stat259 = Stat(
         teamid = '4',
@@ -2149,9 +2133,9 @@ def seed_stats():
         teamid = '4',
         playerid = '29',
         gameid = '28',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '10',
+        assists = '0',
+        rebounds = '2'
     )
     stat262 = Stat(
         teamid = '4',
@@ -2165,7 +2149,7 @@ def seed_stats():
         teamid = '4',
         playerid = '31',
         gameid = '28',
-        points = '9',
+        points = '29',
         assists = '3',
         rebounds = '6'
     )
@@ -2173,9 +2157,9 @@ def seed_stats():
         teamid = '4',
         playerid = '32',
         gameid = '28',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '5',
+        assists = '4',
+        rebounds = '3'
     )
     stat265 = Stat(
         teamid = '4',
@@ -2197,8 +2181,8 @@ def seed_stats():
         teamid = '4',
         playerid = '27',
         gameid = '29',
-        points = '35',
-        assists = '11',
+        points = '11',
+        assists = '3',
         rebounds = '4'
     )
     stat268 = Stat(
@@ -2221,15 +2205,15 @@ def seed_stats():
         teamid = '4',
         playerid = '30',
         gameid = '29',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '8',
+        assists = '0',
+        rebounds = '3'
     )
     stat271 = Stat(
         teamid = '4',
         playerid = '31',
         gameid = '29',
-        points = '9',
+        points = '39',
         assists = '3',
         rebounds = '6'
     )
@@ -2245,9 +2229,9 @@ def seed_stats():
         teamid = '4',
         playerid = '25',
         gameid = '30',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '9',
+        assists = '3',
+        rebounds = '2'
     )
     stat274 = Stat(
         teamid = '4',
@@ -2285,15 +2269,15 @@ def seed_stats():
         teamid = '4',
         playerid = '30',
         gameid = '30',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '25',
+        assists = '11',
+        rebounds = '3'
     )
     stat279 = Stat(
         teamid = '4',
         playerid = '31',
         gameid = '30',
-        points = '9',
+        points = '49',
         assists = '3',
         rebounds = '6'
     )
@@ -2309,9 +2293,9 @@ def seed_stats():
         teamid = '5',
         playerid = '33',
         gameid = '4',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '10',
+        assists = '1',
+        rebounds = '5'
     )
     stat282 = Stat(
         teamid = '5',
@@ -2333,8 +2317,8 @@ def seed_stats():
         teamid = '5',
         playerid = '36',
         gameid = '4',
-        points = '8',
-        assists = '1',
+        points = '27',
+        assists = '0',
         rebounds = '8'
     )
     stat285 = Stat(
@@ -2357,8 +2341,8 @@ def seed_stats():
         teamid = '5',
         playerid = '39',
         gameid = '4',
-        points = '9',
-        assists = '3',
+        points = '4',
+        assists = '9',
         rebounds = '6'
     )
     stat288 = Stat(
@@ -2381,9 +2365,9 @@ def seed_stats():
         teamid = '5',
         playerid = '34',
         gameid = '12',
-        points = '19',
+        points = '16',
         assists = '1',
-        rebounds = '6'
+        rebounds = '4'
     )
     stat291 = Stat(
         teamid = '5',
@@ -2405,9 +2389,9 @@ def seed_stats():
         teamid = '5',
         playerid = '37',
         gameid = '12',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '8',
+        assists = '0',
+        rebounds = '2'
     )
     stat294 = Stat(
         teamid = '5',
@@ -2429,9 +2413,9 @@ def seed_stats():
         teamid = '5',
         playerid = '40',
         gameid = '12',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '18',
+        assists = '0',
+        rebounds = '1'
     )
     stat297 = Stat(
         teamid = '5',
@@ -2453,9 +2437,9 @@ def seed_stats():
         teamid = '5',
         playerid = '35',
         gameid = '19',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '4',
+        assists = '3',
+        rebounds = '9'
     )
     stat300 = Stat(
         teamid = '5',
@@ -2485,9 +2469,9 @@ def seed_stats():
         teamid = '5',
         playerid = '39',
         gameid = '19',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '16',
+        assists = '1',
+        rebounds = '4'
     )
     stat304 = Stat(
         teamid = '5',
@@ -2509,9 +2493,9 @@ def seed_stats():
         teamid = '5',
         playerid = '34',
         gameid = '25',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '8',
+        assists = '0',
+        rebounds = '2'
     )
     stat307 = Stat(
         teamid = '5',
@@ -2533,9 +2517,9 @@ def seed_stats():
         teamid = '5',
         playerid = '37',
         gameid = '25',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '16',
+        assists = '1',
+        rebounds = '4'
     )
     stat310 = Stat(
         teamid = '5',
@@ -2557,9 +2541,9 @@ def seed_stats():
         teamid = '5',
         playerid = '40',
         gameid = '25',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '8',
+        assists = '0',
+        rebounds = '2'
     )
     stat313 = Stat(
         teamid = '5',
@@ -2573,15 +2557,15 @@ def seed_stats():
         teamid = '5',
         playerid = '34',
         gameid = '31',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '18',
+        assists = '0',
+        rebounds = '1'
     )
     stat315 = Stat(
         teamid = '5',
         playerid = '35',
         gameid = '31',
-        points = '35',
+        points = '30',
         assists = '11',
         rebounds = '4'
     )
@@ -2589,9 +2573,9 @@ def seed_stats():
         teamid = '5',
         playerid = '36',
         gameid = '31',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '7',
+        assists = '0',
+        rebounds = '5'
     )
     stat317 = Stat(
         teamid = '5',
@@ -2615,7 +2599,7 @@ def seed_stats():
         gameid = '31',
         points = '9',
         assists = '3',
-        rebounds = '6'
+        rebounds = '5'
     )
     stat320 = Stat(
         teamid = '5',
@@ -2645,9 +2629,9 @@ def seed_stats():
         teamid = '5',
         playerid = '35',
         gameid = '32',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '2',
+        assists = '3',
+        rebounds = '2'
     )
     stat324 = Stat(
         teamid = '5',
@@ -2693,9 +2677,9 @@ def seed_stats():
         teamid = '5',
         playerid = '33',
         gameid = '33',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '12',
+        assists = '6',
+        rebounds = '16'
     )
     stat330 = Stat(
         teamid = '5',
@@ -2709,9 +2693,9 @@ def seed_stats():
         teamid = '5',
         playerid = '35',
         gameid = '33',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '18',
+        assists = '0',
+        rebounds = '2'
     )
     stat332 = Stat(
         teamid = '5',
@@ -2733,9 +2717,9 @@ def seed_stats():
         teamid = '5',
         playerid = '38',
         gameid = '33',
-        points = '14',
+        points = '24',
         assists = '2',
-        rebounds = '6'
+        rebounds = '9'
     )
     stat335 = Stat(
         teamid = '5',
@@ -2757,9 +2741,9 @@ def seed_stats():
         teamid = '5',
         playerid = '33',
         gameid = '34',
-        points = '21',
+        points = '14',
         assists = '4',
-        rebounds = '11'
+        rebounds = '3'
     )
     stat338 = Stat(
         teamid = '5',
@@ -2781,9 +2765,9 @@ def seed_stats():
         teamid = '5',
         playerid = '36',
         gameid = '34',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '10',
+        assists = '0',
+        rebounds = '2'
     )
     stat341 = Stat(
         teamid = '5',
@@ -2805,9 +2789,9 @@ def seed_stats():
         teamid = '5',
         playerid = '39',
         gameid = '34',
-        points = '9',
+        points = '8',
         assists = '3',
-        rebounds = '6'
+        rebounds = '4'
     )
     stat344 = Stat(
         teamid = '5',
@@ -2829,8 +2813,8 @@ def seed_stats():
         teamid = '5',
         playerid = '34',
         gameid = '35',
-        points = '19',
-        assists = '1',
+        points = '18',
+        assists = '2',
         rebounds = '6'
     )
     stat347 = Stat(
@@ -2853,9 +2837,9 @@ def seed_stats():
         teamid = '5',
         playerid = '37',
         gameid = '35',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '8',
+        assists = '3',
+        rebounds = '4'
     )
     stat350 = Stat(
         teamid = '5',
@@ -2901,9 +2885,9 @@ def seed_stats():
         teamid = '6',
         playerid = '43',
         gameid = '5',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '24',
+        assists = '4',
+        rebounds = '2'
     )
     stat356 = Stat(
         teamid = '6',
@@ -2925,9 +2909,9 @@ def seed_stats():
         teamid = '6',
         playerid = '46',
         gameid = '5',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '19',
+        assists = '8',
+        rebounds = '4'
     )
     stat359 = Stat(
         teamid = '6',
@@ -2949,9 +2933,9 @@ def seed_stats():
         teamid = '6',
         playerid = '41',
         gameid = '13',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '8',
+        assists = '3',
+        rebounds = '4'
     )
     stat362 = Stat(
         teamid = '6',
@@ -2973,9 +2957,9 @@ def seed_stats():
         teamid = '6',
         playerid = '44',
         gameid = '13',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '17',
+        assists = '2',
+        rebounds = '4'
     )
     stat365 = Stat(
         teamid = '6',
@@ -2997,9 +2981,9 @@ def seed_stats():
         teamid = '6',
         playerid = '47',
         gameid = '13',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '29',
+        assists = '5',
+        rebounds = '10'
     )
     stat368 = Stat(
         teamid = '6',
@@ -3021,9 +3005,9 @@ def seed_stats():
         teamid = '6',
         playerid = '42',
         gameid = '20',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '5',
+        assists = '0',
+        rebounds = '0'
     )
     stat371 = Stat(
         teamid = '6',
@@ -3045,9 +3029,9 @@ def seed_stats():
         teamid = '6',
         playerid = '45',
         gameid = '20',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '8',
+        assists = '2',
+        rebounds = '8'
     )
     stat374 = Stat(
         teamid = '6',
@@ -3069,9 +3053,9 @@ def seed_stats():
         teamid = '6',
         playerid = '48',
         gameid = '20',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '9',
+        assists = '0',
+        rebounds = '6'
     )
     stat377 = Stat(
         teamid = '6',
@@ -3093,9 +3077,9 @@ def seed_stats():
         teamid = '6',
         playerid = '43',
         gameid = '26',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '38',
+        assists = '5',
+        rebounds = '1'
     )
     stat380 = Stat(
         teamid = '6',
@@ -3117,9 +3101,9 @@ def seed_stats():
         teamid = '6',
         playerid = '46',
         gameid = '26',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '25',
+        assists = '1',
+        rebounds = '13'
     )
     stat383 = Stat(
         teamid = '6',
@@ -3141,9 +3125,9 @@ def seed_stats():
         teamid = '6',
         playerid = '41',
         gameid = '31',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '16',
+        assists = '1',
+        rebounds = '12'
     )
     stat386 = Stat(
         teamid = '6',
@@ -3157,9 +3141,9 @@ def seed_stats():
         teamid = '6',
         playerid = '43',
         gameid = '31',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '30',
+        assists = '14',
+        rebounds = '7'
     )
     stat388 = Stat(
         teamid = '6',
@@ -3181,9 +3165,9 @@ def seed_stats():
         teamid = '6',
         playerid = '46',
         gameid = '31',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '25',
+        assists = '7',
+        rebounds = '10'
     )
     stat391 = Stat(
         teamid = '6',
@@ -3205,9 +3189,9 @@ def seed_stats():
         teamid = '6',
         playerid = '41',
         gameid = '36',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '2',
+        assists = '0',
+        rebounds = '1'
     )
     stat394 = Stat(
         teamid = '6',
@@ -3229,9 +3213,9 @@ def seed_stats():
         teamid = '6',
         playerid = '44',
         gameid = '36',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '0',
+        assists = '0',
+        rebounds = '1'
     )
     stat397 = Stat(
         teamid = '6',
@@ -3285,9 +3269,9 @@ def seed_stats():
         teamid = '6',
         playerid = '43',
         gameid = '37',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '21',
+        assists = '1',
+        rebounds = '3'
     )
     stat404 = Stat(
         teamid = '6',
@@ -3309,9 +3293,9 @@ def seed_stats():
         teamid = '6',
         playerid = '46',
         gameid = '37',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '5',
+        assists = '0',
+        rebounds = '2'
     )
     stat407 = Stat(
         teamid = '6',
@@ -3333,9 +3317,9 @@ def seed_stats():
         teamid = '6',
         playerid = '41',
         gameid = '38',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '5',
+        assists = '11',
+        rebounds = '12'
     )
     stat410 = Stat(
         teamid = '6',
@@ -3349,9 +3333,9 @@ def seed_stats():
         teamid = '6',
         playerid = '43',
         gameid = '38',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '14',
+        assists = '4',
+        rebounds = '20'
     )
     stat412 = Stat(
         teamid = '6',
@@ -3413,9 +3397,9 @@ def seed_stats():
         teamid = '6',
         playerid = '43',
         gameid = '39',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '54',
+        assists = '3',
+        rebounds = '8'
     )
     stat420 = Stat(
         teamid = '6',
@@ -3437,9 +3421,9 @@ def seed_stats():
         teamid = '6',
         playerid = '46',
         gameid = '39',
-        points = '14',
+        points = '8',
         assists = '2',
-        rebounds = '6'
+        rebounds = '5'
     )
     stat423 = Stat(
         teamid = '6',
@@ -3461,9 +3445,9 @@ def seed_stats():
         teamid = '7',
         playerid = '49',
         gameid = '6',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '28',
+        assists = '2',
+        rebounds = '5'
     )
     stat426 = Stat(
         teamid = '7',
@@ -3485,9 +3469,9 @@ def seed_stats():
         teamid = '7',
         playerid = '52',
         gameid = '6',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '17',
+        assists = '4',
+        rebounds = '7'
     )
     stat429 = Stat(
         teamid = '7',
@@ -3509,9 +3493,9 @@ def seed_stats():
         teamid = '7',
         playerid = '55',
         gameid = '6',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '8',
+        assists = '0',
+        rebounds = '2'
     )
     stat432 = Stat(
         teamid = '7',
@@ -3534,9 +3518,9 @@ def seed_stats():
         teamid = '7',
         playerid = '50',
         gameid = '14',
-        points = '19',
+        points = '3',
         assists = '1',
-        rebounds = '6'
+        rebounds = '2'
     )
     stat435 = Stat(
         teamid = '7',
@@ -3558,9 +3542,9 @@ def seed_stats():
         teamid = '7',
         playerid = '53',
         gameid = '14',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '3',
+        assists = '1',
+        rebounds = '2'
     )
     stat438 = Stat(
         teamid = '7',
@@ -3582,9 +3566,9 @@ def seed_stats():
         teamid = '7',
         playerid = '56',
         gameid = '14',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '6',
+        assists = '0',
+        rebounds = '2'
     )
     stat441 = Stat(
         teamid = '7',
@@ -3606,9 +3590,9 @@ def seed_stats():
         teamid = '7',
         playerid = '51',
         gameid = '21',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '21',
+        assists = '0',
+        rebounds = '2'
     )
     stat444 = Stat(
         teamid = '7',
@@ -3622,8 +3606,8 @@ def seed_stats():
         teamid = '7',
         playerid = '53',
         gameid = '21',
-        points = '17',
-        assists = '4',
+        points = '9',
+        assists = '0',
         rebounds = '5'
     )
     stat446 = Stat(
@@ -3639,7 +3623,7 @@ def seed_stats():
         playerid = '55',
         gameid = '21',
         points = '9',
-        assists = '3',
+        assists = '6',
         rebounds = '6'
     )
     stat448 = Stat(
@@ -3654,8 +3638,8 @@ def seed_stats():
         teamid = '7',
         playerid = '49',
         gameid = '27',
-        points = '21',
-        assists = '4',
+        points = '5',
+        assists = '3',
         rebounds = '11'
     )
     stat450 = Stat(
@@ -3670,9 +3654,9 @@ def seed_stats():
         teamid = '7',
         playerid = '51',
         gameid = '27',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '13',
+        assists = '2',
+        rebounds = '3'
     )
     stat452 = Stat(
         teamid = '7',
@@ -3694,9 +3678,9 @@ def seed_stats():
         teamid = '7',
         playerid = '54',
         gameid = '27',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '4',
+        assists = '0',
+        rebounds = '2'
     )
     stat455 = Stat(
         teamid = '7',
@@ -3718,9 +3702,9 @@ def seed_stats():
         teamid = '7',
         playerid = '49',
         gameid = '32',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '19',
+        assists = '0',
+        rebounds = '3'
     )
     stat458 = Stat(
         teamid = '7',
@@ -3734,9 +3718,9 @@ def seed_stats():
         teamid = '7',
         playerid = '51',
         gameid = '32',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '16',
+        assists = '2',
+        rebounds = '3'
     )
     stat460 = Stat(
         teamid = '7',
@@ -3758,9 +3742,9 @@ def seed_stats():
         teamid = '7',
         playerid = '54',
         gameid = '32',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '4',
+        assists = '3',
+        rebounds = '3'
     )
     stat463 = Stat(
         teamid = '7',
@@ -3782,9 +3766,9 @@ def seed_stats():
         teamid = '7',
         playerid = '49',
         gameid = '36',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '36',
+        assists = '0',
+        rebounds = '2'
     )
     stat466 = Stat(
         teamid = '7',
@@ -3798,9 +3782,9 @@ def seed_stats():
         teamid = '7',
         playerid = '51',
         gameid = '36',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '3',
+        assists = '1',
+        rebounds = '2'
     )
     stat468 = Stat(
         teamid = '7',
@@ -3822,9 +3806,9 @@ def seed_stats():
         teamid = '7',
         playerid = '54',
         gameid = '36',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '2',
+        assists = '1',
+        rebounds = '0'
     )
     stat471 = Stat(
         teamid = '7',
@@ -3842,7 +3826,6 @@ def seed_stats():
         assists = '1',
         rebounds = '0'
     )
-
 
     stat497 = Stat(
         teamid = '8',
@@ -3864,9 +3847,9 @@ def seed_stats():
         teamid = '8',
         playerid = '59',
         gameid = '7',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '36',
+        assists = '0',
+        rebounds = '1'
     )
     stat500 = Stat(
         teamid = '8',
@@ -3880,9 +3863,9 @@ def seed_stats():
         teamid = '8',
         playerid = '61',
         gameid = '7',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '3',
+        assists = '1',
+        rebounds = '1'
     )
     stat502 = Stat(
         teamid = '8',
@@ -3896,9 +3879,9 @@ def seed_stats():
         teamid = '8',
         playerid = '63',
         gameid = '7',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '19',
+        assists = '4',
+        rebounds = '10'
     )
     stat504 = Stat(
         teamid = '8',
@@ -3920,8 +3903,8 @@ def seed_stats():
         teamid = '8',
         playerid = '58',
         gameid = '15',
-        points = '19',
-        assists = '1',
+        points = '6',
+        assists = '7',
         rebounds = '6'
     )
     stat507 = Stat(
@@ -3992,9 +3975,9 @@ def seed_stats():
         teamid = '8',
         playerid = '59',
         gameid = '22',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '30',
+        assists = '2',
+        rebounds = '3'
     )
     stat516 = Stat(
         teamid = '8',
@@ -4016,9 +3999,9 @@ def seed_stats():
         teamid = '8',
         playerid = '62',
         gameid = '22',
-        points = '14',
+        points = '10',
         assists = '2',
-        rebounds = '6'
+        rebounds = '10'
     )
     stat519 = Stat(
         teamid = '8',
@@ -4040,9 +4023,9 @@ def seed_stats():
         teamid = '8',
         playerid = '57',
         gameid = '28',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '1',
+        assists = '0',
+        rebounds = '0'
     )
     stat522 = Stat(
         teamid = '8',
@@ -4064,9 +4047,9 @@ def seed_stats():
         teamid = '8',
         playerid = '60',
         gameid = '28',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '10',
+        assists = '2',
+        rebounds = '10'
     )
     stat525 = Stat(
         teamid = '8',
@@ -4080,9 +4063,9 @@ def seed_stats():
         teamid = '8',
         playerid = '62',
         gameid = '28',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '10',
+        assists = '1',
+        rebounds = '3'
     )
     stat527 = Stat(
         teamid = '8',
@@ -4120,8 +4103,8 @@ def seed_stats():
         teamid = '8',
         playerid = '59',
         gameid = '33',
-        points = '35',
-        assists = '11',
+        points = '17',
+        assists = '1',
         rebounds = '4'
     )
     stat532 = Stat(
@@ -4136,9 +4119,9 @@ def seed_stats():
         teamid = '8',
         playerid = '61',
         gameid = '33',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '21',
+        assists = '3',
+        rebounds = '2'
     )
     stat534 = Stat(
         teamid = '8',
@@ -4168,9 +4151,9 @@ def seed_stats():
         teamid = '8',
         playerid = '57',
         gameid = '37',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '9',
+        assists = '0',
+        rebounds = '5'
     )
     stat538 = Stat(
         teamid = '8',
@@ -4192,9 +4175,9 @@ def seed_stats():
         teamid = '8',
         playerid = '60',
         gameid = '37',
-        points = '8',
+        points = '9',
         assists = '1',
-        rebounds = '8'
+        rebounds = '6'
     )
     stat541 = Stat(
         teamid = '8',
@@ -4216,9 +4199,9 @@ def seed_stats():
         teamid = '8',
         playerid = '63',
         gameid = '37',
-        points = '9',
+        points = '5',
         assists = '3',
-        rebounds = '6'
+        rebounds = '11'
     )
     stat544 = Stat(
         teamid = '8',
@@ -4240,9 +4223,9 @@ def seed_stats():
         teamid = '8',
         playerid = '58',
         gameid = '40',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '13',
+        assists = '2',
+        rebounds = '3'
     )
     stat547 = Stat(
         teamid = '8',
@@ -4264,9 +4247,9 @@ def seed_stats():
         teamid = '8',
         playerid = '61',
         gameid = '40',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '4',
+        assists = '0',
+        rebounds = '2'
     )
     stat550 = Stat(
         teamid = '8',
@@ -4288,9 +4271,9 @@ def seed_stats():
         teamid = '8',
         playerid = '64',
         gameid = '40',
-        points = '1',
+        points = '4',
         assists = '1',
-        rebounds = '0'
+        rebounds = '3'
     )
     stat553 = Stat(
         teamid = '8',
@@ -4312,9 +4295,9 @@ def seed_stats():
         teamid = '8',
         playerid = '59',
         gameid = '43',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '36',
+        assists = '0',
+        rebounds = '2'
     )
     stat556 = Stat(
         teamid = '8',
@@ -4336,9 +4319,9 @@ def seed_stats():
         teamid = '8',
         playerid = '62',
         gameid = '43',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '3',
+        assists = '1',
+        rebounds = '2'
     )
     stat559 = Stat(
         teamid = '8',
@@ -4360,9 +4343,9 @@ def seed_stats():
         teamid = '8',
         playerid = '57',
         gameid = '44',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '9',
+        assists = '5',
+        rebounds = '4'
     )
     stat562 = Stat(
         teamid = '8',
@@ -4376,9 +4359,9 @@ def seed_stats():
         teamid = '8',
         playerid = '59',
         gameid = '44',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '9',
+        assists = '1',
+        rebounds = '6'
     )
     stat564 = Stat(
         teamid = '8',
@@ -4392,9 +4375,9 @@ def seed_stats():
         teamid = '8',
         playerid = '61',
         gameid = '44',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '13',
+        assists = '2',
+        rebounds = '3'
     )
     stat566 = Stat(
         teamid = '8',
@@ -4416,9 +4399,9 @@ def seed_stats():
         teamid = '8',
         playerid = '64',
         gameid = '44',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '4',
+        assists = '0',
+        rebounds = '2'
     )
     stat569 = Stat(
         teamid = '7',
@@ -4440,9 +4423,9 @@ def seed_stats():
         teamid = '7',
         playerid = '51',
         gameid = '40',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '19',
+        assists = '3',
+        rebounds = '3'
     )
     stat572 = Stat(
         teamid = '7',
@@ -4464,9 +4447,9 @@ def seed_stats():
         teamid = '7',
         playerid = '54',
         gameid = '40',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '16',
+        assists = '1',
+        rebounds = '4'
     )
     stat575 = Stat(
         teamid = '7',
@@ -4488,9 +4471,9 @@ def seed_stats():
         teamid = '7',
         playerid = '49',
         gameid = '41',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '2',
+        assists = '0',
+        rebounds = '3'
     )
     stat578 = Stat(
         teamid = '7',
@@ -4504,9 +4487,9 @@ def seed_stats():
         teamid = '7',
         playerid = '51',
         gameid = '41',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '36',
+        assists = '2',
+        rebounds = '1'
     )
     stat580 = Stat(
         teamid = '7',
@@ -4528,9 +4511,9 @@ def seed_stats():
         teamid = '7',
         playerid = '54',
         gameid = '41',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '3',
+        assists = '1',
+        rebounds = '2'
     )
     stat583 = Stat(
         teamid = '7',
@@ -4552,9 +4535,9 @@ def seed_stats():
         teamid = '7',
         playerid = '49',
         gameid = '42',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '19',
+        assists = '10',
+        rebounds = '5'
     )
     stat586 = Stat(
         teamid = '7',
@@ -4576,9 +4559,9 @@ def seed_stats():
         teamid = '7',
         playerid = '52',
         gameid = '42',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '6',
+        assists = '7',
+        rebounds = '6'
     )
     stat589 = Stat(
         teamid = '7',
@@ -4632,9 +4615,9 @@ def seed_stats():
         teamid = '2',
         playerid = '11',
         gameid = '14',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '30',
+        assists = '3',
+        rebounds = '5'
     )
     stat596 = Stat(
         teamid = '2',
@@ -4648,9 +4631,9 @@ def seed_stats():
         teamid = '2',
         playerid = '13',
         gameid = '14',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '10',
+        assists = '2',
+        rebounds = '3'
     )
     stat598 = Stat(
         teamid = '2',
@@ -4672,9 +4655,9 @@ def seed_stats():
         teamid = '2',
         playerid = '16',
         gameid = '14',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '1',
+        assists = '0',
+        rebounds = '0'
     )
     stat601 = Stat(
         teamid = '9',
@@ -4696,9 +4679,9 @@ def seed_stats():
         teamid = '9',
         playerid = '67',
         gameid = '8',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '17',
+        assists = '4',
+        rebounds = '7'
     )
     stat604 = Stat(
         teamid = '9',
@@ -4712,9 +4695,9 @@ def seed_stats():
         teamid = '9',
         playerid = '69',
         gameid = '8',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '10',
+        assists = '2',
+        rebounds = '10'
     )
     stat606 = Stat(
         teamid = '9',
@@ -4744,9 +4727,9 @@ def seed_stats():
         teamid = '9',
         playerid = '65',
         gameid = '16',
-        points = '21',
+        points = '7',
         assists = '4',
-        rebounds = '11'
+        rebounds = '2'
     )
     stat610 = Stat(
         teamid = '9',
@@ -4768,9 +4751,9 @@ def seed_stats():
         teamid = '9',
         playerid = '68',
         gameid = '16',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '9',
+        assists = '6',
+        rebounds = '2'
     )
     stat613 = Stat(
         teamid = '9',
@@ -4792,9 +4775,9 @@ def seed_stats():
         teamid = '9',
         playerid = '71',
         gameid = '16',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '2',
+        assists = '1',
+        rebounds = '3'
     )
     stat616 = Stat(
         teamid = '9',
@@ -4816,17 +4799,17 @@ def seed_stats():
         teamid = '9',
         playerid = '66',
         gameid = '23',
-        points = '19',
+        points = '31',
         assists = '1',
-        rebounds = '6'
+        rebounds = '13'
     )
     stat619 = Stat(
         teamid = '9',
         playerid = '67',
         gameid = '23',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '6',
+        assists = '4',
+        rebounds = '2'
     )
     stat620 = Stat(
         teamid = '9',
@@ -4856,9 +4839,9 @@ def seed_stats():
         teamid = '9',
         playerid = '71',
         gameid = '23',
-        points = '9',
+        points = '23',
         assists = '3',
-        rebounds = '6'
+        rebounds = '7'
     )
     stat624 = Stat(
         teamid = '9',
@@ -4880,9 +4863,9 @@ def seed_stats():
         teamid = '9',
         playerid = '66',
         gameid = '29',
-        points = '19',
+        points = '14',
         assists = '1',
-        rebounds = '6'
+        rebounds = '7'
     )
     stat627 = Stat(
         teamid = '9',
@@ -4904,8 +4887,8 @@ def seed_stats():
         teamid = '9',
         playerid = '69',
         gameid = '29',
-        points = '17',
-        assists = '4',
+        points = '10',
+        assists = '7',
         rebounds = '5'
     )
     stat630 = Stat(
@@ -4928,9 +4911,9 @@ def seed_stats():
         teamid = '9',
         playerid = '72',
         gameid = '29',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '9',
+        assists = '5',
+        rebounds = '2'
     )
     stat633 = Stat(
         teamid = '9',
@@ -4952,9 +4935,9 @@ def seed_stats():
         teamid = '9',
         playerid = '67',
         gameid = '34',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '25',
+        assists = '3',
+        rebounds = '7'
     )
     stat636 = Stat(
         teamid = '9',
@@ -4976,9 +4959,9 @@ def seed_stats():
         teamid = '9',
         playerid = '70',
         gameid = '34',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '9',
+        assists = '0',
+        rebounds = '5'
     )
     stat639 = Stat(
         teamid = '9',
@@ -5000,9 +4983,9 @@ def seed_stats():
         teamid = '9',
         playerid = '65',
         gameid = '38',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '9',
+        assists = '0',
+        rebounds = '5'
     )
     stat642 = Stat(
         teamid = '9',
@@ -5024,9 +5007,9 @@ def seed_stats():
         teamid = '9',
         playerid = '68',
         gameid = '38',
-        points = '8',
+        points = '7',
         assists = '1',
-        rebounds = '8'
+        rebounds = '5'
     )
     stat645 = Stat(
         teamid = '9',
@@ -5049,8 +5032,8 @@ def seed_stats():
         playerid = '71',
         gameid = '38',
         points = '9',
-        assists = '3',
-        rebounds = '6'
+        assists = '1',
+        rebounds = '2'
     )
     stat648 = Stat(
         teamid = '9',
@@ -5072,9 +5055,9 @@ def seed_stats():
         teamid = '9',
         playerid = '66',
         gameid = '41',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '9',
+        assists = '2',
+        rebounds = '2'
     )
     stat651 = Stat(
         teamid = '9',
@@ -5088,9 +5071,9 @@ def seed_stats():
         teamid = '9',
         playerid = '68',
         gameid = '41',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '6',
+        assists = '0',
+        rebounds = '5'
     )
     stat653 = Stat(
         teamid = '9',
@@ -5112,9 +5095,9 @@ def seed_stats():
         teamid = '9',
         playerid = '71',
         gameid = '41',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '5',
+        assists = '1',
+        rebounds = '2'
     )
     stat656 = Stat(
         teamid = '9',
@@ -5136,9 +5119,9 @@ def seed_stats():
         teamid = '9',
         playerid = '66',
         gameid = '43',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '15',
+        assists = '4',
+        rebounds = '5'
     )
     stat659 = Stat(
         teamid = '9',
@@ -5160,9 +5143,9 @@ def seed_stats():
         teamid = '9',
         playerid = '69',
         gameid = '43',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '13',
+        assists = '2',
+        rebounds = '8'
     )
     stat662 = Stat(
         teamid = '9',
@@ -5184,9 +5167,9 @@ def seed_stats():
         teamid = '9',
         playerid = '72',
         gameid = '45',
-        points = '1',
+        points = '14',
         assists = '1',
-        rebounds = '0'
+        rebounds = '7'
     )
     stat665 = Stat(
         teamid = '9',
@@ -5208,9 +5191,9 @@ def seed_stats():
         teamid = '9',
         playerid = '67',
         gameid = '45',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '10',
+        assists = '0',
+        rebounds = '7'
     )
     stat668 = Stat(
         teamid = '9',
@@ -5232,9 +5215,9 @@ def seed_stats():
         teamid = '9',
         playerid = '70',
         gameid = '45',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '9',
+        assists = '5',
+        rebounds = '2'
     )
     stat671 = Stat(
         teamid = '9',
@@ -5256,9 +5239,9 @@ def seed_stats():
         teamid = '10',
         playerid = '73',
         gameid = '9',
-        points = '1',
-        assists = '1',
-        rebounds = '0'
+        points = '25',
+        assists = '3',
+        rebounds = '7'
     )
     stat674 = Stat(
         teamid = '10',
@@ -5280,9 +5263,9 @@ def seed_stats():
         teamid = '10',
         playerid = '76',
         gameid = '9',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '9',
+        assists = '0',
+        rebounds = '5'
     )
     stat677 = Stat(
         teamid = '10',
@@ -5304,9 +5287,9 @@ def seed_stats():
         teamid = '10',
         playerid = '79',
         gameid = '9',
-        points = '14',
-        assists = '2',
-        rebounds = '6'
+        points = '7',
+        assists = '1',
+        rebounds = '5'
     )
     stat680 = Stat(
         teamid = '10',
@@ -5328,9 +5311,9 @@ def seed_stats():
         teamid = '10',
         playerid = '74',
         gameid = '17',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '7',
+        assists = '1',
+        rebounds = '5'
     )
     stat683 = Stat(
         teamid = '10',
@@ -5352,9 +5335,9 @@ def seed_stats():
         teamid = '10',
         playerid = '77',
         gameid = '17',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '7',
+        assists = '3',
+        rebounds = '3'
     )
     stat686 = Stat(
         teamid = '10',
@@ -5376,7 +5359,7 @@ def seed_stats():
         teamid = '10',
         playerid = '80',
         gameid = '17',
-        points = '9',
+        points = '8',
         assists = '3',
         rebounds = '6'
     )
@@ -5392,9 +5375,9 @@ def seed_stats():
         teamid = '10',
         playerid = '74',
         gameid = '24',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '20',
+        assists = '2',
+        rebounds = '4'
     )
     stat691 = Stat(
         teamid = '10',
@@ -5408,9 +5391,9 @@ def seed_stats():
         teamid = '10',
         playerid = '76',
         gameid = '24',
-        points = '35',
-        assists = '11',
-        rebounds = '4'
+        points = '22',
+        assists = '4',
+        rebounds = '9'
     )
     stat693 = Stat(
         teamid = '10',
@@ -5432,9 +5415,9 @@ def seed_stats():
         teamid = '10',
         playerid = '79',
         gameid = '24',
-        points = '14',
+        points = '11',
         assists = '2',
-        rebounds = '6'
+        rebounds = '12'
     )
     stat696 = Stat(
         teamid = '10',
@@ -5456,9 +5439,9 @@ def seed_stats():
         teamid = '10',
         playerid = '74',
         gameid = '30',
-        points = '21',
+        points = '22',
         assists = '4',
-        rebounds = '11'
+        rebounds = '9'
     )
     stat699 = Stat(
         teamid = '10',
@@ -5480,9 +5463,9 @@ def seed_stats():
         teamid = '10',
         playerid = '77',
         gameid = '30',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '11',
+        assists = '2',
+        rebounds = '12'
     )
     stat702 = Stat(
         teamid = '10',
@@ -5504,9 +5487,9 @@ def seed_stats():
         teamid = '10',
         playerid = '80',
         gameid = '30',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '8',
+        assists = '6',
+        rebounds = '8'
     )
     stat705 = Stat(
         teamid = '10',
@@ -5528,9 +5511,9 @@ def seed_stats():
         teamid = '10',
         playerid = '75',
         gameid = '35',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '2',
+        assists = '0',
+        rebounds = '0'
     )
     stat708 = Stat(
         teamid = '10',
@@ -5552,8 +5535,8 @@ def seed_stats():
         teamid = '10',
         playerid = '78',
         gameid = '35',
-        points = '17',
-        assists = '4',
+        points = '12',
+        assists = '2',
         rebounds = '5'
     )
     stat711 = Stat(
@@ -5584,9 +5567,9 @@ def seed_stats():
         teamid = '10',
         playerid = '74',
         gameid = '39',
-        points = '21',
+        points = '12',
         assists = '4',
-        rebounds = '11'
+        rebounds = '1'
     )
     stat715 = Stat(
         teamid = '10',
@@ -5608,9 +5591,9 @@ def seed_stats():
         teamid = '10',
         playerid = '77',
         gameid = '39',
-        points = '8',
+        points = '21',
         assists = '1',
-        rebounds = '8'
+        rebounds = '3'
     )
     stat718 = Stat(
         teamid = '10',
@@ -5656,15 +5639,15 @@ def seed_stats():
         teamid = '10',
         playerid = '75',
         gameid = '42',
-        points = '19',
-        assists = '1',
-        rebounds = '6'
+        points = '35',
+        assists = '7',
+        rebounds = '10'
     )
     stat724 = Stat(
         teamid = '10',
         playerid = '76',
         gameid = '42',
-        points = '35',
+        points = '15',
         assists = '11',
         rebounds = '4'
     )
@@ -5688,9 +5671,9 @@ def seed_stats():
         teamid = '10',
         playerid = '79',
         gameid = '42',
-        points = '14',
+        points = '11',
         assists = '2',
-        rebounds = '6'
+        rebounds = '2'
     )
     stat728 = Stat(
         teamid = '10',
@@ -5712,9 +5695,9 @@ def seed_stats():
         teamid = '10',
         playerid = '74',
         gameid = '44',
-        points = '21',
-        assists = '4',
-        rebounds = '11'
+        points = '3',
+        assists = '1',
+        rebounds = '2'
     )
     stat731 = Stat(
         teamid = '10',
@@ -5736,9 +5719,9 @@ def seed_stats():
         teamid = '10',
         playerid = '77',
         gameid = '44',
-        points = '8',
-        assists = '1',
-        rebounds = '8'
+        points = '17',
+        assists = '4',
+        rebounds = '13'
     )
     stat734 = Stat(
         teamid = '10',
@@ -5760,9 +5743,9 @@ def seed_stats():
         teamid = '10',
         playerid = '80',
         gameid = '44',
-        points = '9',
-        assists = '3',
-        rebounds = '6'
+        points = '6',
+        assists = '1',
+        rebounds = '3'
     )
     stat737 = Stat(
         teamid = '10',
@@ -5784,7 +5767,7 @@ def seed_stats():
         teamid = '10',
         playerid = '75',
         gameid = '45',
-        points = '19',
+        points = '17',
         assists = '1',
         rebounds = '6'
     )
@@ -5808,9 +5791,9 @@ def seed_stats():
         teamid = '10',
         playerid = '78',
         gameid = '45',
-        points = '17',
-        assists = '4',
-        rebounds = '5'
+        points = '27',
+        assists = '2',
+        rebounds = '6'
     )
     stat743 = Stat(
         teamid = '10',
@@ -5824,7 +5807,7 @@ def seed_stats():
         teamid = '10',
         playerid = '80',
         gameid = '45',
-        points = '9',
+        points = '6',
         assists = '3',
         rebounds = '6'
     )
