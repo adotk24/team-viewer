@@ -77,9 +77,9 @@ const PlayerDetail = () => {
                     </div>
                 </div>
                 <div className="playerDetailCard-right">
-                    <div>{findPoints()} PPG</div>
-                    <div>{findAssists()} APG</div>
-                    <div>{findRebounds()} RPG</div>
+                    <div>{Math.round(findPoints() * 10) / 10} PPG</div>
+                    <div>{Math.round(findAssists() * 10) / 10} APG</div>
+                    <div>{Math.round(findRebounds() * 10) / 10} RPG</div>
                 </div>
             </div>
 

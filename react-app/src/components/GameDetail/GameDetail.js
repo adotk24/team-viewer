@@ -44,9 +44,10 @@ const GameDetail = () => {
     }
 
     if (scoreFound) {
+        console.log('this is game detail', gameScore)
         for (let key in gameScore) {
             if (key == team1.id) setTeam1score(gameScore[key])
-            if (key == team2.id) setTeam2score(gameScore[key])
+            else setTeam2score(gameScore[key])
         }
         setScoreFound(false)
         setStatsFound(true)
@@ -63,6 +64,7 @@ const GameDetail = () => {
         setStatsFound(false)
         setLoaded(true)
     }
+
 
     return isLoaded && (
         <div className='gamedetailcontainer'>
