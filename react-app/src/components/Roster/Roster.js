@@ -57,7 +57,7 @@ const Roster = () => {
                 <div className="roster-player-grid">
                     <div>{player.number}</div>
                     <NavLink to={`/teams/players/${player.id}`}>
-                        <div>{player.firstName} {player.lastName}</div></NavLink>
+                        <div className="playernameredirect">{player.firstName} {player.lastName}</div></NavLink>
                     <div>{heightConvert(player.height)}</div>
                     <div>{player.position}</div>
                     <div>{player.year}</div>

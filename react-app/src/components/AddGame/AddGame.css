@@ -1,7 +1,7 @@
 .game-form-container {
     margin-top: 10%;
     height: 75vh;
-    width: 100%;
+    width: 99vw;
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 
 .game-form {
     height: 100%;
-    width: 30%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +35,7 @@
 }
 
 .game-form-input {
-    width: 80%;
+    width: 75%;
     height: 5%;
     display: flex;
     flex-direction: row;

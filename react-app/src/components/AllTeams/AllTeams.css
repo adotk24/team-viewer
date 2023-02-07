@@ -1,6 +1,7 @@
 .allTeamsContainer {
-    margin-top: 5.5%;
+    margin-top: 6%;
     height: 87vh;
+    width: 99vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +15,6 @@
 
 .allTeamsHeader {
     font-size: 44px;
-    margin-bottom: px
 }
 
 .allTeamsCounter {
@@ -32,11 +32,11 @@
 }
 
 .teamsLoopContainer {
-    width: 35%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid lightgray
+    border-top: 1px solid lightgray;
 }
 
 

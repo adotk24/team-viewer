@@ -37,6 +37,11 @@
     width: 60%;
 }
 
+.playernameredirect {
+    color: blue;
+
+}
+
 .roster-add-player-btn {
     width: 250px;
     height: 80%;
