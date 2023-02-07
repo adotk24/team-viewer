@@ -1,33 +1,34 @@
-# airBnb Clone - ShareBnb
+# Max Preps Clone - Team Viewer
 
-Project Link: <a href='https://sharebnb-owhp.onrender.com/'>Visit ShareBnb!</a> 
+Project Link: <a href='https://team-viewer.onrender.com/'>Visit Team Viewer!</a> 
 
 ## Purpose
 
-To learn how to develop a fullstack application.
+To learn how to develop a full stack application with an immense database.
 
 ## Description
 
-shareBnb clone that mimics the features of AirBnb in which users can offer listings that other users can book!
+Team Viewer is a clone of Max Preps where high school athletes can post their games, scores, and stats in hopes to get recruited for college!
 
-## Landing Page preview
+## Individual Game Page preview
 
-Below is a preview of the home page when a user is signed out:
+Below is a preview of a specific game when trying to look for stats:
 
-![landingpage](https://user-images.githubusercontent.com/105035447/217137068-a0767ba5-06f9-4120-ab5f-a901fdc2aae8.gif)
+![game-box-score](https://user-images.githubusercontent.com/105035447/217138388-3df8f458-5ce1-431d-82ab-de12ca6b1371.png)
 
-## Spot Page preview
+## Team Roster Page preview
 
-Below is a preview of a spots page
+Below is a preview of a team's roster page
 
-![onespot](https://user-images.githubusercontent.com/105035447/217137442-4713bd5b-f81e-42ab-a149-748f8b58bd54.gif)
+![roster-pic](https://user-images.githubusercontent.com/105035447/217138596-da809549-a52a-4289-8447-3753b41c5ea6.png)
 
-## SearchBar preview
 
-Here is a preview of a search bar that queries through available listings:
+## Adding Game to Schedule preview
 
-![search bar](https://user-images.githubusercontent.com/105035447/217137674-87e800a3-4639-4813-9d6c-81ce96d9b3f4.gif)
+Here is a preview of a adding games to a teams schedule:
 
+
+![adding-game-to-schedule](https://user-images.githubusercontent.com/105035447/217138923-c757aa56-614a-4136-a9b9-47df113ade22.gif)
 
 ## Technologies
 
@@ -36,7 +37,12 @@ Here is a preview of a search bar that queries through available listings:
 	</code>
 	<code><img height="35" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React" />	  </code>
 	<code><img height="35" src="https://user-images.githubusercontent.com/25181517/187896150-cc1dcb12-d490-445c-8e4d-1275cd2388d6.png" alt="Redux" title="Redux" /></code>
+	<code><img height="25" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" title="Python" />
+	</code>
+	<code><img height="25" src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" title="Flask" /></code>
+  <code><img height="25" src="https://quintagroup.com/cms/python/images/sqlalchemy-logo.png/@@images/image.png" alt="CSS" title="SQLAlchemy" /></code>
 	<code><img height="25" src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="CSS" title="CSS" /></code>
+	<code><img height="25" src="https://user-images.githubusercontent.com/25181517/117208740-bfb78400-adf5-11eb-97bb-09072b6bedfc.png" alt="PostgreSQL" title="PostgreSQL" /></code>
 	<code><img height="25" src="https://user-images.githubusercontent.com/25181517/192109061-e138ca71-337c-4019-8d42-4792fdaa7128.png" alt="Postman" title="Postman" /></code>
 	<code><img height="25" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML" /></code>
 	<code><img height="25" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS" /></code>
@@ -47,8 +53,10 @@ Here is a preview of a search bar that queries through available listings:
 
 ## Wiki Links:
 
-### [API Documentation](https://github.com/adotk24/shareBnb/wiki/API-Endpoints---DB-Schema)
-	
+### [MVP List](https://github.com/adotk24/team-viewer/wiki/MVP-List)
+### [Database Diagram](https://github.com/adotk24/team-viewer/wiki/Database-Diagram)
+### [User Stories](https://github.com/adotk24/team-viewer/wiki/User-Stories)
+### [Wire Frame](https://github.com/adotk24/team-viewer/wiki/Wire-Frame)
 
   
 ## Project Contributor
