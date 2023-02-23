@@ -1,0 +1,24 @@
+Header
+    a. Split header in 2 horizontally. Top is a darker red for the about and maybe social links
+    b. Change text of header to a thicker font white
+
+Team Page
+    a. Allow Team Colors when creating a team
+    b. Header should change to team color when looking at specific team
+    c. Header should be default red if no specific team/color
+    d. Add some animation when querying results
+
+Roster
+    a. Fix sizing of team header
+
+Player
+    a. OPTIONAL allow picture upload w AWS
+    b. Add some animation when querying results
+    c. Make the top banner span the entire width of page
+
+Game Log
+    a. Reduce the number of buttons for edit/delete
+    b. Create a faux news story on the right side to fill up some space.
+
+Site Wide
+    a. Neat transitions from page to page
