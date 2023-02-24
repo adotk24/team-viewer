@@ -25,3 +25,4 @@ Site Wide
 
 Navigation
     a. Add search bar for teams/ schools / players
+    b. Testing for Laptop
