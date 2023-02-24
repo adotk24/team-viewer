@@ -14,13 +14,13 @@ const NavBar = () => {
   return (
     <div className='navbar-total'>
         <div className='navbar-top'>
-          <div className='navbar-tl'>Max Preps Clone by Andrew Kim</div>
+          <div className='navbar-tl'>MaxPreps X Andrew Kim</div>
           <div className='about-page'>
-            <NavLink to={`/about`} className='aboutUsLink'>
           <button className='aboutPageBtn'>
+            <NavLink to={`/about`} className='aboutUsLink'>
             About
-          </button>
           </NavLink>
+          </button>
         </div>
       </div>
     <div className='navbar-bottom'>

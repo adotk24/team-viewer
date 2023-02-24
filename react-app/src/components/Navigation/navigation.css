@@ -26,9 +26,13 @@
 }
 
 .aboutPageBtn {
-    margin-right: 15.25vw;
+    margin-right: 15.13vw;
     color: white;
-    font-size: 18px
+    font-size: 18px;
+}
+
+.aboutUsLink {
+    color:white
 }
 
 .navbar-bottom {
@@ -46,12 +50,13 @@
 }
 
 .navbar-left {
-    margin-left: 14.25vw;
-    width: 12%;
+    margin-left: 14vw;
+    width: 14%;
+    height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
