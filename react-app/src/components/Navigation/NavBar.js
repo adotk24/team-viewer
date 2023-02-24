@@ -31,7 +31,7 @@ const NavBar = () => {
         </NavLink>
 
 
-        <NavLink to='/teams' exact={true} activeClassName='active'>
+        <NavLink to='/teams' exact={true} activeClassName='active' className='nav-words'>
           See Teams
         </NavLink>
 
@@ -39,7 +39,7 @@ const NavBar = () => {
       <div className='navbar-right'>
 
         {!sessionUser &&
-          <NavLink to='/login' exact={true} activeClassName='active'>
+          <NavLink to='/login' exact={true} activeClassName='active' className='nav-words'>
             Login
           </NavLink>
         }

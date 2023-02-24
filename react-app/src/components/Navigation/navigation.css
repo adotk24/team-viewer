@@ -1,12 +1,12 @@
 .navbar-total {
     display:flex;
     flex-direction: column;
-    height: 1em;
+    height: 5vh;
     width: 100vw;
     position: absolute;
-    min-height: vh;
+    min-height: 4vh;
     top: 0;
-    margin-left: -8px
+    margin-left: -8px;
 }
 
 .navbar-top {
@@ -16,15 +16,19 @@
     background-color: rgb(173, 17, 0);
     position: relative;
     width: 100vw;
-    height: 5vh;
+    height: 4em;
 }
 
 .navbar-tl {
-    margin-left: 14.5vw
+    margin-left: 14.5vw;
+    color: white;
+    font-size: 18px
 }
 
 .aboutPageBtn {
     margin-right: 15.25vw;
+    color: white;
+    font-size: 18px
 }
 
 .navbar-bottom {
@@ -42,17 +46,17 @@
 }
 
 .navbar-left {
-    margin-left: 14.5vw;
-    width: 8%;
+    margin-left: 14.25vw;
+    width: 12%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center
 }
 
 .logo {
-    height: 45px;
-    width: 45px
+    height: 40%;
+    width: 40%
 }
 
 .navbar-right {
@@ -65,5 +69,10 @@ button {
 }
 
 active:visited {
-    color: black
+    color: white
+}
+
+.nav-words {
+    color: white;
+    font-size: 18px
 }

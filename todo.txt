@@ -22,3 +22,6 @@ Game Log
 
 Site Wide
     a. Neat transitions from page to page
+
+Navigation
+    a. Add search bar for teams/ schools / players
