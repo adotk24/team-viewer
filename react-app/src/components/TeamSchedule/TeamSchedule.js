@@ -32,30 +32,6 @@ const TeamSchedule = ({ teamId }) => {
             <div className="scheduleLoop">
                 {sortedSchedule.map(game => (
                     <IndiGames key={game.id} game={game} team={team} user={user} />
-                    // < div className="scheduleOneGame" >
-                    //     <div>{game.datetime}</div>
-                    //     <div className="scheduleMatchup">
-                    //         <div>{game.team1.mascot} VS {game.team2.mascot}</div>
-                    //     </div>
-                    //     {
-                    //         team[0].userId == user?.id &&
-                    //         <div className="gameFunctions">
-                    //             <NavLink to={`schedule/game/${game.id}/edit`}>
-                    //                 <button
-                    //                     className="schedule-btn">Edit Game</button>
-                    //             </NavLink>
-                    //             <button
-                    //                 className="schedule-btn"
-                    //                 onClick={async (e) => {
-                    //                     e.preventDefault()
-                    //                     const deleted = await dispatch(deletingGame(game.id))
-                    //                     window.location.reload()
-                    //                 }}>
-                    //                 Delete Game
-                    //             </button>
-                    //         </div>
-                    //     }
-                    // </div>
                 ))
                 }
             </div>

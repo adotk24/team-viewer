@@ -4,3 +4,7 @@ button:hover {
     cursor: pointer;
 
 }
+
+* {
+    font-family: Siro, Arial, Helvetica, sans-serif;
+}

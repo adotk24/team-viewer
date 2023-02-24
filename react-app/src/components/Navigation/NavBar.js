@@ -12,7 +12,18 @@ const NavBar = () => {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <div className='navbar'>
+    <div className='navbar-total'>
+        <div className='navbar-top'>
+          <div className='navbar-tl'>Max Preps Clone by Andrew Kim</div>
+          <div className='about-page'>
+            <NavLink to={`/about`} className='aboutUsLink'>
+          <button className='aboutPageBtn'>
+            About
+          </button>
+          </NavLink>
+        </div>
+      </div>
+    <div className='navbar-bottom'>
       <div className='navbar-left'>
 
         <NavLink to='/' exact={true} activeClassName='active'>
@@ -25,25 +36,8 @@ const NavBar = () => {
         </NavLink>
 
       </div>
-      {/* <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-            </NavLink>
-          </li> */}
-      {/* <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-          Users
-          </NavLink>
-        </li> */}
-      {/* {sessionUser &&
-        <LogoutButton />
-      } */}
       <div className='navbar-right'>
-        <div className='about-page'>
-          <button className='aboutPageBtn'>
-            <NavLink to={`/about`} className='aboutUsLink'>About</NavLink>
-          </button>
-        </div>
+
         {!sessionUser &&
           <NavLink to='/login' exact={true} activeClassName='active'>
             Login
@@ -53,6 +47,7 @@ const NavBar = () => {
           <ProfileButton />
         }
       </div>
+     </div>
     </div>
   );
 }
