@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <div className='navbar-total'>
         <div className='navbar-top'>
-          <div className='navbar-tl'>MaxPreps X Andrew Kim</div>
+          <div className='navbar-tl'>MaxPreps &nbsp; &nbsp; X &nbsp; &nbsp; Andrew Kim</div>
           <div className='about-page'>
           <button className='aboutPageBtn'>
             <NavLink to={`/about`} className='aboutUsLink'>
